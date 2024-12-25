@@ -177,7 +177,7 @@ exports.signin = async (req, res) => {
             const playlod = {
                 email:user.email,
                 id:user._id,
-                role:user.accountType
+                accountType:user.accountType
             }
             const token = jwt.sign(playlod, process.env.SECRET_KEY , {
                 expiresIn:"2h"
@@ -211,3 +211,55 @@ exports.signin = async (req, res) => {
         })
     }
 }
+
+exports.changePassword = async (req, res) => {
+    try {
+        // destructuring the user info
+        const { email , oldPassword , newPassword , confirmPassword } = req.body;
+
+        // validation 
+        if(!email || !oldPassword || !newPassword || confirmPassword) {
+            return res.status(400).json({
+                success:false,
+                message:"Please fill all the required fields."
+            })
+        }
+
+        if(newPassword !== confirmPassword) {
+            return res.status(400).json({
+                success:false,
+                message:"Confirm password does not match"
+            })
+        }
+
+        const userDetails = await User.findOne({ email })
+        if(!userDetails) {
+            return res.status(400).json({
+                success:false,
+                message:"User does not exists."
+            })
+        }
+
+        if(userDetails.password !== oldPassword) {
+            return res.status(400).json({
+                success:false,
+                message:"Old password does not match. Please try again later"
+            })
+        }
+
+        const salt = await bcrypt.genSalt(10)
+        const hashedPassword = await bcrypt.hash(newPassword , salt)
+
+        await User.findOneAndUpdate(
+            { email },
+            { password: hashedPassword },
+            { new : true }
+        )
+
+    } catch(error) {
+        return res.status(500).json({
+            success:false,
+            message: "Fail to change the password"
+        })
+    }
+} 

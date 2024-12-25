@@ -42,9 +42,21 @@ const userSchema = new mongoose.Schema({
     courses:[
         {
             type:mongoose.Schema.Types.ObjectId,
+            ref:"course"
+        }
+    ],
+    courseProgress: [
+        {
+            type:mongoose.Schema.Types.ObjectId,
             ref:"CourseProgress"
         }
-    ]
+    ],
+    token:{
+        type:String,
+    },
+    resetPasswordExpires: {
+        type: Date
+    }
 })
 
 module.exports = mongoose.model('User' , userSchema)
