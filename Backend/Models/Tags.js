@@ -9,10 +9,12 @@ const TagsSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
-    course: {
-        type:mongoose.Schema.Types.ObjectId,
-        required:true
-    }
+    courses: [
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            required:true
+        }
+    ]
 })
 
 module.exports = mongoose.model('Tags' , TagsSchema)

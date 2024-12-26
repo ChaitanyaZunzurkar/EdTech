@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const User = require('./User')
 
 const CourseSchema = new mongoose.Schema({
     courseName:{
@@ -34,7 +35,14 @@ const CourseSchema = new mongoose.Schema({
     },
     thumbnail:{
         type:String,
-    }
+    },
+    studentEnrolled :[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            required:true,
+            ref:"User"
+        }
+    ]
 })
 
 module.exports = mongoose.model('Course' , CourseSchema)
