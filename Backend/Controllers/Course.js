@@ -1,6 +1,6 @@
 const User = require('../Models/User')
 const course = require('../Models/Course')
-const Tag = require('../Models/Tags')
+const Category = require('../Models/Categories')
 const { imageUploader } = require('../Utils/imageUpload')
 
 exports.createCourse = async (req , res) => {
@@ -26,11 +26,11 @@ exports.createCourse = async (req , res) => {
             })
         }
 
-        const tagDetails = await Tag.findById({ tag })
-        if(!tagDetails) {
+        const CategoryDetails = await Category.findById({ tag })
+        if(!CategoryDetails) {
             return res.status(400).json({
                 success:false,
-                message:"Tag not found"
+                message:"Category not found"
             })
         }
 
@@ -42,7 +42,7 @@ exports.createCourse = async (req , res) => {
             whatYouWillLearn,
             price,
             thumbnail: thumbnailImage.secure_url,
-            tag:tagDetails._id
+            Category:CategoryDetails._id
         })
 
         await User.findOneAndUpdate(
@@ -55,8 +55,8 @@ exports.createCourse = async (req , res) => {
             { new : true }
         )
         
-        await Tag.findOneAndUpdate(
-            {_id : tagDetails._id },
+        await Category.findOneAndUpdate(
+            {_id : CategoryDetails._id },
             {
                 $push : {
                     courses: courseDetails._id
