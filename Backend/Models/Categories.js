@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 
 const CategorySchema = new mongoose.Schema({
     name:{
-        type:Number,
+        type:String,
         required:true
     },
     description: {
-        type:Number,
+        type:String,
         required:true
     },
     courses: [
