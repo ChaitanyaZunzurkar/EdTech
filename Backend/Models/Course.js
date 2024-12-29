@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const User = require('./User')
+const Categories = require('./Categories')
 
 const CourseSchema = new mongoose.Schema({
     courseName:{
@@ -30,6 +31,14 @@ const CourseSchema = new mongoose.Schema({
             ref:"RatingAndReviews"
         }
     ],
+    tag: {
+        type:[String],
+        required:true,
+    },
+    Category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"Categories"
+    },
     price:{
         type:Number,
     },

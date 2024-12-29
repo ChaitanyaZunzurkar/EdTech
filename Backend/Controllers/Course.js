@@ -113,3 +113,58 @@ exports.getAllCourses = async (req, res) => {
         })
     }
 }
+
+exports.getCourseDetails = async (req, res) => {
+    try { 
+        const { courseId } = req.body
+
+        if (!courseId) {
+            return res.status(400).json({
+                success: false,
+                message: "Course ID is required.",
+            });
+        }
+
+        const courseDetails = await course.findById(
+            courseId
+        ).populate({
+            path:"instructor",
+            populate: {
+                path: "additionalDetails",
+            }
+        }).populate({
+            path:"courseContent",
+            populate: {
+                path: "SubSection"
+            }
+        }).populate("Category").populate("ratingAndReviews").exec()
+    
+        
+        if(!courseDetails) {
+            res.status(400).json({
+                success:false,
+                message:"Course does not found"
+            })
+        }
+
+        res.status(200).json({
+            success:true,
+            message: "got the course details",
+            course : {
+                courseName:courseDetails.courseName,
+                courseDescription: courseDetails.courseDescription,
+                instructor: courseDetails.instructor,
+                whatYouWillLearn:courseDetails.whatYouWillLearn,
+                courseContent: courseDetails.courseContent,
+                ratingAndReviews: courseDetails.ratingAndReviews,
+                price: courseDetails.price,
+                thumbnail: courseDetails.thumbnail,
+            }
+        })
+    } catch(error) {
+        res.status(500).json({
+            success:false,
+            message:"Fail to get entire course details"
+        })
+    }
+}
