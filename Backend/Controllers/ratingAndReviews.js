@@ -1,7 +1,6 @@
 const { default: mongoose } = require("mongoose")
 const Course = require("../Models/Course")
 const RatingAndReviews = require("../Models/RatingAndReviews")
-const { findById } = require("../Models/User")
 
 exports.creatingRatingAndReviews = async (req, res) => {
     try {
@@ -123,6 +122,30 @@ exports.getAvgCourseRating = async (req, res) => {
         return res.status(500).json({
             success:false,
             message:"Fail to get the avg. of course rating"
+        })
+    }
+}
+
+exports.getAllRatingAndReviews = async (req, res) => {
+    try {   
+        const allReviews = await RatingAndReviews.find({}).sort({ rating : "desc" }).populate({
+            path:"User",
+            select: "firstName lastName email image"
+        }).populate({
+            path:"Course",
+            select:"CourseName"
+        }).exec()
+
+        res.status(200).json({
+            success:true,
+            message:"successfuly got all the rating and reviews",
+            allReviews,
+        })
+    } catch(error) {
+        console.log("Fail to get the raing and reviews." , error.message)
+        return res.status(500).json({
+            success:false,
+            message:"Fail to get the raing and reviews."
         })
     }
 }

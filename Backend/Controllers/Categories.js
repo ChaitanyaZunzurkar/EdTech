@@ -49,3 +49,52 @@ exports.showAllCategory = async (req , res) => {
         })
     }
 }
+
+exports.CategoryPageDetails = async (req, res) => {
+    try {
+        const { courseId } = req.body
+        if(!courseId) {
+            return res.status(500).json({
+                success:false,
+                message:"Course Id does not found"
+            })
+        }
+
+        const CategoryCourses = await Category.findById(courseId).populate("courses").exec()
+
+        if(!CategoryCourses) {
+            return res.status(500).json({
+                success:false,
+                message:"Courses not found"
+            })
+        }
+
+        const differntCategory = await Category.findById({ _id: { $ne : courseId } }).populate("courses").exec()
+        if(!differntCategory) {
+            return res.status(500).json({
+                success:false,
+                message:"Courses not found"
+            })
+        }
+
+        const topSellingCourses = await Category.find({  }).populate({
+            path:"courses",
+            options: { sort : { studentEnrolled : -1 }}
+        }).limit(10)
+
+        res.status(200).json({
+            success:true,
+            message:"Courses fetch accourding to category.",
+            data : {
+                CategoryCourses,
+                differntCategory,
+                topSellingCourses
+            }
+        })
+    } catch(error) {
+        return res.status(500).json({
+            success:false,
+            message:"Fail to fetch Categories from DB"
+        })
+    }
+}
