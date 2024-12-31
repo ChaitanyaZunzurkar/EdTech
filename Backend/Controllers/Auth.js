@@ -1,7 +1,9 @@
 const User =  require('../Models/User.js')
 const OTP = require('../Models/OTPSchema.js')
-const otpGenerator = require('otp')
+const otpGenerator = require('otp-generator')
 const Profile = require('../Models/Profile.js')
+const mailSender = require('../Utils/mailSender')
+const emailVerificationTemplate = require('../Emails/Templates/emailVerificationTemplate.js')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
@@ -40,8 +42,12 @@ exports.otpSender = async (req, res) => {
             })
             isUniqueOTP = await OTP.findOne({ otp })
         }
+        const userOTP = await OTP.create({
+            email,
+            otp
+        })
 
-        console.log(otp);
+        const mailResponse = await mailSender(email , "Sending OTP for email verification : " , emailVerificationTemplate(otp))
 
         res.status(200).json({
             success:true,
@@ -95,7 +101,6 @@ exports.signUp = async (req, res) => {
         }
 
         const recentOTP = await OTP.find({ email }).sort({ createdAt: -1 }).limit(1)
-        console.log(recentOTP)
 
         if(recentOTP.length === 0) {
             return res.status(400).json({
@@ -103,7 +108,7 @@ exports.signUp = async (req, res) => {
                 message:"Cannot found a valid OTP"
             })
         }
-        else if (recentOTP !== otp) {
+        else if (recentOTP[0].otp !== otp) {
             return res.status(400).json({
                 success:false,
                 message:"Invalid OTP"
@@ -128,7 +133,7 @@ exports.signUp = async (req, res) => {
             accountType,
             contactNumber,
             additionalDetails:profileDetails._id,
-            image:`https://api.dicebear.com/5.x/initials/svg/?seed=${firstName} ${lastName}`
+            image:`https://api.dicebear.com/5.x/initials/svg/?seed=${firstName}%20${lastName}&style=initials&backgroundColor=auto&fontSize=64`
         })
 
         res.status(201).json({
@@ -137,7 +142,7 @@ exports.signUp = async (req, res) => {
             user
         })
     } catch(error) {
-        console.error("Fail to signup" , error.message)
+        console.error("Fail to signup : " , error.message)
         return res.status(500).json({
             success:false,
             message:"Fail to signup"
@@ -155,8 +160,7 @@ exports.signin = async (req, res) => {
                 message:"Please fill all the required fields."
             })
         }
-
-        const user = await User.find({ email }).populate('additionalDetails')
+        const user = await User.findOne({ email }).populate('additionalDetails')
 
         if(!user) {
             return res.status(403).json({
@@ -179,7 +183,7 @@ exports.signin = async (req, res) => {
                 id:user._id,
                 accountType:user.accountType
             }
-            const token = jwt.sign(playlod, process.env.SECRET_KEY , {
+            const token = jwt.sign(playlod, process.env.JWT_SECRET_KEY , {
                 expiresIn:"2h"
             })
             user.token = token 

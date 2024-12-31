@@ -1,6 +1,8 @@
 const Profile = require('../Models/Profile')
 const User = require("../Models/User")
 const Course = require('../Models/Course')
+const { imageUploader } = require('../Utils/imageUpload')
+require('dotenv').config()
 
 exports.updateProfile = async (req, res) => {
     try {
@@ -85,7 +87,8 @@ exports.getAllUserDetails = async (req, res) => {
 
         res.status(200).json({
             success:true,
-            message:"Displayed user details successfully."
+            message:"Displayed user details successfully.",
+            userDetails
         })
 
     } catch(error) {
@@ -93,6 +96,42 @@ exports.getAllUserDetails = async (req, res) => {
         return res.status(500).json({
             success:false,
             message:"Fail to fetch all users."
+        })
+    }
+}
+
+exports.updateProfilePicture = async (req, res) => {
+    try {
+        const userId = req.user.id
+        const profilePicture = req.files.profilePicture
+        if(!profilePicture || !userId) {
+            return res.status(500).json({
+                success:false,
+                message:"Please fill all the required fields."
+            })
+        }
+
+        const profilePictureUploadResponse = await imageUploader(profilePicture , process.env.FOLDER_NAME)
+        console.log(profilePictureUploadResponse)
+        const updatedUser = await User.findByIdAndUpdate(
+            userId,
+            {
+                image: profilePictureUploadResponse.secure_url
+            },
+            { new: true}
+        )
+
+        res.status(200).json({
+            success:true,
+            message:"Profile picture updated successfully.",
+            updatedUser
+        })
+        
+    } catch(error) {
+        console.log("Fail to update profile picture" , error.message)
+        return res.status(500).json({
+            success:false,
+            message:"Fail to update profile picture."
         })
     }
 }

@@ -1,6 +1,6 @@
 const Section = require('../Models/Section')
 const SubSection = require('../Models/SubSection')
-const { uploadImage, imageUploader } = require("../Utils/imageUpload")
+const { imageUploader } = require("../Utils/imageUpload")
 require('dotenv').config()
 
 exports.createSubSection = async (req , res) => {
@@ -15,7 +15,7 @@ exports.createSubSection = async (req , res) => {
                 message:"Please fill all the required fields"
             })
         }
-        const videoUrl = await uploadImage(video , process.env.FOLDER_NAME)
+        const videoUrl = await imageUploader(video , process.env.FOLDER_NAME)
 
         const subSection = await SubSection.create({
             title,
@@ -36,7 +36,8 @@ exports.createSubSection = async (req , res) => {
 
         res.status(200).json({
             success:true,
-            message:"Sub-section created successfully."
+            message:"Sub-section created successfully.",
+            updateSection
         })
 
     } catch(error) {

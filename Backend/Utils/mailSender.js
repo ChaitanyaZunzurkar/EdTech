@@ -7,7 +7,7 @@ const mailSender = async (email , title , body) => {
             host:process.env.MAIL_HOST,
             auth:{
                 user:process.env.MAIL_USER,
-                password: process.env.PASSWORD
+                pass: process.env.MAIL_PASS
             }
         })
 
@@ -20,7 +20,7 @@ const mailSender = async (email , title , body) => {
 
     } catch(error) {
         console.log("Fail to send OTP through mail")
-        console.log(error)
+        console.log(error.message)
     }
 }
 

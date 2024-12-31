@@ -43,7 +43,7 @@ exports.resetPassword = async (req, res) => {
     try {
         const { password , confirmPassword , token } = req.body
 
-        if(!password || !confirmPassword || token) {
+        if(!password || !confirmPassword || !token) {
             return res.status(400).json({
                 success:false,
                 message:"Fail to get password or confirm password or token"

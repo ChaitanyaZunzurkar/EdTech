@@ -11,12 +11,11 @@ exports.createCategory = async (req ,res) => {
             })
         }
 
-        const Category = await Category.create({
+        const category = await Category.create({
             name,
             description
         })
 
-        console.log(Category)
         res.status(201).json({
             success:true,
             message:"Category created successfully"
@@ -38,11 +37,11 @@ exports.showAllCategory = async (req , res) => {
         res.status(200).json({
             success:true,
             message:"Fetched all Categories successfully",
-            allTag
+            allCategory
         })
 
     } catch(error) {
-        console.log("Error occured in fetching Categories" , allCategory);
+        console.log("Error occured in fetching Categories" , error.message);
         return res.status(500).json({
             success:false,
             message:"Fail to fetch Categories from DB"

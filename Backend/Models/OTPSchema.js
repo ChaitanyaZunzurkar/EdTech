@@ -3,7 +3,7 @@ const mailSender = require('../Utils/mailSender')
 
 const OTPSchema = new mongoose.Schema({
     email:{
-        type:Number,
+        type:String,
         required:true
     },
     otp: {

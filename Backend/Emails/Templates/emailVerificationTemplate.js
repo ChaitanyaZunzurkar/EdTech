@@ -1,4 +1,4 @@
-const emailVerificationTemplate = (userName, verificationLink) => `
+const emailVerificationTemplate = (otp) => `
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +15,9 @@ const emailVerificationTemplate = (userName, verificationLink) => `
             <h1>StudyNotion</h1>
             <p>Your Learning, Simplified</p>
         </div>
-        <p>Dear ${userName},</p>
-        <p>Thank you for signing up with StudyNotion. Please verify your email address to get started:</p>
-        <p style="text-align: center;">
-            <a href="${verificationLink}" style="display: inline-block; padding: 10px 20px; background-color: #f39c12; color: white; text-decoration: none; border-radius: 4px;">Verify Email</a>
-        </p>
+        <p>Thank you for signing up with StudyNotion. To verify your email, please use the following OTP (One-Time Password):</p>
+        <p style="text-align: center; font-size: 24px; font-weight: bold; color: #f39c12;">${otp}</p>
+        <p>Enter this OTP on the verification page to activate your account.</p>
         <p>If you didn’t create an account, please ignore this email.</p>
         <p>Thank you!</p>
         <div class="footer">

@@ -12,13 +12,13 @@ exports.auth = async (req, res, next) => {
   }
 
   try {
-    const payload = jwt.verify(token, process.env.SECRET_KEY);
+    const payload = jwt.verify(token, process.env.JWT_SECRET_KEY);
     console.log(payload);
     req.user = payload;
   } 
   catch (error) {
     console.log("User is not authorized");
-    console.error(error);
+    console.error(error.message);
 
     return res.status(401).json({
       success: false,

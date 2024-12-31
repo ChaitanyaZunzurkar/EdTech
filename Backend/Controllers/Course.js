@@ -2,14 +2,15 @@ const User = require('../Models/User')
 const course = require('../Models/Course')
 const Category = require('../Models/Categories')
 const { imageUploader } = require('../Utils/imageUpload')
+require('dotenv').config()
 
 exports.createCourse = async (req , res) => {
     try {
-        const { courseName , courseDescription , whatYouWillLearn  , price , tag} = req.body
+        const { courseName , courseDescription , whatYouWillLearn  , price , category  ,tag} = req.body
 
         const thumbnail = req.files.thumbnailImage
 
-        if(!courseName || !courseDescription || !instructor || !whatYouWillLearn || !price || !thumbnail) {
+        if(!courseName || !courseDescription || !whatYouWillLearn || !price || !thumbnail || !category || !tag) {
             return res.status(400).json({
                 success:false,
                 message:"Please fill all the required fields."
@@ -17,7 +18,7 @@ exports.createCourse = async (req , res) => {
         }
 
         const userID = req.user.id
-        const InstrctorDetails = await User.findById({ userID })
+        const InstrctorDetails = await User.findById( userID )
 
         if(!InstrctorDetails) {
             return res.status(400).json({
@@ -26,7 +27,7 @@ exports.createCourse = async (req , res) => {
             })
         }
 
-        const CategoryDetails = await Category.findById({ tag })
+        const CategoryDetails = await Category.findById( category )
         if(!CategoryDetails) {
             return res.status(400).json({
                 success:false,
@@ -72,6 +73,7 @@ exports.createCourse = async (req , res) => {
         })
 
     } catch(error) {
+        console.log("Fail to create a course" , error.message)
         return res.status(500).json({
             success:false,
             message:"Fail to create a course."

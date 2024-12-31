@@ -24,7 +24,6 @@ exports.createSection = async (req ,res) => {
             { new:true }
         ).populate("courseContent")
 
-        console.log("updated Course" , updatedCourse)
         res.status(200).json({
             success:true,
             message:"Section created successfully.",

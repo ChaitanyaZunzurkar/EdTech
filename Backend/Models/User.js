@@ -23,21 +23,20 @@ const userSchema = new mongoose.Schema({
     },
     confirmPassword:{
         type:String,
-        required:true
     },
     accountType:{
         type:String,
-        enum:["Admin , Student" , "Instrctor"],
-        require:true
+        enum:["Admin" , "Student" , "Instructor"],
+        required:true
     },
     additionalDetails:{
         type:mongoose.Schema.Types.ObjectId,
-        require:true,
+        required:true,
         ref:'Profile'
     },
     image: {
         type:String,
-        require:true
+        required:true
     },
     courses:[
         {
