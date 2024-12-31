@@ -11,6 +11,9 @@ lerna-debug.log*
 Frontend/node_modules/
 Backend/node_modules/
 
+#Ignore .env file from backend
+Backend/.env
+
 # Build directories
 dist
 dist-ssr
