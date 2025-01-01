@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60vw;
+    /* margin: 3rem; */
+    font-family: 'Inter' sans-serif;
+    /* border: 2px solid red; */
+}
+.instrutorBtn {
+    background-color: #2C333F;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    margin: 2rem;
+    color: #C5C7D4;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 6px;
+}
+
+.instrutorBtn:hover {
+    background-color: #161D29;
+}
+
+.title {
+    font-size: 25px;
+}
+
+.para {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    color: #999DAA;
+}
+
+.btnSection {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}

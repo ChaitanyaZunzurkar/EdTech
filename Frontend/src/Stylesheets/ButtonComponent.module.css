@@ -1,0 +1,17 @@
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0px 10px;
+    border: none;
+    box-shadow: 2px 2px 2px #2C333F;
+    cursor: pointer;
+}
+
+.yellow-btn {
+    background-color: #FFD60A;
+}
+
+.black-btn {
+    background-color: #161D29;
+    color: white;
+}
