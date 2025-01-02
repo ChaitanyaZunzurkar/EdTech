@@ -18,16 +18,17 @@
     border-radius: 15px;
     margin: 2rem;
     color: #C5C7D4;
-    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     gap: 6px;
+    box-shadow: 2px 2px 2px #161D29;
 }
 
 .instrutorBtn:hover {
     background-color: #161D29;
+    box-shadow: none;
 }
 
 .title {
@@ -49,3 +50,22 @@
     text-align: center;
     align-items: center;
 }
+
+.videoContainer {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+}
+
+.BannerVideo{
+    width: 70vw;
+    box-shadow: 
+    -5px -5px 25px  #7EC0D9, 
+    10px 10px 1px #fff;
+    border-radius: 5px;
+}
+
+
+

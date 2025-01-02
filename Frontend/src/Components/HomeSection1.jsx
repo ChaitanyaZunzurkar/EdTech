@@ -2,6 +2,7 @@ import { FaArrowRight } from 'react-icons/fa';
 import SpecialText from './SpecialText';
 import { ButtonComponent } from './ButtonComponent';
 import style from '../Stylesheets/HomeSection1.module.css'
+import Banner from '../assets/banner.mp4'
 
 export const HomeSection1 = () => {
   return (
@@ -25,6 +26,19 @@ export const HomeSection1 = () => {
                 <ButtonComponent active={false} path={'/signup'} text={'Book a Demo'} />
             </div>
         </div>
+
+        <div className={style.videoContainer}>
+            <video
+                muted
+                loop
+                autoPlay
+                className={style.BannerVideo}
+            >
+                <source src={Banner} type='video/mp4'></source>
+            </video>
+            <div className="grad2"></div>
+        </div>
+
     </div>
   )
 }
