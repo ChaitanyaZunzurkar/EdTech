@@ -1,5 +1,48 @@
 export const FooterLink2 = [
     {
+      title: "Company",
+      links: [
+        { title: 'About' , link: '/about'},
+        { title: 'Careers' , link: '/careers'},
+        { title: 'Affiliates' , link: '/affiliates'},
+      ]
+    },
+    {
+      title: "Resources",
+      links: [
+        { title: 'Articles' , link: '/articles'},
+        { title: 'Blog' , link: '/blog'},
+        { title: 'Chart Sheet' , link: '/chart-sheet'},
+        { title: 'Code challenges' , link: '/code-challenges'},
+        { title: 'Docs' , link: '/docs'},
+        { title: 'Projects' , link: '/projects'},
+        { title: 'Videos' , link: '/videos'},
+        { title: 'Wrokspaces' , link: '/workspaces'},
+      ]
+    },
+    {
+      title: "Support",
+      links: [
+        { title: 'Help Center' , link: '/help-center'},
+      ]
+    },
+    {
+      title: "Plans",
+      links: [
+        { title: 'Paid membership' , link: '/paid-membership'},
+        { title: 'For Students' , link: '/students'},
+        { title: 'Business Solutions' , link: '/business'},
+      ]
+    },
+    {
+      title: "Community",
+      links: [
+        { title: 'Forums' , link: '/forums'},
+        { title: 'Chapters' , link: '/chapters'},
+        { title: 'Events' , link: '/events'},
+      ]
+    },
+    {
       title: "Subjects",
       links: [
         { title: "Al", link: "/al" },

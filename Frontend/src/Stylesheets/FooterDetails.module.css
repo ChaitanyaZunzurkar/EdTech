@@ -1,0 +1,17 @@
+.links {
+    text-decoration: none;
+    color: #717171;
+}
+
+.list {
+    list-style: none;
+}
+
+.ul {
+    margin: 2px;
+    padding: 0px;
+}
+
+.container {
+    margin: 0px;
+}
