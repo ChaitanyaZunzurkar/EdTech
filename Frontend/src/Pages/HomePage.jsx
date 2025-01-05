@@ -9,6 +9,7 @@ export default function HomePage() {
     <div className={style.container}>
         <HomeSection1 />
         <HomeSection2 
+          position={false}
           heading={
             <b>Unlock your <SpecialText text={`coding potential`}/> with our online courses.</b>
           }
@@ -19,8 +20,7 @@ export default function HomePage() {
               Try It Yourself <FaArrowRight className={style.arrow} style={{ marginLeft: '8px', fontSize: '13px' }} />
             </div>
           }
-          btn2={'learn more'}
-
+          btn2={'Learn more'}
           codeblock={`<!DOCTYPE html>
 <html>
 <head>
@@ -29,38 +29,34 @@ export default function HomePage() {
 </head>
 <body>
 <h1><a href="/">Header</a></h1>
-<nav>
-  <a href="one/">One</a> <a href="two/">Two</a> 
-</nav>
+<nav> <a href="one/">One</a> <a href="two/">Two</a> </nav>
 </body>
 </html>`}
         />
 
-        <HomeSection2 
+        <HomeSection2
+          position={true} 
           heading={
-            <b>Unlock your <SpecialText text={`coding potential`}/> with our online courses.</b>
+            <b>Start <SpecialText text={`coding in seconds`}/>.</b>
           }
-          para={`Our courses are designed and taught by industry experts who have years of experience in coding and are passionate about sharing their knowledge with you.`}
+          para={`Go ahead, give it a try. Our hands-on learning environment means you'll be writing real code from your very first lesson.`}
 
           btn1={
             <div className={style.btn}>
-              Try It Yourself <FaArrowRight className={style.arrow} style={{ marginLeft: '8px' , fontSize: '13px' }} />
+              Continue Lessons <FaArrowRight className={style.arrow} style={{ marginLeft: '8px' , fontSize: '13px' }} />
             </div>
           }
-          btn2={'learn more'}
-          codeblock={`<!DOCTYPE html>
-<html>
-<head>
-<title>Example</title>
-<linkrel = "stylesheet"href="styles.css">
-</head>
-<body>
-<h1><a href="/">Header</a></h1>
-<nav>
-  <a href="one/">One</a> <a href="two/">Two</a> 
-</nav>
-</body>
-</html>`}
+          btn2={'Learn More'}
+          codeblock={`import React from 'react';
+
+function WelcomeMessage() {
+  return (
+    <h1> Welcome to StudyNotion </h1>
+    <h1> Happy Learning! </h1>
+  );
+}
+
+export default WelcomeMessage;`}
         />
     </div>
   )
