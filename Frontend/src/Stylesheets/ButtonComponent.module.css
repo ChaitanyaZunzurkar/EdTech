@@ -6,6 +6,10 @@
     border: none;
     box-shadow: 2px 2px 2px #2C333F;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 
 .yellow-btn {

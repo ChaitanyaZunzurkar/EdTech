@@ -15,3 +15,73 @@
     align-items: center;
     cursor: pointer;
 }
+
+.section {
+    background-color: white;
+    /* width: 100vw; */
+    width: 100%;
+    height: 30vh;
+}
+
+.section .img {
+    background-image: url('../assets/bghome.svg');
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.sectionFour {
+    background-color: #f9f9f9;
+    height: 20vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+}
+
+.title {
+    color: black;
+    font-size: 25px;
+    width: 27%;
+    /* border: 2px solid red; */
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.desc {
+    color: black;
+    width: 35%;
+    text-align: start;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.desc p {
+    margin: 0px;
+}
+
+.learnBtn {
+    background-color: #FFD60A;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px #2C333F;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}

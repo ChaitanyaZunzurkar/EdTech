@@ -1,0 +1,92 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f9f9f9;
+    color: black;
+    width: 94.7vw;
+    padding: 2rem;
+}
+
+.timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 78vh;
+    margin: 1rem;
+    padding: 0px 1rem;
+}
+
+.subsection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: 2px solid red; */
+    margin: 1rem;
+    position: relative;
+}
+
+.timelineImg {
+    height: 545px;
+}
+
+.timelinelogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    margin: 1rem;
+    border-radius: 1000px;
+    background-color: #FFFFFF;
+}
+
+.info b , p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.timelinelogo::after {
+    content:'';
+    position: absolute;
+    font-weight: bold;
+    /* bottom: 0px; */
+    top: -45px;
+    height: 60px;
+    width: 2px;
+    background-color: #AFB2BF;
+}
+
+.fistchild::after {
+    content: none;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}/* Ellipse 2 */
+
+.img1 {
+    z-index: 10;
+}
+.radial {
+    position: absolute;
+    width: 720px;
+    height: 207.47px;
+    left: 2px;
+    top: 130px;
+    background: linear-gradient(117.82deg, #9CECFB -9.12%, #65C7F7 48.59%, #0052D4 106.3%);
+    opacity: 0.8;
+    filter: blur(34px);
+    transform: matrix(1, 0, -0.03, 1, 0, 0);
+    flex: none;
+    order: 5;
+    flex-grow: 0;
+    z-index: -1;
+}
+
+

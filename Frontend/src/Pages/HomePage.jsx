@@ -3,6 +3,8 @@ import HomeSection2 from "../Components/HomeSection2";
 import style from '../Stylesheets/HomePage.module.css'
 import SpecialText from '../Components/SpecialText'
 import { FaArrowRight } from 'react-icons/fa';
+import { ButtonComponent } from "../Components/ButtonComponent";
+import Timeline from "../Components/Timeline";
 
 export default function HomePage() {
   return (
@@ -58,6 +60,38 @@ function WelcomeMessage() {
 
 export default WelcomeMessage;`}
         />
+
+        {/* Section 3 */}
+        <div className={style.section}> 
+            <div className={style.img}>
+              <div className={style.btn}>
+                  <ButtonComponent active={true} path={'/signup'} text={`Explore Full Catalog`} >
+                    <FaArrowRight className={style.arrow}/>
+                  </ButtonComponent>
+                  <ButtonComponent active={false} path={'signup'} text={'Learn More'} />
+              </div>
+            </div>
+        </div>
+        
+
+        {/* Section 4 */}
+        <div className={style.sectionFour}>
+            <div className={style.title}>
+                <b>Gets the skills you need for a</b> {' '}
+                <SpecialText text={`job that is in demand.`} />
+            </div>
+            <div className={style.desc}>
+              <p>
+                  The modern StudyNotion is the dictates its own terms. Today, to be a competitive specialist requires more than professional skills.
+              </p>
+              <button className={style.learnBtn}>
+                Learn More
+              </button>
+            </div>
+        </div>
+
+        { /* section 5 */ }
+        <Timeline />
     </div>
   )
 }

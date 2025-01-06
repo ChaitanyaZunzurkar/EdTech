@@ -2,7 +2,7 @@
 import { useNavigate } from "react-router-dom"
 import style from '../Stylesheets/ButtonComponent.module.css'
 
-export const ButtonComponent = ({ active , path , text}) => {
+export const ButtonComponent = ({ active , path , text , children }) => {
     const navigate = useNavigate()
     return (
         <button 
@@ -10,6 +10,7 @@ export const ButtonComponent = ({ active , path , text}) => {
             onClick={() => navigate(path)}
         >
             <b>{ text }</b>
+            { children }
         </button>
     )
 }
