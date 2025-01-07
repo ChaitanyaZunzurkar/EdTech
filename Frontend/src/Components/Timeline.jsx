@@ -52,9 +52,39 @@ export default function Timeline() {
                     <img src={timelineImg} alt='Timeline' className={style.timelineImg} />
                 </div>
                 <div className={style.radial}></div>
-                {/* <div className={style.img2}>
-                    <img src={} alt='timelineInfo' />
-                </div> */}
+                <div className={style.greenBlock}>
+                    <div 
+                        style={{
+                            display:"flex",
+                            justifyContent:"space-between",
+                            alignItems:"center"
+                        }}
+                    >
+                        <p style={{fontSize:"30px" , padding:"0px 10px"}}>10</p>
+                        <p style={{
+                                margin:"0px",
+                                padding:"0px 10px",
+                                color:"#05A77B"
+                            }}>YEARS EXPRERIENCES</p>
+                    </div>
+                    <div className={style.line}></div>
+                    <div  
+                        style={{
+                            display:"flex",
+                            justifyContent:"space-between",
+                            alignItems:"center"
+                        }}
+                    >
+                        <p style={{fontSize:"30px" , padding:"0px 10px"}}>250</p>
+                        <p
+                            style={{
+                                margin:"0px",
+                                padding:"0px 10px",
+                                color:"#05A77B"
+                            }}
+                        >TYPES OF COURSES</p>
+                    </div>
+                </div>
             </div>
         </div>
     )

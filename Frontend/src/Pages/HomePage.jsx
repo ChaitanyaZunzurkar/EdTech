@@ -5,6 +5,8 @@ import SpecialText from '../Components/SpecialText'
 import { FaArrowRight } from 'react-icons/fa';
 import { ButtonComponent } from "../Components/ButtonComponent";
 import Timeline from "../Components/Timeline";
+import LearningLanguageSection from "../Components/LearningLanguageSection";
+import Instrcutor from "../Components/Instrcutor";
 
 export default function HomePage() {
   return (
@@ -92,6 +94,8 @@ export default WelcomeMessage;`}
 
         { /* section 5 */ }
         <Timeline />
+        <LearningLanguageSection />
+        <Instrcutor />
     </div>
   )
 }
