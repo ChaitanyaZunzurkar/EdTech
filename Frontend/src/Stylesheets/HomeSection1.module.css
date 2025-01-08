@@ -32,7 +32,8 @@
 }
 
 .title {
-    font-size: 25px;
+    font-size: 36px;
+    margin-bottom: 0.5rem;
 }
 
 .para {
@@ -42,6 +43,7 @@
     align-items: center;
     flex-direction: column;
     color: #999DAA;
+    margin-bottom: 0.5rem;
 }
 
 .btnSection {
@@ -49,6 +51,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
+    margin-top: 3rem;
 }
 
 .videoContainer {

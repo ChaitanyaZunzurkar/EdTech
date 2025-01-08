@@ -7,6 +7,7 @@ import { ButtonComponent } from "../Components/ButtonComponent";
 import Timeline from "../Components/Timeline";
 import LearningLanguageSection from "../Components/LearningLanguageSection";
 import Instrcutor from "../Components/Instrcutor";
+import ExploreCourses from "../Components/ExploreCourses";
 
 export default function HomePage() {
   return (
@@ -64,6 +65,7 @@ export default WelcomeMessage;`}
         />
 
         {/* Section 3 */}
+        <ExploreCourses />
         <div className={style.section}> 
             <div className={style.img}>
               <div className={style.btn}>

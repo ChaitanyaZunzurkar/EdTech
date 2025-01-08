@@ -48,7 +48,7 @@
 
 .title {
     color: black;
-    font-size: 25px;
+    font-size: 30px;
     width: 27%;
     /* border: 2px solid red; */
     margin: 0px;
@@ -69,10 +69,12 @@
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column;
+    margin: 1rem;
 }
 
 .desc p {
     margin: 0px;
+    margin: 0.5rem;
 }
 
 .learnBtn {
