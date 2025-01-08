@@ -2,5 +2,71 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 70vw;
+    gap: 3rem;
+    width: 100%;
+    /* border: 2px solid red; */
+    margin: 2rem;
+}
+.card {
+    /* border: 2px solid red; */
+    width: 20%;
+    height: 30vh;
+    background-color: #161D29;
+    padding: 15px 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.card b , p {
+    padding: 10px;
+}
+
+.card b {
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #DBDDEA;
+}
+
+.btnSection {
+    padding: 0px 1rem;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px dashed #DBDDEA;
+    padding-top: 20px;
+}
+
+.btnSection button {
+    border: none;
+    background-color: #161D29;
+    color: #DBDDEA;
+    margin: 0px 8px;
+}
+
+.level , .lessionNumber {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    background-color: white;
+    box-shadow: 10px 10px 2px solid #E7C009;
+}
+
+.active b {
+    color: black;
+}
+
+.active p {
+    color: #585D69;
+}
+
+.active .btnSection {
+    color: #0A5A72;
 }

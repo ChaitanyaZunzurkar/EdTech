@@ -4,19 +4,19 @@ export const HomePageExplore = [
         courses: [
             {
                 heading: "Learn HTML",
-                description: "This course introduces you to HTML, the building block of web development. You'll learn to create and structure web pages, using tags, links, images, and more.",
+                description: "Get started with HTML and learn to structure web pages. Understand how to use tags, links, and images to build simple websites.",
                 level: 'Beginner',
                 lessionNumber: 6
             },
             {
                 heading: "Intro to JavaScript",
-                description: "Learn the fundamentals of JavaScript, the programming language of the web. This course covers variables, functions, loops, and how to manipulate the DOM to create interactive web pages.",
+                description: "Learn JavaScript basics, including variables, functions, and loops. Create dynamic, interactive web pages using simple coding techniques.",
                 level: 'Beginner',
                 lessionNumber: 8
             },
             {
                 heading: "Version Control with Git",
-                description: "Master the basics of Git for version control. This course will help you understand commits, branches, and how to collaborate on projects using Git and GitHub.",
+                description: "Master Git for version control. Learn how to track changes, work with branches, and collaborate using Git and GitHub.",
                 level: 'Beginner',
                 lessionNumber: 5
             },
@@ -27,19 +27,19 @@ export const HomePageExplore = [
         courses: [
             {
                 heading: "CSS Fundamentals",
-                description: "Understand how to style websites with CSS. Learn how to work with colors, fonts, layouts, and create responsive web designs that look great on any device.",
+                description: "Understand how to style websites using CSS. Learn about colors, fonts, and layouts to create visually appealing pages.",
                 level: 'Beginner',
                 lessionNumber: 6
             },
             {
-                heading: "Introduction to Databases with SQL",
-                description: "Learn SQL and the basics of databases. This course covers how to query, insert, and update data, and also teaches you about relational database concepts.",
+                heading: "Introduction to SQL",
+                description: "Get started with SQL and learn how to manage databases. Explore queries, data insertion, and relational database concepts.",
                 level: 'Beginner',
                 lessionNumber: 7
             },
             {
                 heading: "Responsive Web Design",
-                description: "Learn how to create websites that look great on all screen sizes. Understand how to implement CSS media queries, Flexbox, and CSS Grid for responsive layouts.",
+                description: "Learn how to create responsive websites using CSS. Ensure your websites look great on all screen sizes with Flexbox and CSS Grid.",
                 level: 'Beginner',
                 lessionNumber: 6
             },
@@ -50,19 +50,19 @@ export const HomePageExplore = [
         courses: [
             {
                 heading: "Advanced JavaScript",
-                description: "Dive deeper into JavaScript. Learn about asynchronous programming with promises, callbacks, and async/await. Master closures, prototypes, and modules.",
+                description: "Dive deeper into JavaScript with advanced topics. Learn about asynchronous programming, closures, and prototypes.",
                 level: 'Intermediate',
                 lessionNumber: 8
             },
             {
                 heading: "React for Beginners",
-                description: "Start building dynamic user interfaces with React. This course covers components, JSX, state management, and how to create interactive apps with React.",
+                description: "Learn to build dynamic UIs with React. Understand components, state, and JSX to create interactive web apps.",
                 level: 'Intermediate',
                 lessionNumber: 8
             },
             {
                 heading: "Node.js for Web Development",
-                description: "Learn how to build scalable back-end applications with Node.js. Understand server-side JavaScript, HTTP, RESTful APIs, and database integration.",
+                description: "Master back-end development with Node.js. Learn how to build server-side applications, APIs, and integrate databases.",
                 level: 'Intermediate',
                 lessionNumber: 7
             },
@@ -73,19 +73,19 @@ export const HomePageExplore = [
         courses: [
             {
                 heading: "Flask Web Development",
-                description: "Build powerful web applications using Flask, a lightweight Python web framework. Learn about routing, templates, and creating dynamic websites.",
+                description: "Learn Flask to build dynamic web apps. Explore routing, templates, and creating web applications using Python.",
                 level: 'Intermediate',
                 lessionNumber: 7
             },
             {
                 heading: "Django Web Development",
-                description: "Master Django, a high-level Python web framework. Build full-fledged web applications, learn about models, views, and templates, and explore security best practices.",
+                description: "Master Django for full-stack web development. Learn how to create secure, scalable web apps with Python.",
                 level: 'Advanced',
                 lessionNumber: 8
             },
             {
                 heading: "APIs with FastAPI",
-                description: "Create high-performance APIs with FastAPI. This course covers modern API development, using asynchronous programming, and how to create production-ready web services.",
+                description: "Learn FastAPI for creating high-performance APIs. Understand asynchronous programming and modern API development practices.",
                 level: 'Advanced',
                 lessionNumber: 7
             },
@@ -96,19 +96,19 @@ export const HomePageExplore = [
         courses: [
             {
                 heading: "Next.js: Building Full-stack Apps",
-                description: "Learn how to create server-rendered React apps with Next.js. Explore server-side rendering (SSR), static site generation (SSG), and deploying your apps for production.",
+                description: "Learn to build full-stack applications with Next.js. Master SSR, SSG, and deploying React apps for production.",
                 level: 'Advanced',
                 lessionNumber: 7
             },
             {
                 heading: "Machine Learning with Python",
-                description: "Understand the basics of machine learning using Python. Learn about supervised and unsupervised learning, data preprocessing, and algorithms such as regression and classification.",
+                description: "Get started with machine learning using Python. Learn about data preprocessing, regression, and classification algorithms.",
                 level: 'Advanced',
                 lessionNumber: 8
             },
             {
                 heading: "Web Security Essentials",
-                description: "Get a strong foundation in web security. Learn about common vulnerabilities, security best practices, and how to protect your websites from attacks like XSS, CSRF, and SQL Injection.",
+                description: "Learn essential web security techniques. Understand common vulnerabilities like XSS and SQL injection and how to secure web applications.",
                 level: 'Intermediate',
                 lessionNumber: 6
             },

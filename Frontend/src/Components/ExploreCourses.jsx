@@ -46,7 +46,7 @@ const ExploreCourses = () => {
                     }
                 </ul>
             </div>
-            <CourseCards currentCourse={currentCourse} />
+            <CourseCards currentCourse={currentCourse} currentTab={currentTab} activeCourse={activeCourse} />
         </div>
     )
 }

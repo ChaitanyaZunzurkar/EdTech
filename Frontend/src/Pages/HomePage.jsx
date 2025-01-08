@@ -65,6 +65,7 @@ export default WelcomeMessage;`}
         />
 
         {/* Section 3 */}
+        
         <ExploreCourses />
         <div className={style.section}> 
             <div className={style.img}>
