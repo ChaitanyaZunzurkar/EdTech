@@ -64,19 +64,21 @@ function WelcomeMessage() {
 export default WelcomeMessage;`}
         />
 
-        {/* Section 3 */}
-        
-        <ExploreCourses />
-        <div className={style.section}> 
-            <div className={style.img}>
-              <div className={style.btn}>
-                  <ButtonComponent active={true} path={'/signup'} text={`Explore Full Catalog`} >
-                    <FaArrowRight className={style.arrow}/>
-                  </ButtonComponent>
-                  <ButtonComponent active={false} path={'signup'} text={'Learn More'} />
+        {/* Section 3 */}        
+        <div className={style.relativeDiv}>
+          <ExploreCourses className={style.exploreCourses} />
+          <div className={style.section}> 
+              <div className={style.img}>
+                  <div className={style.btn}>
+                      <ButtonComponent active={true} path={'/signup'} text={`Explore Full Catalog`} >
+                          <FaArrowRight className={style.arrow}/>
+                      </ButtonComponent>
+                      <ButtonComponent active={false} path={'signup'} text={'Learn More'} />
+                  </div>
               </div>
-            </div>
+          </div>
         </div>
+
         
 
         {/* Section 4 */}

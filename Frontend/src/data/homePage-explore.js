@@ -95,7 +95,7 @@ export const HomePageExplore = [
         tag: 'Career paths',
         courses: [
             {
-                heading: "Next.js: Building Full-stack Apps",
+                heading: "Next.js",
                 description: "Learn to build full-stack applications with Next.js. Master SSR, SSG, and deploying React apps for production.",
                 level: 'Advanced',
                 lessionNumber: 7

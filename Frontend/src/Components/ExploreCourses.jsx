@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import style from '../Stylesheets/ExploreCourses.module.css'
-import SpecialText from './SpecialText'
 import { HomePageExplore } from '../data/homePage-explore'
 import CourseCards from "../Components/CourseCards";
+import SpecialText from './SpecialText';
 
 const tabs = [
     "Free",
@@ -34,7 +34,6 @@ const ExploreCourses = () => {
                     Learn to Build Anything You Can Imagine
                 </p>
             </div>
-
             <div className={style.nav}>
                 <ul>
                     {

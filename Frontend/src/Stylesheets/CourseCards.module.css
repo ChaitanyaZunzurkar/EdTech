@@ -12,10 +12,22 @@
     width: 20%;
     height: 30vh;
     background-color: #161D29;
-    padding: 15px 10px;
     display: flex;
+    padding: 15px 10px;
     justify-content: space-between;
     flex-direction: column;
+    padding-bottom: 0px;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+
+.card:hover .description {
+    color: #585D69;
 }
 
 .card b , p {
@@ -31,21 +43,34 @@
     color: #DBDDEA;
 }
 
-.btnSection {
-    padding: 0px 1rem;
+.CourseInfo {
+    /* padding: 0px 1rem; */
     /* border: 2px solid red; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     border-top: 2px dashed #DBDDEA;
-    padding-top: 20px;
 }
-
-.btnSection button {
+.icon {
+    color: #838894;
+}
+.CourseInfo p {
     border: none;
     background-color: #161D29;
-    color: #DBDDEA;
-    margin: 0px 8px;
+    color: #838894;
+}
+.card:hover {
+    box-shadow: 10px 10px 1px #E7C009;
+}
+
+.card:hover .description {
+    color: #585D69;
+}
+
+
+.card:hover .CourseInfo p {
+    background-color: white;
+    color: #064a5f;
 }
 
 .level , .lessionNumber {
@@ -54,19 +79,18 @@
     align-items: center;
 }
 
-.active {
-    background-color: white;
-    box-shadow: 10px 10px 2px solid #E7C009;
+.level p , .lessionNumber p{
+    padding-left: 0px;
 }
 
-.active b {
-    color: black;
+.card:hover .level .icon  {
+    color: #064a5f;
 }
 
-.active p {
-    color: #585D69;
+.card:hover .CourseInfo {
+    border-top: 2px dashed #064a5f;
 }
 
-.active .btnSection {
-    color: #0A5A72;
+.card:hover .lessionNumber svg path {
+    fill: #064a5f; 
 }
