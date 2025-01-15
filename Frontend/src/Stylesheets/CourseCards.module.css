@@ -31,11 +31,11 @@
 }
 
 .card b , p {
-    padding: 10px;
+    padding: 10px 15px;
 }
 
 .card b {
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .card p {
