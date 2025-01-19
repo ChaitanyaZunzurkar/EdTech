@@ -4,6 +4,7 @@
     align-items: center;
     background-color: #2C333F;
     height: 8vh;
+    position: relative;
 }
 
 .logo{
@@ -14,18 +15,25 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 100%;
+
 }
 
 .nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    height: 100%;
+
 }
 
 .navContent {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 100%;
+    /* border: 2px solid red; */
 }
 
 .navContent li a {
@@ -42,8 +50,11 @@
     color: #FFD60A;
 }
 
+.navContent li a:active {
+    color: #FFD60A;
+}
+
 .addtionalUserDetailsSection {
-    /* border: 2px solid red; */
     margin: 0px 10px;
 
 }
@@ -56,3 +67,103 @@
     border-radius: 5px;
     background-color: #2C333F;
 }
+
+.catalogBtn {
+    background-color: #2C333F;
+    border: none;
+    color: #DBDDEA;
+    font-size: 16px;
+    font-weight: 400;
+    border: 2px solid red;
+    border: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20.5px;
+
+}
+
+.catalogBtn:hover {
+    color: #FFD60A;
+}
+
+.catelogContainer:hover .categoriesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 250px;
+    background-color: white;
+    position: absolute;
+    transform: translateX(-30%) translateY(10%);
+    border-radius: 5px;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    margin: 0px;
+    transition: opacity 6s ease-in-out, transform 2s ease-in-out;
+}
+
+.catelogContainer:hover{
+    transition: none;
+}
+
+.catelogContainer:hover .categoriesContainer {
+    transition: none; 
+}
+
+.categoryTitle {
+    color:#141414;
+    font-size: 17px;
+    width: 210px;
+    margin: 5px 10px;
+    /* border: 2px solid red; */
+    padding: 3px 10px;
+    border-radius: 5px;
+
+}
+
+.NoDataBlock {
+    height: 50px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.categoryTitle:hover {
+    color:#141414;
+    font-size: 17px;
+    background-color: #cbcdd6;
+}
+
+.categoriesContainer {
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    z-index: 10;
+
+}
+
+.catelogContainer {
+    /* border: 2px solid red; */
+    height: 100%;
+    width:  60px;
+    /* border: 2px solid red; */
+}
+
+.catelogContainer:hover .pointer {
+    background-color: white;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    transform: rotate(45deg);
+    top: -4px;
+    left: 80px;
+    border-radius: 5px;
+    z-index: -1;
+} 
