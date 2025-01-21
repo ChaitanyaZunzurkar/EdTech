@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #F1F2FF;
+    width: 100%;
+    margin: 10px;
+    /* border: 1px solid red; */
+    padding: 5px;
+
+}
+
+.form input {
+    padding: 10px;
+    border-radius: 7px;
+    width: 80%;
+    background-color: #2C333F;
+    color: #999DAA;
+    border: none;
+    margin: 3px 0px;
+    margin-bottom: 20px;
+}
+
+.astrick {
+    color: red;
+}
+
+.loginBtn {
+    width: 84%;
+    background-color: #FFD60A;
+    color: #000814;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+}

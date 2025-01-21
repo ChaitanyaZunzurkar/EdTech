@@ -1,0 +1,120 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    /* border: 2px solid red; */
+}
+
+.content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    height: 80vh;
+    width: 35%;
+    margin: 3rem 0px;
+    padding: 2rem;
+}
+
+.title {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    margin: 0px;
+    padding: 10px;
+    color: #F1F2FF;
+}
+
+.description {
+    margin: 0;
+    padding: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #AFB2BF;
+}
+
+
+.imgContainer {
+    position: relative;
+    /* border: 2px solid red; */
+}
+
+.img {
+    /* width: 585px; */
+    z-index: 10;
+    
+}
+
+.frame {
+    position: absolute;
+    z-index: -1;
+    top: 20px;
+    left: 20px;
+}
+
+.specialText {
+    font-family: 'Edu SA Beginner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #47A5C5;
+}
+
+.btnDiv {
+    display: flex;
+    margin: 10px;
+    padding: 3px;
+    background-color: #585D69;
+    border-radius: 1000px;
+    gap: 5px;
+}
+
+.btn {
+    background-color: #585D69;
+    color: #999DAA;
+    border: none;
+    padding: 10px;
+    border-radius: 1000px;
+}
+
+
+.active {
+    background-color: #000814;
+    color: #F1F2FF;
+}
+/* 
+.studentBtn:hover {
+    background-color: #000814;
+    color: #F1F2FF;
+}
+
+.InstructorBtn:hover {
+    background-color: #000814;
+    color: #F1F2FF;
+}
+
+.InstructorBtn {
+    background-color: #585D69;
+    color: #999DAA;
+}
+
+.studentBtn:hover .InstructorBtn{
+    background-color: #838894;
+    color: #999DAA;
+}
+
+.InstructorBtn:hover .studentBtn {
+    background-color: #838894;
+    color: #999DAA;
+}
+
+ */

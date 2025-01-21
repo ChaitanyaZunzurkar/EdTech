@@ -1,0 +1,117 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    /* border: 2px solid red; */
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #F1F2FF;
+    width: 100%;
+    margin: 10px;
+    /* border: 1px solid red; */
+    padding: 5px;
+
+}
+
+.form input {
+    padding: 10px;
+    border-radius: 7px;
+    width:80%;
+    background-color: #2C333F;
+    color: #999DAA;
+    border: none;
+    margin: 3px 0px;
+    margin-bottom: 20px;
+}
+
+.astrick {
+    color: red;
+}
+
+.signupBtn {
+    width: 70%;
+    background-color: #FFD60A;
+    color: #000814;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.nameSection {
+    display: flex;
+}
+
+.nameSection div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.emailSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.emailSection input {
+    width: 180%;
+}
+
+.phoneNoSection {
+    display: flex;
+    /* border: 2px solid red; */
+    flex-direction: column;
+
+}
+
+.phoneNoSection div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.phoneNoSection div .phoneInput {
+    width: 30%;
+    margin: 5px;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2C333F;
+    color: #999DAA;
+    text-align: start;
+}
+
+.phoneNoSection div:nth-child(2) {
+    gap: 5px;
+}
+
+.phoneNoSection div:nth-child(2):nth-child(2) {
+    width: 70%;
+}
+
+.passwordSection {
+    display: flex;
+}
+
+.passwordSection div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.input1 {
+    width: 30%;
+    margin: 1px;
+}
+
+.passwordSection div:nth-child(2) .input2 {
+    width: 50%;
+    margin: 0px;
+}
