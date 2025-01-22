@@ -32,7 +32,6 @@ exports.createCategory = async (req ,res) => {
 exports.showAllCategory = async (req , res) => {
     try {
         const allCategory = await Category.find({} , { name: true , description: true})
-        console.log(allCategory)
 
         res.status(200).json({
             success:true,

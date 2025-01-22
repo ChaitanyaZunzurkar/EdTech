@@ -68,7 +68,7 @@ exports.otpSender = async (req, res) => {
 exports.signUp = async (req, res) => {
     try {
         const {
-            firstName ,
+            firstName,
             lastName,
             email,
             password,
@@ -196,7 +196,8 @@ exports.signin = async (req, res) => {
             res.cookie('token' , token , options).status(200).json({
                 success:true,
                 message:"User signin successfully",
-                token:user.token
+                user: user,
+                token: user.token
             })
 
         } catch(error) {
