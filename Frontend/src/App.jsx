@@ -5,6 +5,7 @@ import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
+import VerificationLayout from './Components/VerificationLayout'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route index element={<HomePage />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/verify-email' element={<VerificationLayout />} />
         </Routes>
         <Footer />
     </div>

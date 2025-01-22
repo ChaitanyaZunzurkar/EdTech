@@ -1,9 +1,13 @@
 import { useState } from 'react'
 import style from '../Stylesheets/LoginForm.module.css'
-import { apiConnector } from '../Services/apiConnector'
-import { auth } from '../Services/apis'
+import { useNavigate } from 'react-router-dom'
+import { login } from '../Services/Operations/authAPI'
+import { useDispatch } from 'react-redux'
 
 const LoginForm = () => {
+  const navigate =  useNavigate()
+  const dispatch = useDispatch()
+
   const [loginData , setLoginData] = useState({
     email:'',
     password:''
@@ -16,9 +20,11 @@ const LoginForm = () => {
     })
   }
 
+  const { email , password } = loginData
+
   function submitHandler(event) {
     event.preventDefault();
-    apiConnector('POST' , auth.SIGNIN_URL , loginData)
+    dispatch(login(email , password , navigate))
     setLoginData({email:'' , password:''})
   }
 

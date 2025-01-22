@@ -7,10 +7,10 @@ import { useState } from 'react'
 
 const Template = ({ title , description , specialText , login  , img }) => {
 
-    const [activeBtn , setActiveBtn] = useState('Student')
+    const [accountType , setAccountType] = useState('Student')
 
     function changeRole(role) {
-        setActiveBtn(role)
+        setAccountType(role)
     }
 
 
@@ -22,14 +22,14 @@ const Template = ({ title , description , specialText , login  , img }) => {
 
                 <div className={style.btnDiv}>
                     <button 
-                        className={`${style.btn} ${activeBtn === "Student" ? style.active : ""}`}
+                        className={`${style.btn} ${accountType === "Student" ? style.active : ""}`}
                         onClick={() => changeRole('Student')}
                     >
                         <b>Student</b>
                     </button>
 
                     <button 
-                        className={`${style.btn} ${activeBtn !== "Student" ? style.active : ''}`}
+                        className={`${style.btn} ${accountType !== "Student" ? style.active : ''}`}
                         onClick={() => changeRole('Instructor')}
                     >
                         <b>Instructors</b>
@@ -38,7 +38,7 @@ const Template = ({ title , description , specialText , login  , img }) => {
 
                 <div className={style.form}>
                     {
-                        login ? <LoginForm /> : <SignupForm />
+                        login ? <LoginForm accountType={accountType} /> : <SignupForm accountType={accountType} />
                     }
                 </div>
             </div>

@@ -5,6 +5,7 @@ export const categories = {
 };
 
 export const auth = {
-    SIGNUP_URL: BASE_URL + '/auth/signup',
-    SIGNIN_URL: BASE_URL + '/auth/signin',
+    SIGNUP_URL: BASE_URL + 'auth/signup',
+    SIGNIN_URL: BASE_URL + 'auth/signin',
+    OTP_SENDER_URL: BASE_URL + 'auth/sendotp'
 }

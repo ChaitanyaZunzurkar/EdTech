@@ -1,19 +1,25 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react'
 import style from '../Stylesheets/SignupForm.module.css'
 import countryCodeData from '../data/countryCode.json'
-import { auth } from '../Services/apis'
-import { apiConnector } from '../Services/apiConnector'
+import { otpSender} from '../Services/Operations/authAPI'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-hot-toast'
+import { setSignupData } from '../Store/Slice/authSlice'
 
-const SignupForm = () => {
+const SignupForm = ({ accountType }) => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const [signupData , setsignupData] = useState({
         firstName:'',
         lastName:'',
         email:'',
-        countryCode:'',
-        mobileNumber:'',
         password:'',
-        confirmPassword:''
+        confirmPassword:'',
+        countryCode:'',
+        mobileNumber:''
     })
     
     function changeHandler(event) {
@@ -23,9 +29,35 @@ const SignupForm = () => {
         })
     }
 
+    const {password  , confirmPassword , countryCode , mobileNumber} = signupData
+
     function submitHandler(event) {
         event.preventDefault();
-        apiConnector('POST' , auth.SIGNUP_URL , signupData)
+        if(password !== confirmPassword) {
+            toast.error("Password and confirm password should be same.")
+        }
+        const contactNumber = countryCode + " " + mobileNumber
+        
+        dispatch(
+            setSignupData({
+                ...signupData,
+                contactNumber,
+                accountType
+            })
+        )
+        console.log(signupData)
+        const email = signupData.email
+        dispatch(otpSender(email , navigate))
+
+        setsignupData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+            confirmPassword: "",
+            countryCode: "",
+            mobileNumber: "",
+        });
         
     }
 
