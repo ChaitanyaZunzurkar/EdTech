@@ -69,6 +69,7 @@ const SignupForm = ({ accountType }) => {
                         <label htmlFor='firstName'>First Name<span className={style.astrick}>*</span></label>
                         <input 
                             type='text'
+                            required
                             name='firstName'
                             id='firstName'
                             placeholder='Enter first name'
@@ -85,6 +86,7 @@ const SignupForm = ({ accountType }) => {
                             placeholder='Enter last name'
                             value={signupData.lastName}
                             onChange={changeHandler}
+                            required
                         />
                     </div>
                 </div>
@@ -98,6 +100,7 @@ const SignupForm = ({ accountType }) => {
                         placeholder='email'
                         value={signupData.email}
                         onChange={changeHandler}
+                        required
                     />
                 </div>
 
@@ -114,6 +117,7 @@ const SignupForm = ({ accountType }) => {
                             placeholder='+91'
                             onChange={changeHandler}
                             value={signupData.countryCode}
+                            required
                         >
                             {
                                 countryCodeData.map((country , index) => (
@@ -135,6 +139,7 @@ const SignupForm = ({ accountType }) => {
                             placeholder='12345 67890'
                             onChange={changeHandler}
                             value={signupData.mobileNumber}
+                            required
                         />
                     </div>
 
@@ -149,6 +154,7 @@ const SignupForm = ({ accountType }) => {
                                 value={signupData.password}
                                 onChange={changeHandler}
                                 className={style.input1}
+                                required
 
                             />
                         </div>
@@ -162,6 +168,7 @@ const SignupForm = ({ accountType }) => {
                                 value={signupData.confirmPassword}
                                 onChange={changeHandler}
                                 className={style.input2}
+                                required
                             />
                         </div>
                     </div>

@@ -86,7 +86,7 @@ export const signup = (firstName , lastName , email , password , confirmPassword
 
             if(!res.data.success) {
                 toast.error("Fail to Signup.")
-                throw new Error(res.data.message)
+                return         
             }
 
             toast.success("Signup Successful.")
@@ -99,5 +99,29 @@ export const signup = (firstName , lastName , email , password , confirmPassword
         }
 
         dispatch(setLoading(false))
+    }
+}
+
+export const getResetPassowordToken = (email , setMailSend) => {
+    return async(dispatch) => {
+        dispatch(setLoading(true))
+        try {
+            const res = await apiConnector("POST" , auth.RESET_PASSWORD_URL , {
+                email
+            })
+            console.log(res)
+
+            if(!res.data.success) {
+                toast.error("Fail to send reset password mail.")
+                return
+            }
+
+            toast.success("Reset password link send successfully on your mail")
+            setMailSend(true)
+        } catch(error) {
+            console.log("Fail to send reset password mail" , error.message)
+            toast.error("Fail to send reset password link")
+        }
+        dispatch(setLoading(true))
     }
 }

@@ -39,6 +39,7 @@ const LoginForm = () => {
                 placeholder='Enter Email'
                 value={loginData.email}
                 onChange={changeHandler}
+                required
             />
 
             <label htmlFor='password'>Password<span className={style.astrick}>*</span></label>
@@ -49,8 +50,11 @@ const LoginForm = () => {
                 placeholder='Enter password'
                 value={loginData.password}
                 onChange={changeHandler}
+                required
+                className={style.passwordInput}
             />
 
+            <button className={style.forgotPassowordBtn} type='button' onClick={() => navigate('/reset-password')}>Fortgot password</button>
             <button className={style.loginBtn}><b>Sign in</b></button>
         </form>
     </div>

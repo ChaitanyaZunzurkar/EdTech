@@ -41,3 +41,20 @@
     padding: 10px;
     border-radius: 7px;
 }
+
+.forgotPassowordBtn {
+    color: #47A5C5;
+    display: flex;
+    justify-content: flex-end;
+    width: 84%;
+    align-items: center;
+    background-color: #000814;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 2px;
+    /* border: 2px solid red; */
+}
+
+.form .passwordInput {
+    margin: 0px;
+}

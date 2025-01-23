@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { signup } from '../Services/Operations/authAPI'
 import { useNavigate } from "react-router-dom"
-
+import style from '../Stylesheets/OTPForm.module.css'
 
 const OTPFrom = () => {
     const dispatch = useDispatch()
@@ -51,47 +51,57 @@ const OTPFrom = () => {
     }
 
     return (
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler} className={style.container}>
+            <div className={style.inputContainer}>
+
             <input 
                 type="text"
                 onChange={changeHandler}
                 value={otpData.first}
                 name='first'
-            />
+                placeholder="-"
+                />
             <input 
                 type="text"
                 onChange={changeHandler}
                 value={otpData.second}
                 name='second'
-            />
+                placeholder="-"
+                />
             <input 
                 type="text"
                 onChange={changeHandler}
                 value={otpData.third}
                 name='third'
-            />
+                placeholder="-"
+                />
             <input 
                 type="text"
                 onChange={changeHandler}
                 value={otpData.fourth}
                 name='fourth'
-            />
+                placeholder="-"
+                />
             <input 
                 type="text"
                 onChange={changeHandler}
                 value={otpData.fifth}
                 name='fifth'
+                placeholder="-"
             />
             <input 
                 type="text"
                 onChange={changeHandler}
                 value={otpData.sixth}
                 name='sixth'
+                placeholder="-"
             />
-
-            <button type="submit">
+            </div>
+        <div>
+            <button type="submit" className={style.submitButton}>
                 Verify Email
             </button>
+        </div>
         </form>
   )
 }

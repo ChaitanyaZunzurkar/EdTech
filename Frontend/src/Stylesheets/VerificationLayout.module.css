@@ -1,56 +1,110 @@
 .container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    padding: 2rem;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    border-radius: 8px;
+    flex-direction: column;
+    height: 90vh;
     width: 400px;
-    margin: 2rem auto;
+    /* border: 2px solid red; */
+    margin: auto;
+
   }
   
   .title {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    color: #F1F2FF;
+    margin: 0px 1rem;
   }
   
   .description {
     font-size: 1rem;
-    margin-bottom: 2rem;
-    text-align: center;
+    color: #AFB2BF;
   }
   
   .formContainer {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+
   }
   
   .buttonContainer {
     display: flex;
+    width: 90%;
     justify-content: space-between;
-    width: 100%;
+    /* border: 2px solid rebeccapurple; */
+    margin: 0px 1rem;
+
   }
   
   .backButton {
     background: none;
     border: none;
-    color: #ffffff;
+    color: #F1F2FF;
     cursor: pointer;
     font-size: 0.9rem;
-    text-decoration: underline;
+    text-decoration: none;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  .submitButton {
-    background-color: #ffcc00;
+.resendBtn {
+    background-color: #000812;
     border: none;
-    color: #1a1a1a;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-  }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #47A5C5;
+    font-size: 0.9rem;
+    gap: 5px;
+}
+
+.resendDiv {
+  width: 100%;
+}
+
+.resend {
+  width: 90%;
+  background-color: #FFD60A;
+  color: #000814;
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+}
   
+.resetBtn {
+  width: 89%;
+  background-color: #FFD60A;
+  color: #000814;
+  border: none;
+  padding: 10px;
+  border-radius: 7px;
+}
+  
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  color: #F1F2FF;
+  width: 100%;
+  /* border: 1px solid red; */
+  margin: 5px 15px;
+}
+
+.form input {
+  padding: 10px;
+  border-radius: 7px;
+  width: 85%;
+  background-color: #2C333F;
+  color: #999DAA;
+  border: none;
+  margin: 3px 0px;
+  margin-bottom: 20px;
+}
+
+.astrick {
+  color: red;
+}
