@@ -125,3 +125,32 @@ export const getResetPassowordToken = (email , setMailSend) => {
         dispatch(setLoading(true))
     }
 }
+
+export const ResetPassword = (password , confirmPassword , token , setMailSend , setEmail) => {
+    return async(dispatch) => {
+        dispatch(setLoading(true))
+        try {
+            const res = await apiConnector("POST" , auth.RESET_PASSWORD , {
+                password,
+                confirmPassword,
+                token
+            })
+
+            console.log(res)
+            if(!res.data.success) {
+                throw new Error("Fail to update password")
+            }
+
+            toast.success("Update password successfully.")
+            setMailSend(true)
+            let email = res.data.user.email
+            let emailArr = email.split('@')
+            setEmail(email[0] + email[1] + email[2] + '*************@' + emailArr.at(-1))
+        } catch(error) {
+            console.log("Fail to update password" , error.message)
+            toast.error("Fail to update password")
+        }
+        dispatch(setLoading(false))
+    }
+}
+

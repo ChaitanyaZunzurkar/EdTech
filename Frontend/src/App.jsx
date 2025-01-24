@@ -6,7 +6,8 @@ import Navbar from './Components/Navbar'
 import Signup from './Components/Signup'
 import Login from './Components/Login'
 import VerificationLayout from './Components/VerificationLayout'
-import ResetPassword from './Components/ResetPassoword'
+import ResetPassword from './Components/ResetPassword'
+import UpdatePassword from './Components/UpdatePassword'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/verify-email' element={<VerificationLayout />} />
             <Route path='/reset-password' element={<ResetPassword />} />
+            <Route path='/update-password/:id' element={<UpdatePassword />} />
         </Routes>
         <Footer />
     </div>
