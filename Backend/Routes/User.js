@@ -7,7 +7,7 @@ const { resetPasswordToken , resetPassword } = require('../Controllers/ResetPass
 router.post('/signin' , signin)
 router.post('/signup' , signUp)
 router.post('/reset-password-token' , resetPasswordToken)
-router.post('/reset-password' , resetPassword)
+router.post('/update-password' , resetPassword)
 router.post('/sendotp' , otpSender)
 router.post('/changePassword' , auth , changePassword)
 
