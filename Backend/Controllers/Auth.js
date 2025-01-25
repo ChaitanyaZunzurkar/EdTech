@@ -133,7 +133,7 @@ exports.signUp = async (req, res) => {
             accountType,
             contactNumber,
             additionalDetails:profileDetails._id,
-            image:`https://api.dicebear.com/5.x/initials/svg/?seed=${firstName}%20${lastName}&style=initials&backgroundColor=auto&fontSize=64`
+            image: `https://api.dicebear.com/5.x/initials/svg?seed=${encodeURIComponent(firstName)}%20${encodeURIComponent(lastName)}&style=initials&backgroundColor=ff5733&fontSize=64`
         })
 
         res.status(201).json({

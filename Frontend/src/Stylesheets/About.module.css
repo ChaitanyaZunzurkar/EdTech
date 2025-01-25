@@ -1,0 +1,174 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+
+}
+.section1 {
+    background-color: #161D29;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    height: 70vh;
+    padding: 4rem 24rem;
+    padding-bottom: 3rem;
+    position: relative;
+}
+
+.about {
+    color: #999DAA;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #838894;
+    text-align: center;
+} 
+
+.title {
+    color: #F1F2FF;
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 0px;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: -60px;
+    gap: 30px;
+    width: 384px;
+}
+
+.section2 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #000814;
+    min-height: 100vh;
+    
+}
+
+.para {
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 8rem 10rem;
+}
+.expert {
+    background: linear-gradient(to right, #FF512F, #F09819);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.education {
+    background: linear-gradient(to right, #E65C00, #F9D423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.foundingStory {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding:0px 9rem;
+    gap: 10rem;
+    /* border: 2px solid red; */
+}
+
+.foundingStoryImg {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 2px solid red; */
+    margin-right: 3rem;
+    /* box-shadow: -5px -5px 20px #EC008C ; */
+    position: relative;
+    overflow: visible;
+    background-color: transparent;
+    height: 300px;
+    padding: 20px;
+}
+.foundingStoryImg img {
+    z-index: 10;
+    position: relative;
+    background-color: transparent;
+    overflow: visible;
+}
+
+
+.radial {
+    background: radial-gradient(circle at top, #EC008C , #FC6767);
+    position: absolute;
+    z-index: 2;
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    /* border: 2px solid red; */
+    filter: blur(50px);
+}
+
+.foundingStory .title {
+    background: linear-gradient(#833AB4 , #FD1D1D , #FCB045);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+}
+
+.foundingStory .content .desc {
+    color: #838894;
+    font-size: smaller;
+
+}
+
+
+.missionAndVision {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 1rem 9rem;
+    gap: 10rem;
+    /* border: 2px solid red; */
+
+}
+.missionAndVision .content1 , .content2 .desc {
+    color: #838894;
+    font-size: smaller;
+
+}
+.missionAndVision .content1 .title {
+    background: linear-gradient(to right, #E65C00, #F9D423);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+
+}
+
+.missionAndVision .content2 .title {
+    background: linear-gradient(#1FA2FF , #12D8FA , #A6FFCB);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+
+}
+
+.content  , .content2 , .content1{
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+}
+
+
+
+
