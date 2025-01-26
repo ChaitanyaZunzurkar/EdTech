@@ -1,0 +1,56 @@
+.container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr   ;
+    grid-template-rows: auto auto;
+}
+
+.firstGridBox {
+    /* border: 2px solid red; */
+    padding: 20px;
+    margin-right: 10rem;
+}
+
+.btn {
+    margin-left: 15px;
+    /* border: 2px solid red; */
+    margin-top: 10px;
+}
+
+.fourthGridBox {
+    /* border: 2px solid red; */
+    background-color: #6E727F;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 21.5rem;
+    padding: 20px;
+}
+
+.firstGridBox .title {
+    font-size: 1.9rem;
+    padding: 0px 15px;
+}
+
+.heading {
+    color: #F1F2FF;
+    font-size: 1.2rem;
+}
+
+.description {
+    color: #b7bbc5;
+}
+
+.even {
+    background-color: #161D29;
+    padding: 20px;
+    height: 230px;
+
+}
+
+.odd {
+    background-color: #6E727F;
+    padding: 20px;
+    height: 230px;
+}
+

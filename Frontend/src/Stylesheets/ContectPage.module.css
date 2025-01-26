@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.contactInfo {
+    /* border: 2px solid red; */
+    margin: 4rem 0px;
+    background-color: #424854;
+    border-radius: 10px;
+    padding: 15px 30px;
+}
+
+.info p {
+    margin: 0;
+    padding: 0;
+}
+
+.info .title {
+    font-size: 1.3rem;
+}
+
+.icon {
+    margin-top: 3px;
+}
+
+.info .desc {
+    font-size: smaller;
+    color: #999DAA;
+}
+
+.contactCard {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 15px;
+}
+
+.ContactForm {
+    /* border: 2px solid red; */
+    margin: 4rem 0px; 
+}
+

@@ -9,6 +9,7 @@ import VerificationLayout from './Components/VerificationLayout'
 import ResetPassword from './Components/ResetPassword'
 import UpdatePassword from './Components/UpdatePassword'
 import About from './Components/About'
+import ContactPage from './Pages/ContactPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
             <Route index element={<HomePage />} />
             <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<ContactPage />} />
             <Route path='/signup' element={<Signup />} />
             <Route path='/login' element={<Login />} />
             <Route path='/verify-email' element={<VerificationLayout />} />

@@ -6,6 +6,27 @@ import aboutImg3 from '../assets/aboutus3.webp'
 import foundaryStoreImg from '../assets/FoundingStory.png'
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { RiDoubleQuotesR } from "react-icons/ri";
+import Learning from './Learning'
+import ContactForm from '../Components/ContactForm'
+
+const stats = [
+    {
+        title:"Active Student",
+        number:'5K'
+    },
+    {
+        title:"Mentors",
+        number:'10+'
+    },
+    {
+        title:"Courses",
+        number:'200+'
+    },
+    {
+        title:"Awards",
+        number:'50+'
+    },
+]
 
 const About = () => {
   return (
@@ -58,14 +79,25 @@ const About = () => {
                     </p>
                 </div>
             </div>
+
+            <div className={style.stats}>
+                {
+                    stats.map((stat , index) => (
+                        <div key={index} className={style.statCard}>
+                            <p className={style.number}><b>{ stat.number }</b></p>
+                            <p className={style.title}> {stat.title} </p>
+                        </div>
+                    ))
+                } 
+            </div>
         </section>
 
         <section className={style.section3}>
-
+            <Learning />
         </section>
 
         <section className={style.section4}>
-
+            <ContactForm title={'Get in Touch'} description={'We would love to here for you, Please fill out this form.'}/>
         </section>
     </div>
   )

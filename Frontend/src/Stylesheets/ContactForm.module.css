@@ -1,0 +1,186 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    /* border: 2px solid red; */
+    /* margin-left: 1.5rem; */
+    width: 800px;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #F1F2FF;
+    width: 100%;
+    margin: 10px;
+    /* border: 1px solid red; */
+    padding: 5px;
+
+}
+
+.form input {
+    padding: 10px;
+    border-radius: 7px;
+    width:80%;
+    background-color: #2C333F;
+    color: #999DAA;
+    /* border: none; */
+    margin: 3px 0px;
+    margin-bottom: 20px;
+}
+
+.astrick {
+    color: red;
+}
+
+.sendBtn {
+    width: 70%;
+    background-color: #FFD60A;
+    color: #000814;
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+
+.nameSection {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    /* border: 2px solid red; */
+
+}
+
+.nameSection div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    width: 35%
+    
+}
+
+.nameSection div input {
+    width: 90%;
+}
+
+.emailContainer {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    /* border: 2px solid red; */
+
+}
+
+
+.emailSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 70%;
+    /* border: 2px solid red; */
+
+}
+.numberContainer {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    /* border: 2px solid red; */
+
+}
+
+.emailSection input {
+    width: 95%;
+}
+
+.phoneNoSection {
+    display: flex;
+    /* border: 2px solid red; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 70%;
+    /* border: 2px solid red; */
+
+}
+
+.phoneNoSection div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 2px solid red; */
+
+
+}
+
+.phoneNoSection div .phoneInput {
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2C333F;
+    color: #999DAA;
+    text-align: start;
+    width: 15%;
+}
+
+.phoneNoSection div:nth-child(2) {
+    gap: 5px;
+}
+
+.phoneNoSection div:nth-child(2):nth-child(2) {
+    width: 99%;
+}
+
+.message {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 70%;
+    /* border: 2px solid red; */
+
+}
+
+.messageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.textarea {
+    background-color: #2C333F;
+    color: #999DAA;
+    border-radius: 7px;
+    /* border: none; */
+    width: 97%;
+    padding: 20px 5px;
+    resize: vertical;
+}
+
+
+.title {
+    font-size: 1.5rem;
+    color: #F1F2FF;
+    text-align: center;
+}
+
+.desc {
+    font-size: 1rem;
+    color: #838894;
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
