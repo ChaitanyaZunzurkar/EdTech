@@ -63,13 +63,13 @@
 }
 .expert {
     background: linear-gradient(to right, #FF512F, #F09819);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .education {
     background: linear-gradient(to right, #E65C00, #F9D423);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -118,7 +118,7 @@
 
 .foundingStory .title {
     background: linear-gradient(#833AB4 , #FD1D1D , #FCB045);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1.5rem;
 }
@@ -146,7 +146,7 @@
 }
 .missionAndVision .content1 .title {
     background: linear-gradient(to right, #E65C00, #F9D423);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1.5rem;
 
@@ -154,7 +154,7 @@
 
 .missionAndVision .content2 .title {
     background: linear-gradient(#1FA2FF , #12D8FA , #A6FFCB);
-    -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1.5rem;
 

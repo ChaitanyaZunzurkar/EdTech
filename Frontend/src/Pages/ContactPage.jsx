@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import ContactForm from '../Components/ContactForm'
 import style from '../Stylesheets/ContectPage.module.css'
 import { IoMdChatboxes } from "react-icons/io";

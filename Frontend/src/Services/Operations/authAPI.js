@@ -50,10 +50,10 @@ export const login = (email , password , navigate) => {
             dispatch(setToken(res.data.token))
 
             const userImage = res.data?.token ? 
-            res.data.user.image : 
-            `https://api.dicebear.com/5.x/initials/svg?seed=${res.data.user.firstName} ${res.data.user.lastName}`
+            res.data.user.image : `https://api.dicebear.com/5.x/initials/svg?seed=${encodeURIComponent(res.data.user.firstName)}%20${encodeURIComponent(res.data.user.lastName)}&style=initials&backgroundColor=ff5733&fontSize=64`
 
             dispatch(setUser({...res.data.user , image: userImage}))
+
             localStorage.setItem("token" , JSON.stringify(res.data.token))
             localStorage.setItem("user" , JSON.stringify(res.data.user))
             navigate('/dashboard/my-profile')
