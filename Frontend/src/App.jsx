@@ -26,8 +26,8 @@ function App() {
             <Route path='/verify-email' element={<VerificationLayout />} />
             <Route path='/reset-password' element={<ResetPassword />} />
             <Route path='/update-password/:id' element={<UpdatePassword />} />
-            <Route path='/dashboard' element={<Dashboard />} >
-              <Route path='/my-profile' element={<MyProfile />} />
+            <Route element={<Dashboard />} >
+              <Route path='/dashboard/my-profile' element={<MyProfile />} />
             </Route>
         </Routes>
         {/* <Footer /> */}
