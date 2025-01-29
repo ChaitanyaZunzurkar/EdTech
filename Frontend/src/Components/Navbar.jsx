@@ -4,11 +4,12 @@ import logo from '../assets/Logo-Full-Light.png'
 import { NavbarLinks } from '../data/navbar'
 import { FaAngleDown } from 'react-icons/fa';
 import { useSelector } from "react-redux";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+// import { AiOutlineShoppingCart } from "react-icons/ai";
 import ProfileDropDown from '../Components/ProfileDropDown'
 import { useEffect, useState } from 'react';
 import { categories } from '../Services/apis'
 import { apiConnector } from '../Services/apiConnector'
+import { ACCOUNT_TYPE } from "../utils/constants";
 
 const Navbar = () => {
     const { token } = useSelector((state) => state.auth);
@@ -90,9 +91,9 @@ const Navbar = () => {
 
             <div>
                 {
-                    user && user?.accountType !== "Instructor" && (
+                    user && user?.accountType !== ACCOUNT_TYPE.INSTRUCTOR && (
                         <Link to='/dashboard/cart' >
-                            <AiOutlineShoppingCart />
+                            {/* <AiOutlineShoppingCart /> */}
                             {
                                 totalItems > 0 && (
                                     <span>

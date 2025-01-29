@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+
+
+.link {
+    background-color: #161D29;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+    gap: 10px;
+    padding: 10px;
+    border-left: 2px solid #161D29;
+}
+
+/* .link:hover {
+    background-color: #3D2A01;
+    border-left: 2px solid #FFD60A;
+} */
+
+.active {
+    background-color: #3D2A01;
+    border-left: 2px solid #FFD60A;
+}
+
+.text {
+    color: #838894;
+    padding: 0px;
+}

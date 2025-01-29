@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+    /* border: 2px solid red; */
+    width: 220px;
+    background-color: #161D29;
+}
+
+.horizontalLine {
+    width: 200px;
+    height: 2px;
+    background-color: #838894;
+    margin: 15px auto;
+}
+
+.logoutBtn {
+    background-color: #161D29;
+    color: #838894;
+    border: none;
+    font-size: 1rem;
+    gap: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 2px solid #161D29;
+}
