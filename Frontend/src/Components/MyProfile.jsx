@@ -1,9 +1,12 @@
 import { useSelector } from 'react-redux'
 import style from '../Stylesheets/MyProfile.module.css'
 import { FaRegEdit } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 const MyProfile = () => {
     const user = useSelector((state) => state.profile.user)
+    const navigate = useNavigate()
+
     return (
         <div className={style.container}>
             <p className={style.title}>My Profile</p>
@@ -16,7 +19,7 @@ const MyProfile = () => {
                     </div>
                 </div>
                 <div className={style.editBtn}>
-                    <button >
+                    <button onClick={() => navigate('/dashboard/settings')}>
                         <FaRegEdit size={15}/>
                         <b>Edit</b>
                     </button>
@@ -29,7 +32,7 @@ const MyProfile = () => {
                     <p className={style.desc}>{ user.additionalDetails.about ? user.additionalDetails.about : "Write something about yourself..."}</p>
                 </div>
                 <div className={style.editBtn}>
-                    <button >
+                    <button onClick={() => navigate('/dashboard/settings')}>
                         <FaRegEdit size={15}/>
                         <b>Edit</b>
                     </button>
@@ -77,7 +80,7 @@ const MyProfile = () => {
                     </div>
                 </div>
                 <div className={style.editBtn}>
-                    <button >
+                    <button onClick={() => navigate('/dashboard/settings')}>
                         <FaRegEdit size={15}/>
                         <b>Edit</b>
                     </button>

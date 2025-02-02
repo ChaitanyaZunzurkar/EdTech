@@ -1,6 +1,7 @@
 import style from '../Stylesheets/ProfileDropDown.module.css';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const ProfileDropDown = () => {
     const user = useSelector((state) => state.profile.user);
@@ -17,9 +18,11 @@ const ProfileDropDown = () => {
                   />
               </div>
               <div className={style.profileContainer}>
-                  <p>Dashboard</p>
-                  <p>Logout</p>
-                  <div className={style.pointer}></div>
+                    <Link to={'/dashboard/my-profile'}>
+                        <p>Dashboard</p>
+                    </Link>
+                    <p>Logout</p>
+                    <div className={style.pointer}></div>
               </div>
             </div>
         </div>

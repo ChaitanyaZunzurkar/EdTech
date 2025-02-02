@@ -12,6 +12,7 @@ import About from './Components/About'
 import ContactPage from './Pages/ContactPage'
 import MyProfile from './Components/MyProfile'
 import Dashboard from './Components/Dashboard'
+import DashboardSettings from './Components/DashboardSettings'
 
 function App() {
   return (
@@ -28,12 +29,12 @@ function App() {
             <Route path='/update-password/:id' element={<UpdatePassword />} />
             <Route element={<Dashboard />} >
               <Route path='/dashboard/my-profile' element={<MyProfile />} />
+              <Route path='/dashboard/settings' element={<DashboardSettings />} />
             </Route>
         </Routes>
         {/* <Footer /> */}
     </div>
   )
 }
-
 
 export default App

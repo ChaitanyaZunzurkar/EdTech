@@ -34,7 +34,7 @@ const ContactForm = ({title , description}) => {
             <p className={style.title}><b>{ title }</b></p>
             <p className={style.desc}>{ description }</p>
             <form className={style.form} onSubmit={submitHandler}>
-                    <div className={style.nameSection}>
+                    <div className={style.AboutPage_contact_form_nameSection}>
                         <div>
                             <label htmlFor='firstName'>First Name<span className={style.astrick}>*</span></label>
                             <input 
@@ -61,8 +61,8 @@ const ContactForm = ({title , description}) => {
                     </div>
                 </div>
                 
-                <div className={style.emailContainer}>
-                    <div className={style.emailSection}>
+                <div className={style.AboutPage_contact_form_emailContainer}>
+                    <div className={style.AboutPage_contact_form_emailSection}>
                         <label htmlFor='Email'>Email Address<span className={style.astrick}>*</span></label>
                         <input 
                             type='email'
@@ -72,17 +72,17 @@ const ContactForm = ({title , description}) => {
                             value={contactData.email}
                             onChange={changeHandler}
                             required
-                            />
+                        />
                     </div>
                 </div>
 
-                <div className={style.numberContainer}>
-                    <div className={style.phoneNoSection}>  
+                <div className={style.AboutPage_contact_form_numberContainer}>
+                    <div className={style.AboutPage_contact_form_phoneNoSection}>  
                         <div>
                             <label htmlFor='countryCode'>Phone Address<span className={style.astrick}>*</span></label>
                         </div> 
 
-                        <div >
+                        <div className={style.mobileNumberInputContainer}>
                             <select 
                                 className={style.phoneInput}
                                 name='countryCode'
@@ -112,16 +112,17 @@ const ContactForm = ({title , description}) => {
                                 placeholder='12345 67890'
                                 onChange={changeHandler}
                                 value={contactData.mobileNumber}
+                                className={style.numberInput}
                                 required
-                                />
+                            />
                         </div>
                     </div>
 
                     </div>
 
-                    <div className={style.messageContainer}>
+                    <div className={style.AboutPage_contact_form_messageContainer}>
 
-                    <div className={style.message}>
+                    <div className={style.AboutPage_contact_form_message}>
                         <label htmlFor='message'>Message<span className={style.astrick}>*</span></label>
                         <textarea
                             id="message"
@@ -135,7 +136,7 @@ const ContactForm = ({title , description}) => {
                         ></textarea>
                     </div>                
                 </div>
-                <button className={style.sendBtn}>Send Message</button>
+                <button className={style.AboutPage_contact_form_sendBtn}>Send Message</button>
             </form>
     </div>
   )

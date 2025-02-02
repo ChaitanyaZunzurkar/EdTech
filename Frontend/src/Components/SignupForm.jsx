@@ -65,7 +65,7 @@ const SignupForm = ({ accountType }) => {
         <div className={style.container}>
             <form className={style.form} onSubmit={submitHandler}>
                 <div className={style.nameSection}>
-                    <div>
+                    <div className={style.firstName}>
                         <label htmlFor='firstName'>First Name<span className={style.astrick}>*</span></label>
                         <input 
                             type='text'
@@ -75,9 +75,10 @@ const SignupForm = ({ accountType }) => {
                             placeholder='Enter first name'
                             value={signupData.firstName}
                             onChange={changeHandler}
+                            className={style.input}
                         />
                     </div>
-                    <div>   
+                    <div className={style.lastName}>   
                         <label htmlFor='lastName'>Last Name<span className={style.astrick}>*</span></label>
                         <input 
                             type='text'
@@ -87,6 +88,7 @@ const SignupForm = ({ accountType }) => {
                             value={signupData.lastName}
                             onChange={changeHandler}
                             required
+                            className={style.input}
                         />
                     </div>
                 </div>
@@ -100,6 +102,7 @@ const SignupForm = ({ accountType }) => {
                         placeholder='email'
                         value={signupData.email}
                         onChange={changeHandler}
+                        className={style.input}
                         required
                     />
                 </div>
@@ -139,13 +142,14 @@ const SignupForm = ({ accountType }) => {
                             placeholder='12345 67890'
                             onChange={changeHandler}
                             value={signupData.mobileNumber}
+                            className={style.input}
                             required
                         />
                     </div>
 
                     <div className={style.passwordSection}>
-                        <div>
-                            <label htmlFor='password'>Password<span className={style.astrick}>*</span></label>
+                        <div className={style.PasswordDiv}>
+                            <label htmlFor='password' className={style.label}>Password<span className={style.astrick}>*</span></label>
                             <input 
                                 type='password'
                                 name='password'
@@ -153,13 +157,13 @@ const SignupForm = ({ accountType }) => {
                                 placeholder='Enter password'
                                 value={signupData.password}
                                 onChange={changeHandler}
-                                className={style.input1}
+                                className={style.input}
                                 required
 
                             />
                         </div>
-                        <div>   
-                            <label htmlFor='confirmPassword'>Confirm Password<span className={style.astrick}>*</span></label>
+                        <div className={style.confirmPasswordDiv}>   
+                            <label htmlFor='confirmPassword' >Confirm Password<span className={style.astrick}>*</span></label>
                             <input 
                                 type='password'
                                 name='confirmPassword'
@@ -167,7 +171,7 @@ const SignupForm = ({ accountType }) => {
                                 placeholder='Confirm Password'
                                 value={signupData.confirmPassword}
                                 onChange={changeHandler}
-                                className={style.input2}
+                                className={style.input}
                                 required
                             />
                         </div>

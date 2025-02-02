@@ -70,6 +70,10 @@
     box-sizing: border-box;
 }
 
+.profileContainer a {
+    width: 100%;
+}
+
 .profileContainer p:hover {
     background-color: #3b414c;
     color: #ECF5FF;

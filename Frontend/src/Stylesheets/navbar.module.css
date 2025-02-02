@@ -4,7 +4,11 @@
     align-items: center;
     background-color: #2C333F;
     height: 8vh;
-    position: relative;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+
 }
 
 .logo{

@@ -1,0 +1,375 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 70vw;
+    margin-top: 8vh;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #F1F2FF;
+    padding: 5px 20px;
+    
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    color: #838894;
+    padding: 5px 20px;
+}
+
+.section1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* border: 2px solid red; */
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #2C333F;
+}
+
+.pp {
+    width: 70px;
+    border-radius: 1000px;
+    object-fit: cover;
+}
+
+.userInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    gap: 15px;
+    padding: 10px;
+}
+
+
+
+.userNameAndEmail p {
+    font-size: 1rem;
+    padding: 10px 0px;
+    color: #DBDDEA;
+}
+
+.profilepicChangeBtn {
+    display: flex;
+    gap: 0.5rem;
+    margin: 3px 0px;
+}
+
+.changeBtn,
+.removeBtn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.changeBtn {
+    background-color: #FFD60A;
+    color: #1e1e1e;
+    border: none;
+}
+
+.removeBtn {
+    background-color: #161D29;
+    color: white;
+    border: none;
+
+
+}
+
+.section2 , .section3{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #2C333F;
+
+}
+
+.section2 .title  , .section3 .title , .section4 .title{
+    font-size: 1.5rem;
+    padding: 0px;
+    padding-bottom: 25px;
+    color: #F1F2FF;
+}
+
+.ProfileEditForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    flex-direction: column;
+    gap: 1rem;
+    column-gap: 2rem;
+    width: 90%;
+    /* border: 2px solid red; */
+}
+
+.ProfileEditForm div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    /* border: 2px solid red; */
+}
+
+label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #F1F2FF;
+}
+
+input[type="date"] {
+    /* font-size: 19px;   */
+    padding: 10px 16px;
+    color: #838894;
+    width: 90%;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) brightness(100%) sepia(0) saturate(0) hue-rotate(180deg);
+    font-size: 19px;
+}
+
+.numberContainer {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    /* border: 2px solid red; */
+
+}
+
+.phoneNoSection {
+    display: flex;
+    /* border: 2px solid red; */
+    /* flex-direction: column; */
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* width: 70%; */
+
+}
+
+.phoneNoSection div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.content {
+    border-radius: 10px;
+    border: 1px solid #444;
+
+}
+
+.phoneNoSection div .phoneInput {
+    padding: 15px;
+    /* margin-top: 5px; */
+    border-radius: 5px;
+    border: none;
+    background-color: #161D29;
+    color: #999DAA;
+    text-align: start;
+    width: 25%;
+    border: 2px solid #838894;
+    border-top: 0px;
+    border-left: 0px;
+}
+
+
+input[type="tel"] {
+    width: 63%;
+}
+
+.numberInput {
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    /* border: 2px solid red; */
+    width: 100%;
+}
+
+.btnContainer button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    width: 45%;
+}
+
+.astrick {
+    color: red;
+}
+
+.genderDiv {
+    display: flex;
+    gap: 1rem;    
+}
+
+.genderSelect {
+    background-color: #161D29;
+    border-radius: 10px;
+    padding: 13px;
+    border: 2px solid #838894;
+    border-top: 0px;
+    border-left: 0px;
+    color: #838894;
+}
+
+.genderDiv label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.inputBox {
+    background-color: #161D29;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.cancel {
+    background-color: #161D29;
+    color: #DBDDEA;
+}
+
+.save {
+    background-color: #FFD60A;
+    color: #000814;
+}
+
+.passwordEditForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+
+.passwordSection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 2px solid red; */
+    width: 100%;
+}
+
+.PasswordDiv , .changePasswordDiv {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    /* border: 2px solid red; */
+}
+
+.PasswordDiv label , .changePasswordDiv label {
+    padding: 2px;
+}
+
+.PasswordDiv .input , .changePasswordDiv .input {
+    padding: 15px;
+    width: 75%;
+    border-radius: 10px;
+    background-color: #161D29;
+}
+
+.passwordChangeBtnContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    /* border: 2px solid red; */
+    width: 100%;
+    margin: 10px;
+}
+
+.passwordChangeBtnContainer button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    width: 20%;
+}
+
+.section4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 10px auto;
+    border-radius: 10px;
+    background-color: #340019;
+}
+
+.section4 .desc {
+    color: #FBC7D1;
+    padding: 0px;
+    /* margin-right: 13rem; */
+}
+ 
+.deleteBtn {
+    color: #D43D63;
+    padding: 10px 0px;
+    cursor: pointer;
+}
+
+.section4 div {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    /* padding: 0px; */
+    
+}
+
+.section4 .title {
+    padding: 10px;
+}
+
+.circle {
+    background-color: #BA3356;
+    /* margin: 10px; */
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 100px;
+    
+}
+

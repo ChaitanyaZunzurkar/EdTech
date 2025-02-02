@@ -36,7 +36,7 @@
     color: red;
 }
 
-.sendBtn {
+.AboutPage_contact_form_sendBtn {
     width: 70%;
     background-color: #FFD60A;
     color: #000814;
@@ -46,7 +46,7 @@
     margin-top: 20px;
 }
 
-.nameSection {
+.AboutPage_contact_form_nameSection {
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -55,7 +55,7 @@
 
 }
 
-.nameSection div {
+.AboutPage_contact_form_nameSection div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -65,11 +65,11 @@
     
 }
 
-.nameSection div input {
+.AboutPage_contact_form_nameSection div input {
     width: 90%;
 }
 
-.emailContainer {
+.AboutPage_contact_form_emailContainer {
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
@@ -80,7 +80,7 @@
 }
 
 
-.emailSection {
+.AboutPage_contact_form_emailSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -89,7 +89,10 @@
     /* border: 2px solid red; */
 
 }
-.numberContainer {
+
+
+
+.AboutPage_contact_form_numberContainer {
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
@@ -99,50 +102,54 @@
 
 }
 
-.emailSection input {
+.AboutPage_contact_form_emailSection input {
     width: 95%;
+
 }
 
-.phoneNoSection {
+.AboutPage_contact_form_phoneNoSection {
     display: flex;
     /* border: 2px solid red; */
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     width: 70%;
-    /* border: 2px solid red; */
 
 }
 
-.phoneNoSection div {
+.AboutPage_contact_form_phoneNoSection div {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     /* border: 2px solid red; */
-
-
+    width: 100%;
 }
 
-.phoneNoSection div .phoneInput {
+.AboutPage_contact_form_phoneNoSection div .phoneInput {
     padding: 10px;
     margin-top: 5px;
     border-radius: 5px;
-    border: none;
+    
     background-color: #2C333F;
     color: #999DAA;
     text-align: start;
     width: 15%;
 }
 
-.phoneNoSection div:nth-child(2) {
-    gap: 5px;
+.AboutPage_contact_form_phoneNoSection div:nth-child(2) {
+    gap: 10px;
 }
 
-.phoneNoSection div:nth-child(2):nth-child(2) {
-    width: 99%;
+.mobileNumberInputContainer {
+    width: 100%;
+    /* border: 2px solid red; */
 }
 
-.message {
+.mobileNumberInputContainer .numberInput {
+    width: 78%;
+}
+
+.AboutPage_contact_form_message {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -152,7 +159,7 @@
 
 }
 
-.messageContainer {
+.AboutPage_contact_form_messageContainer {
     display: flex;
     justify-content: center;
     align-items: center;

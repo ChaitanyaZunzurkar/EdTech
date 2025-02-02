@@ -15,10 +15,9 @@
     margin: 10px;
     /* border: 1px solid red; */
     padding: 5px;
-
 }
 
-.form input {
+.form .input {
     padding: 10px;
     border-radius: 7px;
     width:80%;
@@ -44,29 +43,35 @@
 
 .nameSection {
     display: flex;
+    /* border: 2px solid red; */
+    width: 100%;
 }
 
-.nameSection div {
+.nameSection .firstName , .lastName {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    /* border: 2px solid red; */
 }
+
 
 .emailSection {
     display: flex;
     flex-direction: column;
+    /* border: 2px solid red; */
+    width: 100%;
 }
 
-.emailSection input {
-    width: 180%;
+.emailSection .input {
+    width:66%;
 }
 
 .phoneNoSection {
     display: flex;
     /* border: 2px solid red; */
     flex-direction: column;
-
+    width: 100%;
 }
 
 .phoneNoSection div {
@@ -79,6 +84,7 @@
 .phoneNoSection div .phoneInput {
     width: 30%;
     margin: 5px;
+    margin-left: 0px;
     padding: 8px;
     border-radius: 5px;
     border: none;
@@ -95,23 +101,24 @@
     width: 70%;
 }
 
+
 .passwordSection {
     display: flex;
+    width: 100%;
 }
 
-.passwordSection div {
+.passwordSection .PasswordDiv , .confirmPasswordDiv {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    /* border: 2px solid red; */
 }
 
-.input1 {
-    width: 30%;
-    margin: 1px;
+.confirmPasswordDiv .input {
+    width: 48%;
 }
 
-.passwordSection div:nth-child(2) .input2 {
-    width: 50%;
-    margin: 0px;
+.PasswordDiv .label {
+    margin: 3px 0px;
 }
