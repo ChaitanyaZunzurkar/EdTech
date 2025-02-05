@@ -3,10 +3,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 90%; 
 }
 
 .title {
-    font-size: 36px;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -18,13 +19,15 @@
     flex-direction: column;
     color: #999DAA;
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    width: 80%;
 }
 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 35vw;
+    min-width: 35vw;
 }
 
 .nav ul {
@@ -36,12 +39,14 @@
     padding: 5px;
     margin: 10px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .nav ul li {
     list-style: none;
     cursor: pointer;
     padding: 5px;
+    font-size: 1rem;
 }
 
 .nav ul li:hover {
@@ -52,4 +57,24 @@
 .nav ul li:active {
     background-color: #161D29;
     border-radius: 100px;
+}
+
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5rem; /* Reduced for better fit on mobile */
+    }
+
+    .para {
+        font-size: 1rem; /* Adjusted for readability */
+        width: 90%; /* Increased width for better fit */
+    }
+
+    .nav ul { /* Stack items on smaller screens */
+        padding: 10px;
+    }
+
+    .nav ul li {
+        font-size: 0.9rem; /* Slightly reduced for mobile screens */
+    }
 }

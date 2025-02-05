@@ -6,6 +6,8 @@
     color: black;
     width: 94.7vw;
     padding: 2rem;
+    flex-wrap: wrap;
+    border: 2px solid red;
 }
 
 .timeline {
@@ -28,7 +30,9 @@
 }
 
 .timelineImg {
-    height: 545px;
+    width: 100%; /* Change: Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 545px; /* Limit the width */
 }
 
 .timelinelogo {
@@ -75,10 +79,11 @@
 }
 .radial {
     position: absolute;
-    width: 720px;
-    height: 207.47px;
-    left: 2px;
-    top: 130px;
+    width: 100%; /* Change: Adjust width to 100% for responsiveness */
+    max-width: 720px; /* Set a max-width */
+    height: auto; /* Allow height to scale */
+    left: 0; /* Align to the left */
+    top: 0; /* Align to the top */
     background: linear-gradient(117.82deg, #9CECFB -9.12%, #65C7F7 48.59%, #0052D4 106.3%);
     opacity: 0.8;
     filter: blur(34px);
@@ -114,4 +119,68 @@
     font-size: 18px;
     padding: 2px;
     color: white;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .timeline {
+        align-items: center;
+    }
+
+    .subsection {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .timelinelogo {
+        height: 30px;
+        width: 30px;
+        margin: 0.5rem;
+    }
+
+    .images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .greenBlock {
+        width: 100%;
+        max-width: 350px;
+        flex-direction: column;
+        height: auto;
+        padding: 1rem;
+        position: relative;
+        bottom: 0;
+        text-align: center;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .timelineImg {
+        max-width: 100%; /* Ensure image scales to full width */
+    }
+
+    .radial {
+        width: 90%; /* Adjust radial width on smaller screens */
+        left: 5%; /* Center radial background relative to the image */
+        top: -30px; /* Adjust vertical positioning */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .timelineImg {
+        max-width: 100%;
+    }
+
+    .radial {
+        width: 100%; /* Full width on small screens */
+        top: -20px; /* Adjust top position for smaller screens */
+    }
 }

@@ -6,10 +6,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 60vw;
-    /* margin: 3rem; */
-    font-family: 'Inter' sans-serif;
-    /* border: 2px solid red; */
+    width: 100vw;
+    margin-top: 3rem;
+    font-family: 'Inter' , sans-serif;
 }
 .instrutorBtn {
     background-color: #2C333F;
@@ -34,6 +33,7 @@
 .title {
     font-size: 36px;
     margin-bottom: 0.5rem;
+    text-align: center; 
 }
 
 .para {
@@ -43,7 +43,9 @@
     align-items: center;
     flex-direction: column;
     color: #999DAA;
+    margin: 0px 5rem;
     margin-bottom: 0.5rem;
+    padding: 0 10px;
 }
 
 .btnSection {
@@ -52,10 +54,12 @@
     text-align: center;
     align-items: center;
     margin-top: 3rem;
+    flex-wrap: wrap; 
+    gap: 10px; 
 }
 
 .videoContainer {
-    margin: 2rem;
+    margin: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,5 +74,68 @@
     border-radius: 5px;
 }
 
+@media (min-width: 1200px) {
+    .container {
+        width: 100vw; 
+    }
+    /* .title {
+        font-size: 30px; 
+    } */
+    .BannerVideo {
+        width: 90vw; 
+    }
+    .para {
+        width: 90vw;
+    }
+}
 
 
+@media (min-width: 1024px) {
+    .container {
+        width: 100vw; 
+    }
+    /* .title {
+        font-size: 30px; 
+    } */
+    .BannerVideo {
+        width: 100vw; 
+    }
+    .para {
+        width: 100vw;
+        /* margin: 0px 6rem; */
+        margin: 0px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100vw; 
+    }
+    .title {
+        font-size: 25px; 
+    }
+    .instrutorBtn {
+        padding: 8px; 
+        font-size: 14px; 
+    }
+    .BannerVideo {
+        width: 95vw; 
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 24px;
+    }
+    .para {
+        font-size: 14px; 
+    }
+    .instrutorBtn {
+        /* width: 100%; */
+        text-align: center;
+
+    }
+    .BannerVideo {
+        width: 95vw; 
+    }
+}

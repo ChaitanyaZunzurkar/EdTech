@@ -33,3 +33,55 @@
 .img {
     box-shadow: -14px -14px 2px white;
 }
+
+@media (max-width: 768px) {
+    .container {
+        margin: 3rem; /* Change: Reduced margin for smaller screens */
+    }
+
+    .content {
+        margin: 0px 3rem; /* Change: Reduced content margin */
+    }
+
+    .title {
+        font-size: 28px; /* Change: Reduced font size for smaller screens */
+        width: 90%; /* Change: Increased width to make title more visible */
+    }
+
+    .para {
+        width: 80%; /* Change: Increased width for better readability */
+    }
+
+    .img img {
+        width: 100%; /* Change: Make the image take up full width */
+        margin-bottom: 2rem; /* Change: Added bottom margin to space out content */
+    }
+
+    .container {
+        flex-direction: column; /* Change: Stack content vertically */
+    }
+}
+
+/* For screens 480px and below */
+@media (max-width: 480px) {
+    .title {
+        font-size: 24px; /* Change: Reduced font size for very small screens */
+    }
+
+    .para {
+        width: 100%; /* Change: Take up full width for text */
+    }
+
+    .content {
+        margin: 0px 2rem; /* Change: Further reduced content margin */
+    }
+
+    .img img {
+        width: 100%; /* Change: Ensure image scales to full width */
+        margin-bottom: 1rem; /* Change: Adjusted margin for image */
+    }
+
+    .container {
+        padding: 1.5rem 0px; /* Change: Reduced padding for small screens */
+    }
+}

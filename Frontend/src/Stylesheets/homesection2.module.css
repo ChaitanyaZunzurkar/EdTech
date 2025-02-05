@@ -6,6 +6,7 @@
     /* border:2px solid red; */
     width: 85vw;
     height: 45vh;
+    flex-wrap: wrap;
 }
 
 .info {
@@ -19,6 +20,7 @@
 
 .title {
     font-size: 35px;
+    /* text-align: center; */
 }
 
 .para {
@@ -27,6 +29,12 @@
     align-items: flex-start;
     flex-direction: column;
     color: #999DAA;
+    /* text-align: center; */
+    /* padding: 10px 0px; */
+}
+
+.para p {
+    padding: 10px 0px;
 }
 
 .btnSection {
@@ -36,6 +44,8 @@
     align-items: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    /* flex-wrap: wrap; */
+    /* gap: 10px; */
 }
 
 .codeblock {
@@ -52,6 +62,7 @@
     background-color: transparent;
     z-index: 10; 
     overflow: visible;   
+    word-wrap: break-word;
 }
 
 .codeContainer {
@@ -67,6 +78,7 @@
     position: relative;
     box-shadow: 2px 2px 8px #000826;
     border: 2px solid #717171;
+    min-width: 300px;
 }
 
 .numbers {
@@ -98,7 +110,75 @@
 }
 
 
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column; /* Stacks content vertically on tablets */
+        height: auto; /* Allows flexible height */
+        width: 90vw; /* Adjusts width for smaller screens */
+        margin: 2rem; /* Reduces margin */
+    }
 
+    .info {
+        width: 80%; /* Expands info section */
+         /* Centers content */
+        height: auto; /* Adjusts height dynamically */
+    }
+
+    .title {
+        font-size: 30px; /* Reduces font size */
+    }
+
+    .para {
+        font-size: 16px; /* Slightly reduces text size */
+        padding: 0 10px; /* Adds padding for better readability */
+    }
+
+    .codeContainer {
+        width: 90%; /* Expands code section width */
+    }
+
+    .codeblock {
+        font-size: 14px; /* Reduces font size */
+        height: auto; /* Allows flexibility */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 95vw; /* Adjusts width for smaller screens */
+        margin: 1rem; /* Further reduces margin */
+    }
+
+    .title {
+        font-size: 26px; /* Further reduces font size */
+    }
+
+    .para {
+        font-size: 14px; /* Adjusts text for mobile readability */
+    }
+    .codeContainer {
+        width: 95%; /* Adjusts code block width */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 22px; /* Further reduces title size */
+    }
+
+    .para {
+        font-size: 13px; /* Further reduces text size */
+        padding: 10px 0px;
+    }
+
+    .codeContainer {
+        min-width: 100%; /* Ensures it takes full width */
+    }
+
+    .codeblock {
+        font-size: 12px; /* Reduces font size for small screens */
+    }
+}
 
 
 

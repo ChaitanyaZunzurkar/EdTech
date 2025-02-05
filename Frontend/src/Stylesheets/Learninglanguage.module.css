@@ -37,3 +37,50 @@
     margin-bottom: 65px;
     margin-left: -150px;
 }
+
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 24px; /* Change: Reduced font size for smaller screens */
+    }
+
+    .para {
+        width: 80%; /* Change: Increased width for smaller screens */
+    }
+
+    .img1,
+    .img2,
+    .img3 {
+        margin-left: 0; /* Change: Removed negative margin */
+        margin-right: 0; /* Change: Removed negative margin */
+        margin-bottom: 20px; /* Change: Adjusted bottom margin */
+    }
+
+    .images {
+        flex-direction: column; /* Change: Stack images vertically */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px; /* Change: Further reduced font size for very small screens */
+    }
+
+    .para {
+        width: 90%; /* Change: Increased width to take more space */
+    }
+
+    .img1,
+    .img2,
+    .img3 {
+        margin-bottom: 15px; /* Change: Reduced margin at the bottom */
+    }
+
+    .images {
+        gap: 10px; /* Change: Reduced gap between images */
+    }
+
+    .container {
+        padding: 1.5rem 0px; /* Change: Reduced padding for small screens */
+    }
+}

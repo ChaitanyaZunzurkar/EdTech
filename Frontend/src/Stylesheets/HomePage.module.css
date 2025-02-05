@@ -48,15 +48,15 @@
 .title {
     color: black;
     font-size: 28px;
-    width: 27%;
     margin: 0px;
     height: 100%;
     margin-top: 1rem;
+    width: 30%;
 }
 
 .desc {
     color: black;
-    width: 35%;
+    width: 40%;
     text-align: start;
     height: 100%;
     display: flex;
@@ -80,4 +80,47 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+}
+
+.learnBtn:hover {
+    background-color: #F0C000; /* Slightly darker on hover */
+}
+
+@media (max-width: 1024px) {
+    .title {
+        font-size: 24px; /* Reduced font size for tablets */
+        width: 40%; /* Adjusted width */
+    }
+    .desc {
+        width: 50%; /* Adjusted width for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .sectionFour {
+        flex-direction: column; /* Stack content vertically */
+        gap: 1rem; /* Reduced gap */
+    }
+    .title, .desc {
+        width: 80%; /* Full width for readability */
+    }
+    .title {
+        font-size: 22px; /* Adjusted font size for mobile */
+    }
+    .desc p {
+        font-size: 0.9rem; /* Adjusted font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 18px; /* Further reduced for smaller screens */
+    }
+    .desc {
+        width: 90%; /* Almost full width */
+        text-align: center; /* Center text on small screens */
+    }
+    .learnBtn {
+        width: 100%; /* Full-width button for easier tapping */
+    }
 }
