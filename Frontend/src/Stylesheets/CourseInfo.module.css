@@ -1,0 +1,179 @@
+.formContainer {
+    margin: 20px;
+    padding: 20px;
+    background-color: #161D29;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid red;
+    width: 500px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.inputField {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #666;
+  background-color: #444;
+  color: white;
+}
+
+.inputField:focus {
+  outline: none;
+  border-color: #1e90ff;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.submitButton {
+  padding: 10px;
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+textarea.inputField {
+  height: 100px; /* Adjust as needed */
+  resize: vertical; /* Only allow vertical resizing */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap; /* Ensures long words break */
+}
+
+.submitButton:hover {
+  background-color: #0077cc;
+}
+
+.asterisk {
+  color: red;
+  font-size: 16px;
+  margin-left: 2px;
+}
+
+.selectWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%; /* Ensure it takes full width */
+  }
+  
+  .inputField {
+    width: 100%; /* Make input and select full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .dropdownIcon {
+    position: absolute;
+    right: 12px;
+    pointer-events: none; /* Prevent interaction */
+    color: #666;
+    font-size: 18px;
+  }
+  
+  .tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .tag {
+    background-color: #b89f18; /* Yellowish */
+    color: black;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+
+  .thumbnailContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .label {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .asterisk {
+    color: red;
+  }
+  
+  .dropArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 180px;
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .icon {
+    color: #f4c824; /* Yellow color */
+  }
+  
+  .text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .browse {
+    color: #f4c824;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .subText {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  
+  .recommendation {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+  }
+  

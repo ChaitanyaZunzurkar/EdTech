@@ -13,6 +13,7 @@ import ContactPage from './Pages/ContactPage'
 import MyProfile from './Components/MyProfile'
 import Dashboard from './Components/Dashboard'
 import DashboardSettings from './Components/DashboardSettings'
+import CreateCourse from './Components/CreateCourse'
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route element={<Dashboard />} >
               <Route path='/dashboard/my-profile' element={<MyProfile />} />
               <Route path='/dashboard/settings' element={<DashboardSettings />} />
+              <Route path='/dashboard/add-course' element={<CreateCourse />} />
             </Route>
         </Routes>
         {/* <Footer /> */}

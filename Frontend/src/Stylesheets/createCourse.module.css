@@ -1,0 +1,39 @@
+.container {
+    border : 2px solid red;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin:0px 10px;
+    margin-top: 8vh;
+
+}
+
+
+.tipsContainer {
+    background-color: #161D29; /* Dark background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+  }
+  
+  .heading {
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+  
+  .list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #d1d1d1;
+  }
+  
+  .list li {
+    margin-bottom: 8px;
+  }
+  

@@ -6,13 +6,13 @@
 
 .content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin-left: 200px;
     flex-grow: 1;
     padding: 20px;
     /* overflow-y: auto; */
-    margin-top: vh;
+    /* margin-top: 8vh; */
     min-height: 100vh;
     /* overflow-x: hidden; */
 }
