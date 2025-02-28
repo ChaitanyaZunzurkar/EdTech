@@ -1,7 +1,6 @@
 import style from '../Stylesheets/Fileupload.module.css'
 import { FiUpload } from "react-icons/fi"; 
-import { useDropzone } from "react-dropzone";
-
+// import { useDropzone } from "react-dropzone";
 
 
 const FileUpload = () => {

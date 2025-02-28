@@ -11,6 +11,8 @@ const CourseForm = () => {
   const [ subLink , setSubLink ] = useState([])    
   const [loading , setLoading] = useState(true)
   const [tags , setTags] = useState([])
+  const [newReqInstrc , setNewReqInstrc] = useState('')
+  const [requirement_instructions , setReq_Instrc] = useState([])
   
       async function fetchSubLinkData() {
           try {
@@ -38,11 +40,29 @@ const CourseForm = () => {
         }
       }
       
+
+      function removeReq_Instrc(index) {
+        setReq_Instrc(requirement_instructions.filter((_ , i) => i !== index))
+      }
+      
       function removeTag(index) {
         setTags(tags.filter((_, i) => i !== index));
       }
+
+        function handleAddReq_Instrc(event) {
+          event.preventDefault();
       
-  
+          if (!newReqInstrc.trim()) return; 
+      
+          if (!requirement_instructions.includes(newReqInstrc.trim())) {
+            const updatedList = [...requirement_instructions, newReqInstrc.trim()];
+            setReq_Instrc(updatedList);
+          }
+      
+          setNewReqInstrc(""); 
+        }
+      
+
       useEffect(() => {
           fetchSubLinkData();
       } , [])
@@ -57,6 +77,7 @@ const CourseForm = () => {
         <div className={style.formGroup}>
           <label htmlFor="courseTitle">Course Title <span className={style.asterisk}>*</span></label>
           <input
+            placeholder='Course Title'
             id="courseTitle"
             type="text"
             {...register('courseTitle', { required: 'Course Title is required' })}
@@ -68,6 +89,7 @@ const CourseForm = () => {
         <div className={style.formGroup}>
           <label htmlFor="courseDescription">Course Short Description <span className={style.asterisk}>*</span></label>
           <textarea
+            placeholder='Course Description'
             id="courseDescription"
             {...register('courseDescription', { required: 'Course description is required' })}
             className={style.inputField}
@@ -78,6 +100,7 @@ const CourseForm = () => {
         <div className={style.formGroup}>
           <label htmlFor="price">Price <span className={style.asterisk}>*</span></label>
           <input
+            placeholder='Price'
             id="price"
             type="number"
             {...register('price', { required: 'Price is required' })}
@@ -95,7 +118,7 @@ const CourseForm = () => {
               className={style.inputField}
               disabled={loading}
             >
-              <option value="">{loading ? "Loading categories..." : "Choose a Category"}</option>
+              <option value="" disabled>{loading ? "Loading categories..." : "Choose a Category"}</option>
               {subLink.map((category) => (
                 <option key={category.id} value={category.id}>{category.name}</option>
               ))}
@@ -110,13 +133,15 @@ const CourseForm = () => {
             {tags.map((tag, index) => (
               <span key={index} className={style.tag}>
                 {tag}
-                <button className={style.closeButton} onClick={() => removeTag(index)}>×</button>
+                {"  "}
+                <button className={style.closeButton} onClick={() => removeTag(index)}>x</button>
               </span>
             ))}
           </div>
 
 
           <input 
+            placeholder='Tags'
             id='tag'
             name='tag'
             type='text'
@@ -125,7 +150,7 @@ const CourseForm = () => {
             onKeyDown={handleTagFunction}
             
           />
-          {errors.tag && <span className={style.error}>{errors.tag.message}</span>}
+          { tags.length === 0 && errors.tag && <span className={style.error}>{errors.tag.message}</span>}
         </div>
 
 
@@ -145,10 +170,48 @@ const CourseForm = () => {
           </div>
         </div>
 
+        <div className={style.formGroup}>
+          <label htmlFor="Benifits">Course Benifits <span className={style.asterisk}>*</span></label>
+          <textarea 
+            placeholder='Benifits'
+            id='Benifits'
+            name="Benifits"
+            {...register('Benifits' , { required : "Benifits is required"})}
+            className={style.inputField}
+          >
+          </textarea>
+          { errors.Benifits && <span className={style.error}>{errors.Benifits.message}</span> }
+        </div>
+
+        <div className={style.formGroup}>
+            <label htmlFor="Requirement_Instructions">Requirement/Instructions<span className={style.asterisk}>*</span></label>
+            <input 
+              placeholder='Requirement / Instructions'
+              name='Requirement_Instructions'
+              id='Requirement_Instructions'
+              type='text'
+              className={style.inputField}
+              {...register('Requirement_Instructions' , { required: "Requirement/Instructions are required"})}
+              value={newReqInstrc} 
+              onChange={(e) => setNewReqInstrc(e.target.value)}
+            />
+
+            <button className={style.addBtn} onClick={handleAddReq_Instrc}>Add</button>
+
+            <div className={style.Req_Instrc_container}>
+              {requirement_instructions.map((req_instrc, index) => (
+                <span key={index} className={style.req_instrc}>
+                  { req_instrc }
+                  <button className={style.closeButton} onClick={() => removeReq_Instrc(index)}>clear</button>
+                </span>
+              ))}
+            </div>
+            { requirement_instructions.length === 0 && errors.Requirement_Instructions && <span className={style.error}>{errors.Requirement_Instructions.message}</span>}
+        </div>
 
 
         <div className={style.formGroup}>
-          <button type="submit" className={style.submitButton}>Submit</button>
+          <button type="submit" className={style.submitButton}>Next</button>
         </div>
       </form>
     </div>

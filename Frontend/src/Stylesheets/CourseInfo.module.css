@@ -5,7 +5,7 @@
     color: white;
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 500px;
 }
 
@@ -46,8 +46,8 @@ label {
 
 .submitButton {
   padding: 10px;
-  background-color: #1e90ff;
-  color: white;
+  background-color: yellow;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -59,10 +59,6 @@ textarea.inputField {
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: pre-wrap; /* Ensures long words break */
-}
-
-.submitButton:hover {
-  background-color: #0077cc;
 }
 
 .asterisk {
@@ -115,7 +111,7 @@ textarea.inputField {
   .closeButton {
     background: none;
     border: none;
-    color: black;
+    color: rgb(152, 5, 5);
     font-weight: bold;
     cursor: pointer;
   }
@@ -175,5 +171,34 @@ textarea.inputField {
   .recommendation {
     font-size: 12px;
     color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .addBtn {
+    background-color: yellow;
+    color: black;
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px 0px;
+    width: 20%;
+  }
+  
+  .Req_Instrc_container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .req_instrc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #333;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
   }
   

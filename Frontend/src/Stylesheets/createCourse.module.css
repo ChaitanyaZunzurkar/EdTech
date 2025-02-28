@@ -1,10 +1,10 @@
 .container {
-    border : 2px solid red;
+    /* border : 2px solid red; */
     width: 100%;
     height: auto;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: start;
     margin:0px 10px;
     margin-top: 8vh;
 
@@ -12,7 +12,7 @@
 
 
 .tipsContainer {
-    background-color: #161D29; /* Dark background */
+    background-color: #161D29; 
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -35,5 +35,86 @@
   
   .list li {
     margin-bottom: 8px;
+  }
+  .CoursePublishTracker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin: 20px auto;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 800px; /* Adjust max-width as needed */
+  }
+  
+  /* Step Container */
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 13px;
+    color: #838894;
+    position: relative;
+    flex: 1;
+    text-align: center;
+  }
+  
+  /* Step Number Circle */
+  .stepNo {
+    border-radius: 50%;
+    background-color: #2C333F;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #838894;
+    border: 2px solid transparent;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Active Step Styling */
+  .activeStep .stepNo {
+    color: #FFD60A; /* Golden color for active step */
+    border: 2px solid #FFD60A;
+    background-color: #251400;
+  }
+
+  
+
+  
+  .activeStep .name {
+    color: #fff;
+  }
+  /* Connector Line Between Steps */
+  .connector {
+    position: absolute;
+    top: 30%;
+    left: 100%;
+    width: 100%; /* Make it responsive */
+    height: 2px;
+    background-color: #555;
+    z-index: -1;
+    transform: translateX(-50%);
+  }
+  
+  .step:last-child .connector {
+    display: none;
+  }
+  
+  /* Adjust connector width dynamically */
+  @media (max-width: 768px) {
+    .connector {
+      width: 80%; /* Reduce width on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .connector {
+      width: 60%; /* Further reduce on very small screens */
+    }
   }
   
