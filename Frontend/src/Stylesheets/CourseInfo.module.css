@@ -29,7 +29,7 @@ label {
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #666;
-  background-color: #444;
+  background-color: rgba(255, 255, 255, 0.05);
   color: white;
 }
 
@@ -46,7 +46,7 @@ label {
 
 .submitButton {
   padding: 10px;
-  background-color: yellow;
+  background-color: #FFD60A;
   color: black;
   border: none;
   border-radius: 5px;
@@ -82,6 +82,13 @@ textarea.inputField {
     font-size: 16px;
   }
   
+  .inputField option {
+    background-color: lightgray; /* Background color */
+    color: black; /* Text color */
+    padding: 10px; /* Padding (not always supported) */
+    font-size: 14px;
+  }
+
   .dropdownIcon {
     position: absolute;
     right: 12px;
@@ -97,7 +104,7 @@ textarea.inputField {
   }
   
   .tag {
-    background-color: #b89f18; /* Yellowish */
+    background-color: #FFD60A; /* Yellowish */
     color: black;
     font-weight: bold;
     padding: 6px 10px;
@@ -149,7 +156,7 @@ textarea.inputField {
   }
   
   .icon {
-    color: #f4c824; /* Yellow color */
+    color: #FFD60A; /* Yellow color */
   }
   
   .text {
@@ -158,7 +165,7 @@ textarea.inputField {
   }
   
   .browse {
-    color: #f4c824;
+    color: #FFD60A;
     font-weight: 600;
     cursor: pointer;
   }
@@ -174,7 +181,7 @@ textarea.inputField {
   }
   
   .addBtn {
-    background-color: yellow;
+    background-color: #FFD60A;
     color: black;
     padding: 6px 12px;
     border: none;
