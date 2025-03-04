@@ -11,3 +11,17 @@ export const auth = {
     RESET_PASSWORD_URL: BASE_URL + 'auth/reset-password-token',
     RESET_PASSWORD: BASE_URL + 'auth/update-password'
 }
+
+export const courses = {
+    CREATE_COURSE_URL: BASE_URL + 'course/create-course',
+    GET_ALL_COURSES_URL: BASE_URL + 'course/getCourse',
+    GET_COURSE_DETAILS_URL: BASE_URL + 'course/getCourseDetials',
+
+    CREATE_SECTION_URL: BASE_URL + 'course/create-section',
+    UPDATE_SECTION_URL: BASE_URL + 'course/update-section',
+    DELETE_SECTION_URL: BASE_URL + 'course/delete-section',
+
+    CREATE_SUB_SECTION_URL: BASE_URL + 'course/create-subsection',
+    UPDATE_SUB_SECTION_URL: BASE_URL + 'course/update-subsection',
+    DELETE_SUB_SECTION_URL: BASE_URL + 'course/delete-subsection',
+}
