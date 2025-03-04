@@ -5,7 +5,10 @@ import { apiConnector } from "../Services/apiConnector";
 import { categories } from "../Services/apis";
 import { useEffect, useState } from "react";
 import ThumbnailUpload from "./Upload";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
+import { COURSE_STATUS } from '../utils/constants';
+import { setCourse , setStep } from '../Store/Slice/courseSlice.js';
+import { createCourse } from "../Services/Operations/CourseDetailsAPI.js";
 
 const CourseForm = () => {
   const {
@@ -144,7 +147,7 @@ const CourseForm = () => {
         setLoading(false)
 
         if(result) {
-          dispatch(setSteps(2))
+          dispatch(setStep(2))
           dispatch(setCourse(result))
         } 
       } else {
@@ -166,7 +169,7 @@ const CourseForm = () => {
     formData.append("thumbnailImage", data.courseImage)
 
     setLoading(true)
-    const result = await addCourseDetails(formData, token)
+    const result = await createCourse(formData, token)
     if (result) {
       dispatch(setStep(2))
       dispatch(setCourse(result))
