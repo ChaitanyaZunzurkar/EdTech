@@ -10,17 +10,18 @@ const {
     DELETE_SECTION_URL,
     CREATE_SUB_SECTION_URL,
     UPDATE_SUB_SECTION_URL,
-    DELETE_SUB_SECTION_URL
+    DELETE_SUB_SECTION_URL,
+    EDIT_COURSE_API,
+    GET_INSTRUCTOR_COURESES_API,
+    DELETE_COURSE_API,
 } = '../apis.js'
-
-
 
 export const getAllCourses = async () => {
     let result = []
 
     try {
         // add loading
-        const res = await apiConnector('POST' , GET_ALL_COURSES_URL);
+        const res = await apiConnector('GET' , GET_ALL_COURSES_URL);
         if(!res?.data?.success) {
             throw new Error("Fail to fetch all courses.");
         }
@@ -65,7 +66,7 @@ export const getCourseDetails = async (courseId) => {
 
     try {
         // add loading
-        const res = await apiConnector('POST' , GET_COURSE_DETAILS_URL , {
+        const res = await apiConnector('GET' , GET_COURSE_DETAILS_URL , {
             courseId
         });
 
@@ -113,7 +114,7 @@ export const updatedSection = async (data , token) => {
 
     try {
         // add loading
-        const res = await apiConnector('POST' , UPDATE_SECTION_URL , data , {
+        const res = await apiConnector('PUT' , UPDATE_SECTION_URL , data , {
             "Authorization": `Bearer ${token}`
         });
 
@@ -137,7 +138,7 @@ export const deleteSection = async (data , token) => {
 
     try {
         // add loading
-        const res = await apiConnector('POST' , DELETE_SECTION_URL , data , {
+        const res = await apiConnector('DELETE' , DELETE_SECTION_URL , data , {
             "Authorization": `Bearer ${token}`
         });
 
@@ -183,7 +184,7 @@ export const updateSubSection = async (data , token) => {
 
     try {
         // add loading
-        const res = await apiConnector('POST' , UPDATE_SUB_SECTION_URL, data , {
+        const res = await apiConnector('PUT' , UPDATE_SUB_SECTION_URL, data , {
             "Authorization" : `Bearer ${token}`
         });
 
@@ -207,7 +208,7 @@ export const deleteSubSection = async (data , token) => {
 
     try {
         // add loading
-        const res = await apiConnector('POST' , DELETE_SUB_SECTION_URL , data , {
+        const res = await apiConnector('DELETE' , DELETE_SUB_SECTION_URL , data , {
             "Authorization": `Bearer ${token}`
         });
 
@@ -219,9 +220,73 @@ export const deleteSubSection = async (data , token) => {
         toast.success("Sub-Section deleted successfully.");
 
     } catch(error) {
-        console.log("Fail to delete courses." , error.message);
-        toast.error("Fail to delete courses.")
+        console.log("Fail to delete sub-section." , error.message);
+        toast.error("Fail to delete sub-section.")
     }
 
     return result;
+}
+
+
+export const editCourseDetails = async (data , token) => {
+    try {
+        let result = null
+        const res = await apiConnector('POST' , EDIT_COURSE_API , data , {
+            "Authorization": `Bearer ${token}`
+        });
+
+        if(!res?.data?.success) {
+            throw new Error("Fail to edit courses.");
+        }
+
+        result = res?.data;
+        console.log(result);
+        toast.success("Course edited successfully.")
+    } catch(error) {
+        console.log("Fail to edit course details." , error.message);
+        toast.error("Fail to edit course details.")
+    }
+}
+
+
+export const getInstructorCourses = async (data , token) => {
+    let result = null
+    try {
+        const res = await apiConnector('GET' , GET_INSTRUCTOR_COURESES_API , null , {
+            "Authorization": `Bearer ${token}`
+        });
+
+        if(!res?.data?.success) {
+            throw new Error("Fail to edit courses.");
+        }
+
+        result = res?.data;
+        toast.success("Course edited successfully.")
+
+    } catch(error) {
+        console.log("Fail to edit course details." , error.message);
+        toast.error("Fail to edit course details.")
+    }
+    return result
+
+}
+
+export const deleteCourse = async (data , token) => {
+    try {
+        let result = null
+        const res = await apiConnector('DELETE' , DELETE_COURSE_API , data , {
+            "Authorization": `Bearer ${token}`
+        });
+
+        if(!res?.data?.success) {
+            throw new Error("Fail to edit courses.");
+        }
+
+        result = res?.data;
+        console.log(result);
+        toast.success("Course edited successfully.")
+    } catch(error) {
+        console.log("Fail to edit course details." , error.message);
+        toast.error("Fail to edit course details.")
+    }
 }

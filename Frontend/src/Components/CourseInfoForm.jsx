@@ -8,7 +8,7 @@ import ThumbnailUpload from "./Upload";
 import { useDispatch, useSelector } from "react-redux";
 import { COURSE_STATUS } from '../utils/constants';
 import { setCourse , setStep } from '../Store/Slice/courseSlice.js';
-import { createCourse } from "../Services/Operations/CourseDetailsAPI.js";
+import { createCourse , editCourseDetails } from "../Services/Operations/CourseDetailsAPI.js";
 
 const CourseForm = () => {
   const {

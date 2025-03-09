@@ -24,4 +24,8 @@ export const courses = {
     CREATE_SUB_SECTION_URL: BASE_URL + 'course/create-subsection',
     UPDATE_SUB_SECTION_URL: BASE_URL + 'course/update-subsection',
     DELETE_SUB_SECTION_URL: BASE_URL + 'course/delete-subsection',
+
+    EDIT_COURSE_API: BASE_URL + 'course/edit-course',
+    GET_INSTRUCTOR_COURESES_API: BASE_URL + 'course/get-instructor-courses',
+    DELETE_COURSE_API: BASE_URL + 'course/delete-course',
 }
