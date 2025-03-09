@@ -1,10 +1,14 @@
 const User = require('../Models/User')
 const course = require('../Models/Course')
+const CourseProgess = require('../Models/CourseProgess')
+const subSection = require('../Models/SubSection')
+const Section = require('../Models/Section')
+
 const Category = require('../Models/Categories')
 const { imageUploader } = require('../Utils/imageUpload')
 const Course = require('../Models/Course')
-const CourseProgess = require('../Models/CourseProgess')
 const { convertSecondsToDuration } = require('../Utils/secToDuration')
+const SubSection = require('../Models/SubSection')
 require('dotenv').config()
 
 exports.createCourse = async (req , res) => {
@@ -292,6 +296,82 @@ exports.getFullCourseDetails = async (req , res) => {
         res.status(500).json({
             success:false,
             message:"Fail to get full course details."
+        })
+    }
+}
+
+exports.getInstructorCourses = async (req , res) => {
+    try {
+        const { userId } = req.user;
+        const courses = await Course.find({
+            userId
+        }).sort({ createdAt: -1 });
+
+        if(!courses) {
+            return console.log("Courses not found.");
+        }
+
+        res.status(200).json({
+            success: true,
+            message: "Fetching instructor courses successfully.",
+            data: courses
+        })
+
+    } catch (error) {
+        console.log("Fail to get instructor courses.");
+        console.log(error.message)
+        res.status(500).json({
+            success:false,
+            message:"Fail to get instructor courses"
+        })
+    }
+}
+
+exports.deleteCourse = async (req , res) => {
+    try {
+        const { userId } = req.user;
+        const { courseId } = req.body;
+
+        const course = await Course.findById(courseId);
+
+        if(!course) {
+            return console.log("Course does not exist.");
+        }
+
+        const studentsEnrolled = course.studentEnrolled;
+        studentsEnrolled.forEach(async (studentId) => {
+            await User.findByIdAndUpdate(
+                studentId,
+                { $pull : { courses : courseId } }
+            )
+        })
+            
+        const courseSection = course.courseContent;
+        for(const sectionId of courseSection) {
+            const section = await Section.findById(sectionId);
+            if(section) {
+                await Promise.all(
+                    section.subSection.map(subSectionId => (
+                        SubSection.findByIdAndDelete(subSectionId)
+                    ))
+                )
+            } 
+
+            await Section.findByIdAndDelete(sectionId);
+        }
+
+        await Course.findByIdAndDelete(courseId);
+        return res.status(200).json({
+            success: true,
+            message: "Course deleted successfully",
+        })
+
+    } catch(error) {
+        console.log("Fail to delete course.");
+        console.log(error.message)
+        res.status(500).json({
+            success:false,
+            message:"Fail to delete course."
         })
     }
 }
