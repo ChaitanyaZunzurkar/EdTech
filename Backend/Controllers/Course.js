@@ -15,7 +15,7 @@ exports.createCourse = async (req , res) => {
     try {
         const { courseName , courseDescription , whatYouWillLearn  , price , category  ,tag} = req.body
 
-        const thumbnail = req.files.thumbnailImage
+        const thumbnail = req.files?.thumbnailImage
 
         if(!courseName || !courseDescription || !whatYouWillLearn || !price || !thumbnail || !category || !tag) {
             return res.status(400).json({

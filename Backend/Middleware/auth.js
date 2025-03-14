@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 exports.auth = async (req, res, next) => {
-  const token = req.cookies.token || req.body.token || req.header("Authorisation").replace("Bearer", "");
+  const token = req.cookies?.token || req.body?.token || req.header("Authorization")?.replace("Bearer", "");
 
   if (!token) {
     return res.status(403).json({
@@ -11,14 +11,15 @@ exports.auth = async (req, res, next) => {
     });
   }
 
+  console.log(token , process.env.JWT_SECRET_KEY)
+
   try {
     const payload = jwt.verify(token, process.env.JWT_SECRET_KEY);
-    console.log(payload);
     req.user = payload;
   } 
   catch (error) {
     console.log("User is not authorized");
-    console.error(error.message);
+    console.error(error);
 
     return res.status(401).json({
       success: false,
