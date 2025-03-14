@@ -1,17 +1,17 @@
 import style from '../Stylesheets/createCourse.module.css'
 import CourseInfoForm from '../Components/CourseInfoForm'
-import { useState } from 'react';
+import CourseBuilder from '../Components/CourseBuilder'
+import PublishCourse from '../Components/PublishCourse'
+import { useSelector } from 'react-redux';
 
 const CreateCourse = () => {
-
-  const [currentStep, setCurrentStep] = useState(1); // Track active step
+  const { step } = useSelector((state) => state.course)
 
   const coursePublishingSteps = [
-    { stepNo: 1, name: "Course Information", isActive: currentStep >= 1 },
-    { stepNo: 2, name: "Course Builder", isActive: currentStep >= 2 },
-    { stepNo: 3, name: "Publish", isActive: currentStep >= 3 }
+    { stepNo: 1, name: "Course Information", isActive: step >= 1 },
+    { stepNo: 2, name: "Course Builder", isActive: step >= 2 },
+    { stepNo: 3, name: "Publish", isActive: step >= 3 }
   ];
-
 
   return (
     <div className={style.container}>
@@ -34,7 +34,10 @@ const CreateCourse = () => {
               }
             </div>
 
-            <CourseInfoForm />
+            { step === 1 && <CourseInfoForm /> }
+            { step === 2 && <CourseBuilder /> }
+            { step === 3 && <PublishCourse /> }
+            
         </div>
 
         <div className={style.instructionsToCreateCourse}>

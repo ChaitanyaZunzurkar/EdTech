@@ -1,63 +1,111 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
+import { useEffect, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
-import { useCallback, useState } from "react";
-import { Upload } from "lucide-react";
-import style from '../Stylesheets/Upload.module.css'
+import { FiUploadCloud } from "react-icons/fi";
+import { useSelector } from "react-redux";
+import "video-react/dist/video-react.css";
+import { Player } from "video-react";
+import style from "../Stylesheets/Upload.module.css";
 
-const ThumbnailUpload = ({ setValue }) => {
+export default function ThumbnailUpload({
+  name,
+  label,
+  register,
+  setValue,
+  errors,
+  video = false,
+  viewData = null,
+  editData = null,
+}) {
+  const { course } = useSelector((state) => state.course);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [previewSource, setPreviewSource] = useState(
+    viewData ? viewData : editData ? editData : ""
+  );
+  const inputRef = useRef(null);
 
-    const [file , setFile] = useState(null)
+  const onDrop = (acceptedFiles) => {
+    const file = acceptedFiles[0];
+    if (file) {
+      previewFile(file);
+      setSelectedFile(file);
+    }
+  };
 
-    const onDrop = useCallback((acceptedFiles) => {
-        const selectedFile = acceptedFiles[0];
-        if (selectedFile) {
-            const fileWithPreview = Object.assign(selectedFile, {
-              preview: URL.createObjectURL(selectedFile),
-            });
-      
-            setFile(fileWithPreview);
-            setValue("thumbnail", selectedFile);
-        }
-    }, [setValue]);
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    noClick: false,
+    noKeyboard: false,
+    accept: !video ? { "image/*": [".jpeg", ".jpg", ".png"] } : { "video/*": [".mp4"] },
+  });
 
-    const { getRootProps , getInputProps , isDragActive } = useDropzone({
-        onDrop,
-        maxSize: 5 * 1024 * 1024, 
-    })
+  const previewFile = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setPreviewSource(reader.result);
+    };
+  };
 
-    return (
-        <div className={style.thumbnailContainer}>
-            <label className={style.label}>
-                Course Thumbnail <span className={style.asterisk}>*</span>
-            </label>
+  useEffect(() => {
+    register(name, { required: true });
+  }, [register]);
 
-            <div {...getRootProps()} className={style.dropArea}>
-                <input {...getInputProps()}/>
-                {
-                    file ? (
-                        <div className={style.imagePreview}>
-                            <img src={file.preview} alt="Preview" className={style.thumbnail} />
-                        </div>
-                    ) : (
-                        <>
-                            <div className={style.iconWrapper}>
-                                <Upload size={32} className={style.icon} />
-                            </div>
+  useEffect(() => {
+    setValue(name, selectedFile);
+  }, [selectedFile, setValue]);
 
-                            <p className={style.text}>
-                                {isDragActive ? "Drop the image here..." : "Drag and drop an image, or "}
-                                <span className={style.browse}>Browse</span>
-                            </p> 
-                            <p className={style.subText}>Max 6MB each (12MB for videos)</p>
-                            <p className={style.recommendation}>
-                                • Aspect ratio <strong>16:9</strong> • Recommended size <strong>1024×576</strong>
-                            </p>
-                        </>
-                    )
-                }
+  return (
+    <div className={style.thumbnailContainer}>
+      <label className={style.label} htmlFor={name}>
+        {label} {!viewData && <sup className={style.asterisk}>*</sup>}
+      </label>
+      <div
+        className={`${isDragActive ? style.active : style.inactive} ${style.dropzone}`}
+        {...getRootProps()}
+        onClick={() => inputRef.current?.click()}
+      >
+        <input {...getInputProps()} ref={inputRef} />
+        {previewSource ? (
+          <div className={style.previewContainer}>
+            {!video ? (
+              <img src={previewSource} alt="Preview" className={style.previewImage} />
+            ) : (
+              <Player aspectRatio="16:9" playsInline src={previewSource} />
+            )}
+            {!viewData && (
+              <button
+                type="button"
+                onClick={() => {
+                  setPreviewSource("");
+                  setSelectedFile(null);
+                  setValue(name, null);
+                }}
+                className={style.cancelButton}
+              >
+                Cancel
+              </button>
+            )}
+          </div>
+        ) : (
+          <div className={style.placeholderContent}>
+            <div className={style.iconWrapper}>
+              <FiUploadCloud className={style.uploadIcon} />
             </div>
-        </div>
-    )
+            <p className={style.uploadText}>
+              Drag and drop an {!video ? "image" : "video"}, or click to <span className={style.browseText}>Browse</span> a file
+            </p>
+            <ul className={style.uploadGuidelines}>
+              <li>Aspect ratio 16:9</li>
+              <li>Recommended size 1024x576</li>
+            </ul>
+          </div>
+        )}
+      </div>
+      {errors[name] && (
+        <span className={style.errorText}>{label} is required</span>
+      )}
+    </div>
+  );
 }
-
-export default ThumbnailUpload

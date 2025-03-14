@@ -77,12 +77,12 @@ const CourseForm = () => {
 
   useEffect(() => {
     if(editCourse) {
-      setValue("CourseTitle" , course.courseName)
+      setValue("courseTitle", course.courseName);
       setValue("CourseShortDesc" , course.courseDescription)
       setValue("CoursePrice" , course.price)
       setValue("CourseTags" , course.tag)
       setValue("CourseBenifits" , course.whatYouWillLearn)
-      setValue("CourseCategory" , course.Category)
+      setValue("courseCategory", course.Category?._id || "");
       setValue("courseRequirements", course.instructions)
       setValue("CourseThumbnail" , course.thumbnail)
     }
@@ -99,7 +99,7 @@ const CourseForm = () => {
       currentValues.CoursePrice !== course.CoursePrice || 
       currentValues.CourseTags.toString() !== course.tag.toString() || 
       currentValues.CourseBenifits !== course.whatYouWillLearn ||
-      currentValues.CourseCategory !== course.Category || 
+      currentValues.category !== course.Category._id || 
       currentValues.courseRequirements.toString() !== course.instructions.toString() || 
       currentValues.CourseThumbnail !== course.thumbnail
     ) {
@@ -111,38 +111,46 @@ const CourseForm = () => {
   }
 
   const onSubmit = async (data) => {
+    console.log("Form Data Before Submission:", data);
     if(editCourse) {
       if(isFormUpdated()) {
         const currentValues = getValues()
         const formData = new FormData()
 
-        formData.append("courseId" , course._id)
-        if(currentValues.courseTitle !== course.courseName) {
-          formData.append("CourseName" , data.courseTitle)
+        if (currentValues.courseName !== course.courseName) {
+          formData.append("courseName", currentValues.courseName);
         }
-        if(currentValues.CourseShortDesc !== course.courseDescription) {
-          formData.append("courseDescription" , data.CourseShortDesc)
+        
+        if (currentValues.courseDescription !== course.courseDescription) {
+          formData.append("courseDescription", currentValues.courseDescription);
         }
-        if(currentValues.CoursePrice !== course.CoursePrice) {
-          formData.append("CoursePrice" , data.CoursePrice)
-        }
-        if(currentValues.CourseTags.toString() !== course.tag.toString()) {
-          formData.append("tag" , data.CourseTags)
-        }
-        if(currentValues.CourseBenifits !== course.whatYouWillLearn) {
-          formData.append("whatYouWillLearn" , data.CourseBenifits)
-        }
-        if(currentValues.CourseCategory._id !== course.Category._id) {
-          formData.append("Category" , data.CourseCategory)
-        }
-        if(currentValues.CourseThumbnail !== course.thumbnail) {
-          formData.append("thumbnail" , data.CourseThumbnail)
-        }
-        if(currentValues.courseRequirements.toString() !== course.instructions.toString()) {
-          formData.append("instructions" , JSON.stringify(data.courseTitle))
+        
+        if (currentValues.price !== course.price) {
+          formData.append("price", currentValues.price);
         }
 
+        if (JSON.stringify(currentValues.tag) !== JSON.stringify(course.tag)) {
+          formData.append("tag", JSON.stringify(currentValues.tag));
+        }
+        
+        if (currentValues.Category !== course.Category) {
+          formData.append("Category", currentValues.Category);
+        }
+        
+        if (currentValues.CourseThumbnail && currentValues.CourseThumbnail[0] !== course.thumbnail) {
+          formData.append("thumbnail", currentValues.CourseThumbnail[0]);
+        }
+        
+        if (JSON.stringify(currentValues.instructions) !== JSON.stringify(course.instructions)) {
+          formData.append("instructions", JSON.stringify(currentValues.instructions));
+        }
+        
+        if (currentValues.whatYouWillLearn !== course.whatYouWillLearn) {
+          formData.append("whatYouWillLearn", currentValues.whatYouWillLearn);
+        }
+        
         setLoading(true)
+        console.log("Sending FormData for Editing:", formData);
         const result = await editCourseDetails(formData , token)
         setLoading(false)
 
@@ -158,17 +166,18 @@ const CourseForm = () => {
     }
 
     const formData = new FormData()
-    formData.append("courseName", data.courseTitle)
-    formData.append("courseDescription", data.courseShortDesc)
-    formData.append("price", data.coursePrice)
-    formData.append("tag", JSON.stringify(data.courseTags))
-    formData.append("whatYouWillLearn", data.courseBenefits)
-    formData.append("category", data.courseCategory)
-    formData.append("status", COURSE_STATUS.DRAFT)
-    formData.append("instructions", JSON.stringify(data.courseRequirements))
-    formData.append("thumbnailImage", data.courseImage)
+    formData.append("courseName", data.courseTitle);
+    formData.append("courseDescription", data.courseShortDesc);
+    formData.append("price", data.coursePrice);
+    formData.append("tag", JSON.stringify(data.courseTags));
+    formData.append("whatYouWillLearn", data.courseBenefits);
+    formData.append("Category", data.courseCategory);
+    formData.append("status", COURSE_STATUS.DRAFT);
+    formData.append("instructions", JSON.stringify(data.courseRequirements));
+    formData.append("thumbnail", data.courseImage[0]);
 
     setLoading(true)
+    console.log("Sending FormData for New Course:", formData);
     const result = await createCourse(formData, token)
     if (result) {
       dispatch(setStep(2))
@@ -188,11 +197,12 @@ const CourseForm = () => {
             placeholder="Course Title"
             id="courseTitle"
             type="text"
-            {...register("courseTitle", {
+            {...register("CourseTitle", {
               required: "Course Title is required",
             })}
             className={style.inputField}
           />
+
           {errors.courseTitle && (
             <span className={style.error}>{errors.courseTitle.message}</span>
           )}
@@ -292,7 +302,14 @@ const CourseForm = () => {
           )}
         </div>
 
-        <ThumbnailUpload setValue={setValue} />
+        <ThumbnailUpload 
+          name="courseImage"
+          label="Course Thumbnail"
+          register={register}
+          setValue={setValue}
+          errors={errors}
+          editData={editCourse ? course?.thumbnail : null}
+        />
 
         <div className={style.formGroup}>
           <label htmlFor="Benifits">
@@ -324,8 +341,9 @@ const CourseForm = () => {
               required: "Requirement/Instructions are required",
             })}
             value={newReqInstrc}
-            onChange={(e) => setNewReqInstrc(e.target.value)}
+            onChange={(e) => setNewReqInstrc(e.target.value)}  // Ensure state updates
           />
+
 
           <button className={style.addBtn} onClick={handleAddReq_Instrc}>
             Add
