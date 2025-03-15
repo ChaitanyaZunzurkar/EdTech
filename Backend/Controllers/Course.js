@@ -4,7 +4,7 @@ const CourseProgess = require('../Models/CourseProgess')
 const subSection = require('../Models/SubSection')
 const Section = require('../Models/Section')
 
-const Category = require('../Models/Categories')
+const ModelCategory = require('../Models/Categories')
 const { imageUploader } = require('../Utils/imageUpload')
 const Course = require('../Models/Course')
 const { convertSecondsToDuration } = require('../Utils/secToDuration')
@@ -13,11 +13,11 @@ require('dotenv').config()
 
 exports.createCourse = async (req , res) => {
     try {
-        const { courseName , courseDescription , whatYouWillLearn  , price , category  ,tag} = req.body
+        const { courseName , courseDescription , whatYouWillLearn  , price , Category  ,tag} = req.body
 
-        const thumbnail = req.files?.thumbnailImage
+        const thumbnail = req.files?.thumbnail
 
-        if(!courseName || !courseDescription || !whatYouWillLearn || !price || !thumbnail || !category || !tag) {
+        if(!courseName || !courseDescription || !whatYouWillLearn || !price || !thumbnail || !Category || !tag) {
             return res.status(400).json({
                 success:false,
                 message:"Please fill all the required fields."
@@ -34,7 +34,10 @@ exports.createCourse = async (req , res) => {
             })
         }
 
-        const CategoryDetails = await Category.findById( category )
+        const CategoryDetails = await ModelCategory.find(
+            { name : Category },
+            { name : true , description : true }
+        )
         if(!CategoryDetails) {
             return res.status(400).json({
                 success:false,
@@ -63,7 +66,7 @@ exports.createCourse = async (req , res) => {
             { new : true }
         )
         
-        await Category.findOneAndUpdate(
+        await ModelCategory.findOneAndUpdate(
             {_id : CategoryDetails._id },
             {
                 $push : {
@@ -191,7 +194,7 @@ exports.editCourse = async (req, res) => {
 
         if(req.files) {
             console.log("Thumbnail update")
-            const updatedThumbnail = req.files.thumbnailImage;
+            const updatedThumbnail = req.files.thumbnail;
 
             const thumbnailImage = await imageUploader(
                 updatedThumbnail,

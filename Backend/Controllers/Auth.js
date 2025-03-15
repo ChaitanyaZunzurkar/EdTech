@@ -178,19 +178,19 @@ exports.signin = async (req, res) => {
         }
 
         try {
-            const playlod = {
+            const payload = {
                 email:user.email,
                 id:user._id,
                 accountType:user.accountType
             }
-            const token = jwt.sign(playlod, process.env.JWT_SECRET_KEY , {
+            const token = jwt.sign(payload, process.env.JWT_SECRET_KEY , {
                 expiresIn:"2h"
             })
             user.token = token 
             user.password = undefined
 
             const options = {
-                expiresIn: Date.now() * 3 * 24 * 60 * 60 * 1000,
+                expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
                 httpOnly:true
             }
             res.cookie('token' , token , options).status(200).json({
