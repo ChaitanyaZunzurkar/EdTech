@@ -5,6 +5,7 @@ exports.createSection = async (req ,res) => {
     try {
         const { sectionName , courseId } = req.body
 
+        console.log(sectionName , courseId)
         if(!sectionName || !courseId) {
             return res.status(400).json({
                 success:false,
@@ -18,7 +19,7 @@ exports.createSection = async (req ,res) => {
             courseId,
             {
                 $push : {
-                    courseContent: section._id
+                    courseContent: section
                 }
             },
             { new:true }
@@ -27,7 +28,7 @@ exports.createSection = async (req ,res) => {
         res.status(200).json({
             success:true,
             message:"Section created successfully.",
-            section
+            updatedCourse
         })
 
     } catch(error) {

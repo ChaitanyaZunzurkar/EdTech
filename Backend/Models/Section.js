@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const SectionSchema = new mongoose.Schema({
-    setionName:{
+    sectionName:{
         type:String,
         trim:true,
     },
