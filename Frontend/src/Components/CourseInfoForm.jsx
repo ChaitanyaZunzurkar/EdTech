@@ -111,11 +111,10 @@ const CourseForm = () => {
   }
 
   const onSubmit = async (data) => {
-    console.log("Form Data Before Submission:", data);
     if(editCourse) {
       if(isFormUpdated()) {
         const currentValues = getValues()
-        const formData = new FormData()
+        let formData = new FormData()
 
         if (currentValues.courseName !== course.courseName) {
           formData.append("courseName", currentValues.courseName);
@@ -165,19 +164,19 @@ const CourseForm = () => {
       return 
     }
 
-    const formData = new FormData()
-    formData.append("courseName", data.courseTitle);
-    formData.append("courseDescription", data.courseShortDesc);
-    formData.append("price", data.coursePrice);
-    formData.append("tag", JSON.stringify(data.courseTags));
-    formData.append("whatYouWillLearn", data.courseBenefits);
-    formData.append("Category", data.courseCategory);
+    let formData = new FormData()
+    formData.append("courseName", data.CourseTitle);
+    formData.append("courseDescription", data.courseDescription);
+    formData.append("price", data.price);
+    formData.append("tag", JSON.stringify(data.tag));
+    formData.append("whatYouWillLearn", data.Benifits);
+    formData.append("Category", data.category);
     formData.append("status", COURSE_STATUS.DRAFT);
-    formData.append("instructions", JSON.stringify(data.courseRequirements));
-    formData.append("thumbnail", data.courseImage[0]);
+    formData.append("instructions", JSON.stringify(data.Requirement_Instructions));
+    formData.append("thumbnail", data.courseImage);
 
     setLoading(true)
-    console.log("Sending FormData for New Course:", formData);
+
     const result = await createCourse(formData, token)
     if (result) {
       dispatch(setStep(2))

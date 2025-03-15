@@ -40,7 +40,7 @@ export const createCourse = async (data , token) => {
         }
 
         result = res.data;
-
+        
         toast.success("Course Created successfully.");
     } catch(error) {
         console.log("Fail to create course." , error);
