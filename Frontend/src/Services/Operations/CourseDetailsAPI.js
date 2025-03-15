@@ -76,11 +76,10 @@ export const getCourseDetails = async (courseId) => {
 
 export const createSection = async (data , token) => {
     let result = null;
-
     try {
         // add loading
         const res = await apiConnector('POST' , courses.CREATE_SECTION_URL , data , {
-            "Autorization" : `Bearer ${token}`
+            "Authorization" : `Bearer ${token}`
         });
 
         if(!res?.data?.success) {
@@ -91,7 +90,7 @@ export const createSection = async (data , token) => {
         toast.success("Section created successfully.");
 
     } catch(error) {
-        console.log("Fail to create section." , error.message);
+        console.log("Fail to create section." , error);
         toast.error("Fail to create section.")
     }
 
