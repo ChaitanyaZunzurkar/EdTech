@@ -28,10 +28,9 @@
   }
   
   .createbutton {
-    margin-top: 1rem;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     padding: 0.5rem 1rem;
     border: 2px solid #FFD60A; /* border-yellow-400 */
     color: #FFD60A;
@@ -44,12 +43,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 200px;
+    margin: 5px 0px;
   }
   
   .backButton {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.1);
     border: none;
     padding: 10px 20px;
@@ -67,6 +67,7 @@
   .nextButton {
     display: flex;
     align-items: center;
+    justify-content: center;
     background: #ffcc00;
     border: none;
     padding: 10px 20px;
@@ -85,3 +86,17 @@
     margin: 0 5px;
   }
   
+.cancelBtn {
+  background-color: #2C333F;
+  color: #F1F2FF;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
+
+.courseBtnContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}

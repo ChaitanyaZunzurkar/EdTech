@@ -154,14 +154,13 @@ export const createSubSection = async (data , token) => {
         });
 
         if(!res?.data?.success) {
-            throw new Error("Fail to fetch all courses.");
+            throw new Error("Fail create sub section.");
         }
-
         result = res?.data;
-        toast.success("Sub=section Created successfully.");
+        toast.success("Sub-section Created successfully.");
     } catch(error) {
-        console.log("Fail to get the get all courses." , error.message);
-        toast.error("Fail to load all courses.")
+        console.log("Fail create sub section." , error);
+        toast.error("Fail create sub section.")
     }
 
     return result;

@@ -1,5 +1,5 @@
 .container {
-    background-color: #2b2b2b; /* Dark background */
+    background-color: #2C333F; /* Dark background */
     border-radius: 8px;
     padding: 12px;
     margin: 10px 0;
@@ -41,19 +41,68 @@
     color: white;
   }
   
-  button {
+  .addButton {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 14px;
-    font-weight: 500;
     background: none;
     border: none;
-    color: #ffd700; /* Yellow color */
+    color: #FFD60A; 
     padding: 8px;
+    gap: 8px;
     cursor: pointer;
     transition: 0.2s;
   }
   
+  .iconButton {
+    display: flex;
+    align-items: center;
+    background: none;
+    color: #999DAA; 
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 0px 10px;
+    font-weight: 500;
+  }
 
+  .vertical {
+    color: #999DAA;
+    font-weight: 500;
+  }
+
+  .subSectionContainer {
+    display: flex;
+    flex-direction: column;
+  }
   
+  .subSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 20px;
+  }
+
+  .subSectionName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .title {
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 2px;
+  }
+
+  .subSectionMenu {
+    display: flex;
+  }
+
+  .subsectionContainer {
+    display: flex;
+    flex-direction: column;
+    
+  }

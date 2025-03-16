@@ -94,40 +94,39 @@ const CourseBuilder = () => {
           errors.sectionName && <span className={style.error}>{errors.sectionName.message}</span>
         }
         {
+          console.log("course Builder" , course)
+        }
+        {
           course?.updatedCourse?.courseContent?.length > 0 &&
           course.updatedCourse.courseContent.map((section, index) => (
-            <SectionBlock key={index} sectionName={section.sectionName} />
+            <SectionBlock key={index} section={section} handleChangeEditSectionName={handleEditSectionName} />
           ))
         }
-        {
-          editSectionName ? (
-            <>  
-                <button type="submit" className={style.createbutton}>
-                  <PlusCircle size={18} />
-                  Create Section
-                </button>
-
-                <button type="button" className={style.createbutton} onClick={handleEditSectionName}>
-                  <PlusCircle size={18} />
-                  Edit Section
-                </button>
-            </>
-          ) : (
-            <button type="submit" className={style.createbutton}>
-              <PlusCircle size={18} />
-              Create Section
-            </button>
-          )
-        }
-        {
-          editSectionName && 
-          <button 
+        <div className={style.courseBtnContainer}>
+          {
+            editSectionName ? (
+              <button type="button" className={style.createbutton} onClick={handleEditSectionName}>
+                <PlusCircle size={18} />
+                Edit Section
+              </button>
+            ) : (
+              <button type="submit" className={style.createbutton}>
+                <PlusCircle size={18} />
+                Create Section
+              </button>
+            )
+          }
+          {
+            editSectionName && 
+            <button 
             type="button"
             onClick={cancelEdit}
-          >
-            Cancel Edit
-          </button>
-        }
+            className={style.cancelBtn}
+            >
+              Cancel Edit
+            </button>
+          }
+        </div>
        </form>
 
        <div className={style.btnContainer}>
