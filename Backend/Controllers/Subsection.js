@@ -5,11 +5,11 @@ require('dotenv').config()
 
 exports.createSubSection = async (req , res) => {
     try {
-        const { SectionId , title , timeDuration , description } = req.body
+        const { sectionId , lectureTitle , lectureDescription } = req.body
 
-        const video = req.files.videoUrl
+        const video = req.files.lectureVideo
         
-        if(!SectionId || !title || !timeDuration || !description || !video) {
+        if(!sectionId || !lectureTitle || !lectureDescription || !video) {
             return res.status(400).json({
                 success:false,
                 message:"Please fill all the required fields"
@@ -17,15 +17,16 @@ exports.createSubSection = async (req , res) => {
         }
         const videoUrl = await imageUploader(video , process.env.FOLDER_NAME)
 
+        const title = lectureTitle
+        const description = lectureDescription
         const subSection = await SubSection.create({
             title,
-            timeDuration,
             description,
-            videoUrl:videoUrl.secure_url
+            videoUrl: videoUrl.secure_url
         })
 
         const updateSection = await Section.findByIdAndUpdate(
-            SectionId,
+            sectionId,
             {
                 $push : {
                     subSection: subSection
