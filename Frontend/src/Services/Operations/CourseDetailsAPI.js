@@ -222,6 +222,7 @@ export const editCourseDetails = async (data , token) => {
             "Authorization": `Bearer ${token}`
         });
 
+        console.log(res)
         if(!res?.data?.success) {
             throw new Error("Fail to edit courses.");
         }
@@ -230,7 +231,7 @@ export const editCourseDetails = async (data , token) => {
         console.log(result);
         toast.success("Course edited successfully.")
     } catch(error) {
-        console.log("Fail to edit course details." , error.message);
+        console.log("Fail to edit course details." , error);
         toast.error("Fail to edit course details.")
     }
 }

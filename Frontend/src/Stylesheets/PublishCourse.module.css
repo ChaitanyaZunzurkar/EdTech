@@ -1,24 +1,21 @@
 /* PublishCourse.module.css */
 .container {
-    background: #0F0F0F;  /* Dark background */
+    background: #2C333F;  /* Dark background */
     padding: 20px;
     border-radius: 10px;
-    width: 100%;
-    max-width: 600px;
+    width: 600px;
     margin: auto;
   }
   
   .StateTitle {
     font-size: 20px;
-    color: white;
+    color: #F1F2FF;
     font-weight: bold;
     margin-bottom: 10px;
     display: block;
   }
   
-  .publishForm {
-    background: rgba(255, 255, 255, 0.1);  /* Semi-transparent */
-    padding: 20px;
+  .publishForm { 
     border-radius: 10px;
   }
   
@@ -32,13 +29,13 @@
   .input {
     width: 16px;
     height: 16px;
-    border: 2px solid gray;
+    border: 2px solid #6E727F;
     background: transparent;
     cursor: pointer;
   }
   
   .label {
-    color: #A0A0A0;
+    color: #6E727F;
     font-size: 16px;
   }
   
@@ -49,35 +46,23 @@
   }
   
   .backBtn {
-    background: transparent;
-    color: white;
+    background-color: #161D29;
+    color: #F1F2FF;
     border: 1px solid gray;
     padding: 10px 20px;
     border-radius: 6px;
     cursor: pointer;
   }
   
-  .courseProceedBtn {
-    display: flex;
-    gap: 10px;
-  }
   
-  .courseProceedBtn button {
+  .saveBtn {
     padding: 10px 20px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
-  }
-  
-  .courseProceedBtn button:first-child {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid gray;
-  }
-  
-  .courseProceedBtn button:last-child {
-    background: #FFD700;
-    color: black;
+    background: #FFD60A;
+    color: #000814;
     font-weight: bold;
   }
+
   
