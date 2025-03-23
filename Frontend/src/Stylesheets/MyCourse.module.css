@@ -1,0 +1,162 @@
+.container {
+    margin-top: 8vh;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.head .pageTitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.newBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #ffcc00;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.newBtn:hover {
+  background-color: #e6b800;
+}
+
+/* Table Container */
+.tabelContainer {
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.tabel {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabelHead {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.headData {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: bold;
+  color: #bbb;
+}
+
+.tabelRow {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin: 5px;
+}
+
+.tabelBodyData {
+  padding: 15px;
+  color: #ddd;
+  vertical-align: middle;
+}
+
+.courseThumbnail {
+    width: 400px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.courseOverview {
+    display: flex;
+    align-items: flex-start;
+}
+
+.Courseinfo {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.courseName {
+  font-size: 18px;
+  font-weight: bold;
+  color: #F1F2FF;
+  margin: 5px 0;
+}
+
+.desc {
+  font-size: 14px;
+  padding: 5px 0px;
+  color: #AFB2BF;
+}
+
+.createdAt {
+  font-size: 12px;
+  color: #DBDDEA;
+  padding: 5px 0;
+}
+
+.status {
+    font-size: small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid red; */
+    padding: 0;
+    margin: 5px 0px;
+}
+
+.published {
+    background-color: #fff87020;
+    display: flex;
+    color: #E7C009;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    padding: 5px;
+    border-radius: 100px;
+}
+
+.drafted {
+    background-color: #fff87020;
+    display: flex;
+    color: #F37290;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    padding: 5px;
+    border-radius: 100px;
+}
+
+
+.tabelBodyData button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.tabelBodyData button:first-child {
+  color: #f1c40f;
+}
+
+.tabelBodyData button:last-child {
+  color: #e74c3c;
+}
+
+.tabelBodyData button:hover {
+  opacity: 0.8;
+}

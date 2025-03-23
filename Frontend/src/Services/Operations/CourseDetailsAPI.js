@@ -237,7 +237,7 @@ export const editCourseDetails = async (data , token) => {
 }
 
 
-export const getInstructorCourses = async (data , token) => {
+export const getInstructorCourses = async (token) => {
     let result = null
     try {
         const res = await apiConnector('GET' , courses.GET_INSTRUCTOR_COURESES_API , null , {
@@ -245,18 +245,14 @@ export const getInstructorCourses = async (data , token) => {
         });
 
         if(!res?.data?.success) {
-            throw new Error("Fail to edit courses.");
+            throw new Error("Fail to fetch courses");
         }
 
         result = res?.data;
-        toast.success("Course edited successfully.")
-
     } catch(error) {
-        console.log("Fail to edit course details." , error.message);
-        toast.error("Fail to edit course details.")
+        console.log("Fail to fetch courses" , error);
     }
     return result
-
 }
 
 export const deleteCourse = async (data , token) => {
