@@ -15,6 +15,7 @@ import Dashboard from './Components/Dashboard'
 import DashboardSettings from './Components/DashboardSettings'
 import CreateCourse from './Components/CreateCourse'
 import MyCourse from './Components/MyCourse'
+import CategoryPage from './Components/CategoryPage'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path='/verify-email' element={<VerificationLayout />} />
             <Route path='/reset-password' element={<ResetPassword />} />
             <Route path='/update-password/:id' element={<UpdatePassword />} />
+            <Route path='catelog/:catalogName' element={<CategoryPage />} />
             <Route element={<Dashboard />} >
               <Route path='/dashboard/my-profile' element={<MyProfile />} />
               <Route path='/dashboard/settings' element={<DashboardSettings />} />

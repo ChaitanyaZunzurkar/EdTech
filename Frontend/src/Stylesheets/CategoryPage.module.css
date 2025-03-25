@@ -1,0 +1,46 @@
+.container {
+    background-color: #1a1a1a;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contentBox {
+    max-width: 700px;
+    width: 100%;
+    border: 1px solid #444;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.breadcrumb {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.link {
+    color: #bbb;
+    cursor: pointer;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.activeLink {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.heading {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.5;
+}

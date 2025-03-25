@@ -29,3 +29,7 @@ export const courses = {
     GET_INSTRUCTOR_COURESES_API: BASE_URL + 'course/get-instructor-courses',
     DELETE_COURSE_API: BASE_URL + 'course/delete-course',
 }
+
+export const catelog = {
+    CATELOG_PAGE_DETAILS: BASE_URL + 'course/categoryPageDetails'
+}

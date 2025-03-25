@@ -61,7 +61,7 @@ const Navbar = () => {
                                                 subLink > 0 || !loading ?
                                                 (
                                                     subLink.map((category , index) => (
-                                                        <Link to={category.name} key={index}>
+                                                        <Link to={`catelog/${category.name}`} key={index}>
                                                             <p className={style.categoryTitle} >
                                                                 {category.name}
                                                             </p>
