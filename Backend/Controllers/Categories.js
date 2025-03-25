@@ -50,15 +50,15 @@ exports.showAllCategory = async (req , res) => {
 
 exports.CategoryPageDetails = async (req, res) => {
     try {
-        const { courseId } = req.body
-        if(!courseId) {
+        const { categoryId } = req.body
+        if(!categoryId) {
             return res.status(500).json({
                 success:false,
-                message:"Course Id does not found"
+                message:"Category Id does not found"
             })
         }
 
-        const CategoryCourses = await Category.findById(courseId).populate("courses").exec()
+        const CategoryCourses = await Category.findById(categoryId).populate("courses").exec()
 
         if(!CategoryCourses) {
             return res.status(500).json({
@@ -67,11 +67,11 @@ exports.CategoryPageDetails = async (req, res) => {
             })
         }
 
-        const differntCategory = await Category.findById({ _id: { $ne : courseId } }).populate("courses").exec()
+        const differntCategory = await Category.findById({ _id: { $ne : categoryId } }).populate("courses").exec()
         if(!differntCategory) {
             return res.status(500).json({
                 success:false,
-                message:"Courses not found"
+                message:"Category not found"
             })
         }
 
