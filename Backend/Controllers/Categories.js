@@ -67,7 +67,8 @@ exports.CategoryPageDetails = async (req, res) => {
             })
         }
 
-        const differntCategory = await Category.findById({ _id: { $ne : categoryId } }).populate("courses").exec()
+        const differntCategory = await Category.find({ _id: { $ne : categoryId } }).populate("courses").exec()
+
         if(!differntCategory) {
             return res.status(500).json({
                 success:false,
