@@ -9,14 +9,14 @@ export const getCategoryPageDetails = async (categoryId) => {
             categoryId: categoryId
         })
 
-        console.log("This is response " , response)
         if(!response?.data?.success) {
             throw new Error("Fail to fetch the category page details")
         }
 
-        result = response?.data
-        console.log(result)
+        result = response?.data?.data
     } catch (error) {
         console.error("Error fetching data:", error);
     }
+
+    return result
 }

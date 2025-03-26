@@ -13,49 +13,53 @@ export default function CatagoryPage() {
     const [catagoryId , setCatagoryId] = useState("")
 
     useEffect(() => {
-        
         const getCategories = async () => {
-
             const res = await apiConnector('GET' , categories.CATEGORIES_URL)
-            console.log("campare" , catalogName.toLowerCase())
-            console.log(res?.data?.allCategory?.filter((ct) => ct.name.split(" ").join("-").toLowerCase())
-            const category_id = res?.data?.allCategory?.filter((ct) => ct.name.split(" ").join("-").toLowerCase() === catalogName.toLowerCase())
+            let category_id
+            res?.data?.allCategory?.filter((ct) => (
+                ct.name.split(" ").join("-").toLowerCase()) === catalogName.toLowerCase() ? (
+                    category_id = ct._id
+                ) : (
+                    category_id = null
+                )
+            )
+            // const category_id = res?.data?.allCategory?.filter((ct) => ct.name.split(" ").join("-").toLowerCase() === catalogName.toLowerCase())
             setCatagoryId(category_id)
         }
 
         getCategories()
         console.log("id" , catagoryId)
-    } , [catalogName])
+    } , [catagoryId, catalogName])
 
     useEffect(() => {
         const getCategoryDetails = async () => {
             try {
                 const res = await getCategoryPageDetails(catagoryId)
-                console.log("This is res " , res)
+                console.log("This is res : " , res)
                 setCatelogPageData(res)
             } catch(error) {
                 console.log("Fail to fetch category page details.")
                 console.log(error.message)
             }
-            console.log("catelog page data" , catalogPageData)
         }
 
         getCategoryDetails()
     } , [catagoryId])
-
+    
     return (
+       
         <div className={style.container}>
             <div className={style.contentBox}>
                 <div className={style.pages}>
-                    <p className={style.home}>Home</p>
-                    <p className={style.home}>Catelog</p>
+                    <p className={style.home}>Home  <pre> / </pre>  </p>
+                    <p className={style.home}>Catelog  <pre> / </pre>  </p>
                     <p className={style.category}>{catalogName}</p>
                 </div>
                 <h1 className={style.heading}>
                     {catalogName}
                 </h1>
                 <p className={style.description}>
-                    {}
+                    {catalogPageData?.CategoryCourses?.description}
                 </p>
             </div>
 
@@ -65,9 +69,9 @@ export default function CatagoryPage() {
                     Courses to get you started
                 </h1>
                 <div className={style.typeOfCourses}>
-                    <p>Most Popular</p>
-                    <p>Trending</p>
-                    <p>Other</p>
+                    <p className={`${style.active} ${style.catalogNavItem}`}>Most Popular</p>
+                    <p className={`${style.active} ${style.catalogNavItem}`}>Trending</p>
+                    <p className={`${style.active} ${style.catalogNavItem}`}>Other</p>
                 </div>
                 <CourseSlider />
             </div>

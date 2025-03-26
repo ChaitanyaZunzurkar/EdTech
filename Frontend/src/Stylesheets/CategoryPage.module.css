@@ -1,46 +1,81 @@
 .container {
-    background-color: #1a1a1a;
-    color: white;
+    width: 100%;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+    margin-top: 8vh;
+    color: #F1F2FF;
+    flex-direction: column;
 }
 
 .contentBox {
-    max-width: 700px;
+    /* border: 2px solid red; */
+    border-top: 1px solid #999DAA;
+    padding: 0px 10rem;
+    background-color: #2C333F;
     width: 100%;
-    border: 1px solid #444;
-    padding: 20px;
-    border-radius: 8px;
+    padding-bottom: 20px;
 }
 
-.breadcrumb {
+.pages {
+    display: flex;
     font-size: 14px;
-    margin-bottom: 10px;
+    color: #cbd5e1;
+    /* Grayish-white */
+    gap: 5px;
+    padding:0px 15px;
 }
 
-.link {
-    color: #bbb;
+.home {
+    display: flex;
     cursor: pointer;
+    transition: color 0.3s ease;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
-.link:hover {
-    text-decoration: underline;
-}
-
-.activeLink {
-    color: #ffcc00;
-    font-weight: bold;
+.category {
+    color: #FFD60A;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .heading {
-    font-size: 28px;
-    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
 }
 
 .description {
     font-size: 16px;
-    line-height: 1.5;
+    color: #999DAA;
+    max-width: 800px;
+    padding: 0px 10px;
+}
+
+.coursesToGetYouStarted,
+.topSellingCourses,
+.frequentlyBroughtCourse {
+    max-width: 1200px;
+    margin: 25px auto;
+}
+
+.typeOfCourses {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #999DAA;
+}
+
+.catalogNavItem {
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #cbd5e1;
+    /* padding: 8px 16px; */
+    /* border-radius: 6px; */
+    transition: all 0.3s ease;
+    border: 1px solid #000814;
+}
+
+.catalogNavItem:hover {
+    color: #E7C009;
+    border-bottom: 1px solid #E7C009;
 }
