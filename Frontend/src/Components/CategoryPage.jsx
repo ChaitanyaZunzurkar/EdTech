@@ -4,7 +4,7 @@ import Course_Cards from './Course_Cards';
 import CourseSlider from './CourseSlider';
 import { useParams } from 'react-router-dom'
 import { apiConnector } from '../Services/apiConnector'
-import { categories} from '../Services/apis'
+import { categories } from '../Services/apis'
 import { getCategoryPageDetails } from '../Services/Operations/CatelogApis'
 
 export default function CatagoryPage() {    
@@ -28,14 +28,12 @@ export default function CatagoryPage() {
         }
 
         getCategories()
-        console.log("id" , catagoryId)
-    } , [catagoryId, catalogName])
+    } , [catalogName])
 
     useEffect(() => {
         const getCategoryDetails = async () => {
             try {
                 const res = await getCategoryPageDetails(catagoryId)
-                console.log("This is res : " , res)
                 setCatelogPageData(res)
             } catch(error) {
                 console.log("Fail to fetch category page details.")
@@ -44,6 +42,7 @@ export default function CatagoryPage() {
         }
 
         getCategoryDetails()
+        console.log(catalogPageData)
     } , [catagoryId])
     
     return (
@@ -73,7 +72,7 @@ export default function CatagoryPage() {
                     <p className={`${style.active} ${style.catalogNavItem}`}>Trending</p>
                     <p className={`${style.active} ${style.catalogNavItem}`}>Other</p>
                 </div>
-                <CourseSlider />
+                <CourseSlider courses={catalogPageData?.CategoryCourses} />
             </div>
 
             {/* section 2 */}
@@ -81,7 +80,7 @@ export default function CatagoryPage() {
                 <h1 className={style.heading}>
                     Top courses in Python and Machine Learning
                 </h1>
-                <CourseSlider />
+                <CourseSlider courses={catalogPageData?.differntCategory} />
             </div>
 
             {/* section 3 */}
@@ -89,7 +88,15 @@ export default function CatagoryPage() {
                 <h1 className={style.heading}>
                     Frequently Bought Together
                 </h1>
-                <Course_Cards />
+                <div>
+                    {
+                        catalogPageData?.topSellingCourses?.map((course , index) => (
+                            <div key={index}>
+                                <Course_Cards course={course} />
+                            </div>
+                        ))
+                    }
+                </div>
             </div>
 
             {/* footer  */}

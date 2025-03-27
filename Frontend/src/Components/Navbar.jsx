@@ -22,7 +22,6 @@ const Navbar = () => {
         try {
             setLoading(true)
             const res = await apiConnector('GET' , categories.CATEGORIES_URL);
-            console.log(res.data.allCategory)
             setSubLink(res.data.allCategory);
             setLoading(false)
         } catch (error) {
