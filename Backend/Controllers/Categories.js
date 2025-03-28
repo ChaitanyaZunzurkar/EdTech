@@ -1,4 +1,5 @@
 const Category = require('../Models/Categories')
+const Course = require('../Models/Course')
 
 exports.createCategory = async (req ,res) => {
     try {
@@ -18,7 +19,8 @@ exports.createCategory = async (req ,res) => {
 
         res.status(201).json({
             success:true,
-            message:"Category created successfully"
+            message:"Category created successfully",
+            category
         })
 
     } catch(error) {
@@ -51,6 +53,7 @@ exports.showAllCategory = async (req , res) => {
 exports.CategoryPageDetails = async (req, res) => {
     try {
         const { categoryId } = req.body
+
         if(!categoryId) {
             return res.status(500).json({
                 success:false,
@@ -63,13 +66,19 @@ exports.CategoryPageDetails = async (req, res) => {
         if(!CategoryCourses) {
             return res.status(500).json({
                 success:false,
-                message:"Courses not found"
+                message:"No courses found for this category"
             })
         }
 
-        const differntCategory = await Category.find({ _id: { $ne : categoryId } }).populate("courses").exec()
+        const differentCategory = await Category.find({ _id: { $ne : categoryId } })
+        .limit(10)
+        .populate({
+            path: "courses",
+            options: { limit: 5 , sort: { studentEnrolled: -1 }} 
+        })
+        .exec()
 
-        if(!differntCategory) {
+        if(!differentCategory) {
             return res.status(500).json({
                 success:false,
                 message:"Category not found"
@@ -86,7 +95,7 @@ exports.CategoryPageDetails = async (req, res) => {
             message:"Courses fetch accourding to category.",
             data : {
                 CategoryCourses,
-                differntCategory,
+                differentCategory,
                 topSellingCourses
             }
         })

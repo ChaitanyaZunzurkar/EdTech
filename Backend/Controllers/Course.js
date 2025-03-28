@@ -34,10 +34,11 @@ exports.createCourse = async (req , res) => {
             })
         }
 
-        const CategoryDetails = await ModelCategory.find(
+        const CategoryDetails = await ModelCategory.findOne(
             { name : Category },
             { name : true , description : true }
         )
+
         if(!CategoryDetails) {
             return res.status(400).json({
                 success:false,
@@ -46,6 +47,8 @@ exports.createCourse = async (req , res) => {
         }
 
         const thumbnailImage = await imageUploader(thumbnail , process.env.FOLDER_NAME)
+
+
         const courseDetails = await course.create({
             courseName,
             courseDescription,
