@@ -79,3 +79,17 @@
     color: #E7C009;
     border-bottom: 1px solid #E7C009;
 }
+
+.courses {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}

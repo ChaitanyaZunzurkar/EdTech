@@ -15,14 +15,12 @@ export default function CatagoryPage() {
     useEffect(() => {
         const getCategories = async () => {
             const res = await apiConnector('GET' , categories.CATEGORIES_URL)
-            let category_id
-            res?.data?.allCategory?.filter((ct) => (
-                ct.name.split(" ").join("-").toLowerCase()) === catalogName.toLowerCase() ? (
-                    category_id = ct._id
-                ) : (
-                    category_id = null
-                )
-            )
+            const category = res?.data?.allCategory?.find((ct) => 
+                ct.name.split(" ").join("-").toLowerCase() === catalogName.toLowerCase()
+            );
+            
+            const category_id = category ? category._id : null;
+            
             // const category_id = res?.data?.allCategory?.filter((ct) => ct.name.split(" ").join("-").toLowerCase() === catalogName.toLowerCase())
             setCatagoryId(category_id)
         }
@@ -46,7 +44,6 @@ export default function CatagoryPage() {
     } , [catagoryId])
     
     return (
-       
         <div className={style.container}>
             <div className={style.contentBox}>
                 <div className={style.pages}>
@@ -72,7 +69,7 @@ export default function CatagoryPage() {
                     <p className={`${style.active} ${style.catalogNavItem}`}>Trending</p>
                     <p className={`${style.active} ${style.catalogNavItem}`}>Other</p>
                 </div>
-                <CourseSlider courses={catalogPageData?.CategoryCourses} />
+                <CourseSlider courses={catalogPageData?.CategoryCourses?.courses} />
             </div>
 
             {/* section 2 */}
@@ -80,7 +77,7 @@ export default function CatagoryPage() {
                 <h1 className={style.heading}>
                     Top courses in Python and Machine Learning
                 </h1>
-                <CourseSlider courses={catalogPageData?.differntCategory} />
+                <CourseSlider courses={catalogPageData?.differentCategory?.[0].courses} />
             </div>
 
             {/* section 3 */}
@@ -88,10 +85,10 @@ export default function CatagoryPage() {
                 <h1 className={style.heading}>
                     Frequently Bought Together
                 </h1>
-                <div>
+                <div className={style.courses}>
                     {
-                        catalogPageData?.topSellingCourses?.map((course , index) => (
-                            <div key={index}>
+                        catalogPageData?.topSellingCourses?.[0].courses?.map((course , index) => (
+                            <div key={index} className={style.cardContainer}>
                                 <Course_Cards course={course} />
                             </div>
                         ))

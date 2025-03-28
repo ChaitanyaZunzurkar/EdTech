@@ -1,0 +1,70 @@
+/* Course_cards.module.css */
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.cardContainer {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.thumbnailWrapper {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  width: 400px;
+}
+
+.thumbnail {
+  width: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.courseDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 0.25rem;
+  margin: 2px;
+}
+
+.courseTitle {
+  font-size: 1.25rem;
+  color: #f5f5f5; 
+  padding: 0;
+  margin: 0;
+}
+
+.instructorName {
+  font-size: 0.875rem;
+  color: #b3b3b3; /* Equivalent to text-richblack-50 */
+}
+
+.ratingSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avgReview {
+  color: #ffd700; /* Equivalent to text-yellow-5 */
+}
+
+.totalRatings {
+  color: #888888; /* Equivalent to text-richblack-400 */
+}
+
+.coursePrice {
+  font-size: 1.25rem;
+  color: #f5f5f5;
+  padding: 0;
+}
+
+.link {
+  text-decoration: none;
+}

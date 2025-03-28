@@ -15,7 +15,7 @@ const Course_Cards = ({course}) => {
 
   return (
     <div className={styles.container}>
-        <Link to={`/courses/${course._id}`}>
+        <Link to={`/courses/${course._id}`} className={styles.link}>
           <div className={styles.cardContainer}>
             <div className={styles.thumbnailWrapper}>
               <img
@@ -26,9 +26,9 @@ const Course_Cards = ({course}) => {
             </div>
             <div className={styles.courseDetails}>
               <p className={styles.courseTitle}>{course?.courseName}</p>
-              <p className={styles.instructorName}>
+              {/* <p className={styles.instructorName}>
                 {course?.instructor?.firstName} {course?.instructor?.lastName}
-              </p>
+              </p> */}
               <div className={styles.ratingSection}>
                 <span className={styles.avgReview}>{avgReviewCount || 0}</span>
                 <RatingStars Review_Count={avgReviewCount} />
