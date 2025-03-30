@@ -28,7 +28,7 @@ const CourseSchema = new mongoose.Schema({
     ratingAndReviews: [
         {
             type:mongoose.Schema.Types.ObjectId,
-            ref:"RatingAndReviews"
+            ref:"ratingAndReviews"
         }
     ],
     tag: {
@@ -37,7 +37,7 @@ const CourseSchema = new mongoose.Schema({
     },
     Category: {
         type: mongoose.Schema.Types.ObjectId,
-        ref:"Categories"
+        ref:"Category"
     },
     price:{
         type:Number,

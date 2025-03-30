@@ -1,9 +1,6 @@
 const User = require('../Models/User')
-const course = require('../Models/Course')
 const CourseProgess = require('../Models/CourseProgess')
-const subSection = require('../Models/SubSection')
 const Section = require('../Models/Section')
-
 const ModelCategory = require('../Models/Categories')
 const { imageUploader } = require('../Utils/imageUpload')
 const Course = require('../Models/Course')
@@ -49,7 +46,7 @@ exports.createCourse = async (req , res) => {
         const thumbnailImage = await imageUploader(thumbnail , process.env.FOLDER_NAME)
 
 
-        const courseDetails = await course.create({
+        const courseDetails = await Course.create({
             courseName,
             courseDescription,
             instructor: InstrctorDetails._id,
@@ -97,7 +94,7 @@ exports.createCourse = async (req , res) => {
 
 exports.getAllCourses = async (req, res) => {
     try {
-        const allCourses = await course.find({ } , {
+        const allCourses = await Course.find({ } , {
             courseName:true,
             courseDescription:true,
             price:true,
@@ -131,8 +128,7 @@ exports.getAllCourses = async (req, res) => {
 
 exports.getCourseDetails = async (req, res) => {
     try { 
-        const { courseId } = req.body
-
+        const { courseId } = req.body;
         if (!courseId) {
             return res.status(400).json({
                 success: false,
@@ -140,20 +136,25 @@ exports.getCourseDetails = async (req, res) => {
             });
         }
 
-        const courseDetails = await course.findById(
-            courseId
-        ).populate({
+        const courseDetails = await Course.findById(courseId)        
+        .populate({
             path:"instructor",
             populate: {
                 path: "additionalDetails",
             }
-        }).populate({
-            path:"courseContent",
+        })
+        .populate({
+            path:'courseContent',
             populate: {
-                path: "SubSection"
+                path:'subSection'
             }
-        }).populate("Category").populate("ratingAndReviews").exec()
-    
+        })
+        .populate({
+            path:"Category",
+            select: 'name description'
+        })
+        .populate("ratingAndReviews")
+        .exec()
         
         if(!courseDetails) {
             res.status(400).json({
@@ -174,6 +175,7 @@ exports.getCourseDetails = async (req, res) => {
                 ratingAndReviews: courseDetails.ratingAndReviews,
                 price: courseDetails.price,
                 thumbnail: courseDetails.thumbnail,
+                studentEnrolled: courseDetails.studentEnrolled
             }
         })
     } catch(error) {
