@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 6px ;
+    padding: 0px 10px;
+}
+
+.courseContentTable {
+    border: 1px solid #424854;
+    width: 100%;
+    /* display: flex;
+    justify-content: flex-start;
+    align-items: center; */
+}
+
+.sectionContainer {
+    width: 100%;
+    background-color: #2C333F;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    padding: 0px 1.5rem;
+}
+
+.subSectionContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 1.5rem;
+    flex-direction: column;
+}
+
+.subDesc {
+    padding: 0px 2.1rem;
+    margin: 0;
+    color: #C5C7D4;
+}
+
+.subName {
+    padding: 0px 1rem;
+    color: #F1F2FF;
+    font-size: large;
+    /* border: 1px solid red; */
+}
+
+
+.sectionName {
+    color: #F1F2FF;
+    font-size: larger;
+}

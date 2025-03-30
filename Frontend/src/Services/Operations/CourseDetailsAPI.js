@@ -55,7 +55,8 @@ export const getCourseDetails = async (courseId) => {
 
     try {
         // add loading
-        const res = await apiConnector('GET' , courses.GET_COURSE_DETAILS_URL , {
+        console.log(courseId)
+        const res = await apiConnector('POST' , courses.GET_COURSE_DETAILS_URL , {
             courseId
         });
 
@@ -65,9 +66,8 @@ export const getCourseDetails = async (courseId) => {
 
         result = res?.data;
         toast.success("Got Course Details.");
-
     } catch(error) {
-        console.log("Fail to fetch course details." , error.message);
+        console.log("Fail to fetch course details." , error);
         toast.error("Fail to fetch course details.")
     }
 

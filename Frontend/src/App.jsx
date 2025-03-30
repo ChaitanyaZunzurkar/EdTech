@@ -16,6 +16,7 @@ import DashboardSettings from './Components/DashboardSettings'
 import CreateCourse from './Components/CreateCourse'
 import MyCourse from './Components/MyCourse'
 import CategoryPage from './Components/CategoryPage'
+import CoursePage from './Components/CoursePage'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path='/reset-password' element={<ResetPassword />} />
             <Route path='/update-password/:id' element={<UpdatePassword />} />
             <Route path='catelog/:catalogName' element={<CategoryPage />} />
+            <Route path='/courses/:courseId' element={<CoursePage />} />
             <Route element={<Dashboard />} >
               <Route path='/dashboard/my-profile' element={<MyProfile />} />
               <Route path='/dashboard/settings' element={<DashboardSettings />} />

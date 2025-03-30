@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: column;
+    
+    margin-top: 8vh;
+    background-color: #161D29;
+}
+
+.pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.courseName {
+    margin: 0px 6px;
+    padding: 0px 6px;
+    font-weight: bolder;
+    font-size: 2rem;
+}
+
+.ratingAndReviews {
+    margin: 0px 6px;
+    padding: 0px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whatYouWillLearn {
+    padding: 0;
+    margin: 2.5rem 0px;
+    border: 1px solid #2C333F;
+
+}
+
+.author {
+    margin:8px;
+    padding: 0px 6px;
+}
+
+.courseContent {
+    margin: 2.5rem 0px;
+}
