@@ -5,9 +5,7 @@ const User = require('../Models/User')
 const { mailSender } = require('../Utils/mailSender')
 const crypto = require('crypto')
 const Razorpay = require('razorpay')
-const { courses } = require('../../Frontend/src/Services/apis')
 const CourseProgess = require('../Models/CourseProgess')
-
 
 // this is backend code for buying single item 
 
@@ -162,10 +160,12 @@ const CourseProgess = require('../Models/CourseProgess')
 // this is backend code for buying multiple items
 
 exports.capturePayment = async (req , res) => {
-    const { courseId } = req.body
-    const { userId } = req.user.key_id
+    const { courses } = req.body
+    const { userId } = req.user.id
 
-    if(Course.length === 0) {
+    console.log(courses)
+    console.log(userId)
+    if(courses.length === 0) {
         return res.json({
             success:false,
             message: "Course id not found."
