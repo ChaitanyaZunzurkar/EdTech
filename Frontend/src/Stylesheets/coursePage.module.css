@@ -4,9 +4,8 @@
     align-items: flex-start;
     width: 100%;
     flex-direction: column;
-    
-    margin-top: 8vh;
     background-color: #161D29;
+    position: relative;
 }
 
 .pages {
@@ -32,8 +31,9 @@
 
 .whatYouWillLearn {
     padding: 0;
-    margin: 2.5rem 0px;
+    margin: 2rem 0px;
     border: 1px solid #2C333F;
+    margin-bottom: 0px;
 
 }
 
@@ -43,5 +43,16 @@
 }
 
 .courseContent {
-    margin: 2.5rem 0px;
+    margin: 2rem 0px;
+}
+
+.main {
+    margin-top: 8vh;
+}
+
+.buyingcart {
+    border-radius: 10px;
+    margin: 1rem;
+    background-color: #2C333F;
+    margin-top: 8vh;
 }

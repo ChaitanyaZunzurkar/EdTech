@@ -65,7 +65,6 @@ export const getCourseDetails = async (courseId) => {
         }
 
         result = res?.data;
-        toast.success("Got Course Details.");
     } catch(error) {
         console.log("Fail to fetch course details." , error);
         toast.error("Fail to fetch course details.")
