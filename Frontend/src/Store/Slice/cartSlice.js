@@ -20,12 +20,12 @@ export const cartReducer = createSlice({
         }, 
 
         remove(state , value) {
-            toast.error("Item removed from cart.")
+            toast.success("Item removed from cart.")
             state.cart = state.cart.filter((item) => item.id !== value.payload.id)
         }, 
 
         resetCart(state) {
-            toast.warn("Cart reset successfully.")
+            toast.success("Cart reset successfully.")
             state.cart = []
         }
     }

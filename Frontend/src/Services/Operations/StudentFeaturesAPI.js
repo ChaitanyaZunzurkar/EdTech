@@ -5,7 +5,7 @@ import { setPaymentLoading } from '../../Store/Slice/courseSlice'
 import { resetCart } from '../../Store/Slice/cartSlice'
 import { studentEndpoints } from '../apis'
 
-const { COURSE_PAYMENT_API , COURSE_VERIFY_API , SEND_PAYMENT_SUCCESS_EAMIL_API } = studentEndpoints;
+const { COURSE_PAYMENT_API , COURSE_VERIFY_API , SEND_PAYMENT_SUCCESS_EMAIL_API } = studentEndpoints;
 
 function loadScript(src) {
     return new Promise((resolve) => {
@@ -45,9 +45,9 @@ export async function buyCourse(token , courses , userDetails , navigate , dispa
 
         const options = {
             key: import.meta.env.VITE_RAZORPAY_KEY_ID,
-            currency: orderResponse.data.currency,
-            amount: `${orderResponse.data.amount}`,
-            order_id: orderResponse.data.id,
+            currency: orderResponse.data.data.currency,
+            amount: orderResponse.data.data.amount,
+            order_id: orderResponse.data.data.id,
             name:"StudyNotion",
             description: "Thank You for Purchasing the Course",
             image:rzpLogo,
@@ -56,8 +56,7 @@ export async function buyCourse(token , courses , userDetails , navigate , dispa
                 email: userDetails.email
             },
             handler: function(response) {
-                sendPaymentSuccessEmail(response , orderResponse.data.amount , token)
-
+                sendPaymentSuccessEmail(response , orderResponse.data.data.amount , token)
                 verifyPayment({...response , courses } , token , navigate , dispatch)
             }
         }
@@ -78,12 +77,12 @@ export async function buyCourse(token , courses , userDetails , navigate , dispa
 
 async function sendPaymentSuccessEmail(response , amount , token) {
     try {
-        await apiConnector("POST" , SEND_PAYMENT_SUCCESS_EAMIL_API , {
-            orderId: response.razorpay_order_id,
+        await apiConnector("POST" , SEND_PAYMENT_SUCCESS_EMAIL_API , {
+            orderId: response.razorpay_order_id, 
             paymentId: response.razorpay_payment_id,
             amount
         } , {
-            Authorization: `Bearer ${token}`
+            Authorization: `Bearer ${token}`    
         })
     } catch(error) {
         console.log("payment success email error" , error);
@@ -104,8 +103,8 @@ async function verifyPayment(bodyData , token , navigate , dispatch) {
         }
 
         toast.success("Payment successful , you are added to the course")
-        navigate("/dashboard/enrolled-course")
         dispatch(resetCart())
+        navigate("/dashboard/enrolled-course")
     } catch(error) {
         console.log("PAYMENT VERIFY ERROR....", error);
         toast.error("Could not verify Payment");

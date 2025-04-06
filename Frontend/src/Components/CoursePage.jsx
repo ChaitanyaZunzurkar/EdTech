@@ -1,11 +1,10 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react"
 import RatingStars from "./RatingStar"
 import { getCourseDetails } from "../Services/Operations/CourseDetailsAPI";
 import style from '../Stylesheets/coursePage.module.css'
 import Section_SubSection from "./Section_SubSection";
 import { useDispatch, useSelector } from "react-redux"
-import { useNavigate , useParams} from "react-router-dom"
+import { useNavigate , useParams } from "react-router-dom"
 import avgRating from "../utils/avgRating";
 import ReactMarkdown from "react-markdown"
 import { buyCourse } from "../Services/Operations/StudentFeaturesAPI";
@@ -74,7 +73,6 @@ const CoursePage = () => {
     })
   }
 
-
   if (loading || !courseDetails) {
     return (
       <div className="grid min-h-[calc(100vh-3.5rem)] place-items-center">
@@ -91,6 +89,7 @@ const CoursePage = () => {
       </div>
     )
   }
+  
   return (
       <div className={` ${style.main}`}>
         {

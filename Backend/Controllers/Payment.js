@@ -2,10 +2,12 @@ const { default: mongoose } = require('mongoose')
 const { instance } = require('../Config/razorpay')
 const Course = require('../Models/Course')
 const User = require('../Models/User')
-const { mailSender } = require('../Utils/mailSender')
+const mailSender = require('../Utils/mailSender')
 const crypto = require('crypto')
 const Razorpay = require('razorpay')
 const CourseProgess = require('../Models/CourseProgess')
+const { paymentSuccessEmail } = require('../Emails/Templates/PaymentSuccessEmail')
+const courseEnrollmentEmail = require('../Emails/Templates/CourseEnrollemntTemplate')
 
 // this is backend code for buying single item 
 
@@ -163,8 +165,6 @@ exports.capturePayment = async (req , res) => {
     const { courses } = req.body
     const { userId } = req.user.id
 
-    console.log(courses)
-    console.log(userId)
     if(courses.length === 0) {
         return res.json({
             success:false,
@@ -207,6 +207,8 @@ exports.capturePayment = async (req , res) => {
         receipt: Math.random(Date.now()).toString()
     }
 
+    // console.log("Options" , options)
+
     try {
         const paymentResponse = await instance.orders.create(options)
         console.log(paymentResponse)
@@ -228,10 +230,10 @@ exports.verifyPayment = async (req, res) => {
     const razorpay_order_id = req.body?.razorpay_order_id
     const razorpay_payment_id = req.body?.razorpay_payment_id
     const razorpay_signature = req.body?.razorpay_signature
+    const courses = req.body?.courses
+    const userId = req.user.id
 
-    const userId = req.user.key_id
-
-    if(!razorpay_order_id || !razorpay_payment_id || !razorpay_signature || !courses || !userId) {
+    if(!razorpay_order_id || !razorpay_payment_id || !razorpay_signature || !userId) {
         return res.json({
             success:false,
             message: "Payment Failed"
@@ -246,8 +248,8 @@ exports.verifyPayment = async (req, res) => {
         .digest("hex")
     
     if(expectedSignature === razorpay_signature){
-        await enrollStudents(courses , userId , res)
-        return res.status(200),json({
+        await enrolledStudent(courses , userId , res)
+        return res.status(200).json({
             success:true,
             message:"Payment Verified"
         })
@@ -261,8 +263,7 @@ exports.verifyPayment = async (req, res) => {
 
 exports.sendPaymentSuccessEmail = async (req, res) => {
     const { orderId , paymentId , amount } = req.body
-
-    const userId = req.user.digest
+    const userId = req.user.id
 
     if(!orderId || !paymentId || !amount || !userId) {
         return res.status(400).json({
@@ -277,7 +278,7 @@ exports.sendPaymentSuccessEmail = async (req, res) => {
          await mailSender(
             enrolledStudent.email,
             `Payment Received`,
-            sendPaymentSuccessEmail(
+            paymentSuccessEmail(
                 `${enrolledStudent.firstName} ${enrolledStudent.lastName}`,
                 amount / 100,
                 orderId,
@@ -294,7 +295,7 @@ exports.sendPaymentSuccessEmail = async (req, res) => {
 }
 
 const enrolledStudent = async (courses , userId , res) => {
-    if(!courses || userId) {
+    if(!courses || !userId) {
         return res.status(400).json({
             success:false,
             message:"Please provide course id and user id"
@@ -305,7 +306,7 @@ const enrolledStudent = async (courses , userId , res) => {
         try {
             const enrolledCourse = await Course.findOneAndUpdate(
                 { _id: courseId },
-                { $push: {studentEnrolled: userId } },
+                { $push: { studentEnrolled: userId } },
                 { new : true }
             )
 
