@@ -2,6 +2,8 @@ const Profile = require('../Models/Profile')
 const User = require("../Models/User")
 const Course = require('../Models/Course')
 const { imageUploader } = require('../Utils/imageUpload')
+const { convertSecondsToDuration } = require("../utils/secToDuration")
+const CourseProgress = require("../Models/CourseProgess")
 require('dotenv').config()
 
 exports.updateProfile = async (req, res) => {
@@ -188,19 +190,18 @@ exports.updateDisplayPicture = async (req, res) => {
 exports.getEnrolledCourses = async (req, res) => {
     try {
         const userId = req.user.id
-        let userDetails = await User.findOne({
-            _id: userId,
-        })
-            .populate({
-                path: "courses",
+        let userDetails = await User.findById(userId)
+        .populate({
+            path: "courses",
+            populate: {
+                path:"courseContent",
                 populate: {
-                    path: "courseContent",
-                    populate: {
-                        path: "subSection",
-                    },
-                },
-            })
-            .exec()
+                    path: "subSection"
+                }
+            }
+        })
+        .exec()
+
         userDetails = userDetails.toObject()
         var SubsectionLength = 0
         for (var i = 0; i < userDetails.courses.length; i++) {

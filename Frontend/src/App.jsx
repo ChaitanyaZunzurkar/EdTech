@@ -17,6 +17,7 @@ import CreateCourse from './Components/CreateCourse'
 import MyCourse from './Components/MyCourse'
 import CategoryPage from './Components/CategoryPage'
 import CoursePage from './Components/CoursePage'
+import EnrolledCourses from './Components/EnrolledCourses'
 
 function App() {
   return (
@@ -38,7 +39,9 @@ function App() {
               <Route path='/dashboard/settings' element={<DashboardSettings />} />
               <Route path='/dashboard/add-course' element={<CreateCourse />} />
               <Route path='/dashboard/my-courses' element={<MyCourse />} />
+              <Route path="/dashboard/enrolled-courses" element={<EnrolledCourses />} />
             </Route>
+
         </Routes>
         {/* <Footer /> */}
     </div>

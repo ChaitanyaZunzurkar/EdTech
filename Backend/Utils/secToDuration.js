@@ -12,6 +12,6 @@ function convertSecondsToDuration(totalSec) {
     }
 }
 
-exports.module = {
+module.exports = {
     convertSecondsToDuration
 }
