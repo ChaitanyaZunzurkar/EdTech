@@ -3,9 +3,18 @@
     justify-content: center;
     align-items: center; 
     /* border: 2px solid red; */
-    /* margin-left: 1.5rem; */
     width: 800px;
     flex-direction: column;
+}
+
+.head {
+    /* border:2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+    margin-right: 3rem;
 }
 
 .form {
@@ -21,10 +30,10 @@
 
 }
 
-.form input {
+.form .input , .numberInput{
     padding: 10px;
     border-radius: 7px;
-    width:80%;
+    /* width:80%; */
     background-color: #2C333F;
     color: #999DAA;
     /* border: none; */
@@ -65,8 +74,8 @@
     
 }
 
-.AboutPage_contact_form_nameSection div input {
-    width: 90%;
+.AboutPage_contact_form_nameSection div .input {
+    width: 95%;
 }
 
 .AboutPage_contact_form_emailContainer {
@@ -102,8 +111,8 @@
 
 }
 
-.AboutPage_contact_form_emailSection input {
-    width: 95%;
+.AboutPage_contact_form_emailSection .input {
+    width: 97%;
 
 }
 
@@ -146,7 +155,7 @@
 }
 
 .mobileNumberInputContainer .numberInput {
-    width: 78%;
+    width: 80%;
 }
 
 .AboutPage_contact_form_message {
@@ -190,4 +199,86 @@
     margin-bottom: 1rem;
     text-align: center;
 
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .AboutPage_contact_form_nameSection {
+        flex-wrap: wrap;
+    }
+    .AboutPage_contact_form_nameSection div {
+        width: 45%;
+        margin-bottom: 1rem;
+    }
+    .AboutPage_contact_form_emailSection,
+    .AboutPage_contact_form_phoneNoSection,
+    .AboutPage_contact_form_message {
+        width: 90%;
+    }
+    .AboutPage_contact_form_phoneNoSection div .phoneInput {
+        width: 20%;
+    }
+    .AboutPage_contact_form_sendBtn {
+        width: 90%;
+    }
+}
+
+/* For mobile landscape and larger phones */
+@media (max-width: 780px) {
+    .container {
+        width: 100%;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .AboutPage_contact_form_nameSection {
+        flex-direction: column;
+    }
+    .AboutPage_contact_form_nameSection div {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .AboutPage_contact_form_emailSection,
+    .AboutPage_contact_form_phoneNoSection,
+    .AboutPage_contact_form_message {
+        width: 100%;
+    }
+    .AboutPage_contact_form_phoneNoSection div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .AboutPage_contact_form_phoneNoSection div .phoneInput {
+        width: 95%;
+        margin-top: 5px;
+    }
+    .mobileNumberInputContainer .numberInput {
+        width: 95%;
+    }
+    .AboutPage_contact_form_sendBtn {
+        width: 100%;
+    }
+}
+
+/* For small phones */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.2rem;
+    }
+    .desc {
+        font-size: 0.9rem;
+    }
+    .form .input, .numberInput, .textarea {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+    .AboutPage_contact_form_sendBtn {
+        padding: 8px;
+        font-size: 1rem;
+    }
 }

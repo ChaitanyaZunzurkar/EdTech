@@ -3,9 +3,9 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-
-
+    width: 100vw;
 }
+
 .section1 {
     background-color: #161D29;
     display: flex;
@@ -14,14 +14,9 @@
     flex-direction: column;
     /* border: 2px solid red; */
     height: 70vh;
-    padding: 4rem 24rem;
-    padding-bottom: 3rem;
+    padding: 4rem 6rem;
     position: relative;
-}
-
-.about {
-    color: #999DAA;
-    margin-bottom: 20px;
+    margin-top: 8vh;
 }
 
 .description {
@@ -41,7 +36,7 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: -60px;
+    bottom: -120px;
     gap: 30px;
     width: 384px;
 }
@@ -53,14 +48,16 @@
     flex-direction: column;
     background-color: #000814;
     min-height: 100vh;
-    
+    /* border:2px solid red; */
 }
 
 .para {
-    font-size: 1.7rem;
+    font-size: 2rem;
     text-align: center;
-    padding: 8rem 10rem;
+    padding: 10rem;
+    padding-bottom:5rem ;
 }
+
 .expert {
     background: linear-gradient(to right, #FF512F, #F09819);
     background-clip: text;
@@ -76,30 +73,31 @@
 .foundingStory {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    padding:0px 9rem;
+    align-items: center;
+    padding: 4rem 9rem;
     gap: 10rem;
     /* border: 2px solid red; */
 }
 
 .foundingStoryImg {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     /* border: 2px solid red; */
-    margin-right: 3rem;
     /* box-shadow: -5px -5px 20px #EC008C ; */
     position: relative;
     overflow: visible;
     background-color: transparent;
-    height: 300px;
-    padding: 20px;
+    width:100%;
 }
+
 .foundingStoryImg img {
     z-index: 10;
     position: relative;
     background-color: transparent;
     overflow: visible;
+    aspect-ratio: 16 / 9;
+    max-width: 490px;
 }
 
 
@@ -120,13 +118,12 @@
     background: linear-gradient(#833AB4 , #FD1D1D , #FCB045);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.5rem;
+    font-size: 2em;
 }
 
 .foundingStory .content .desc {
     color: #838894;
-    font-size: smaller;
-
+    font-size: 1em;
 }
 
 
@@ -141,14 +138,14 @@
 }
 .missionAndVision .content1 , .content2 .desc {
     color: #838894;
-    font-size: smaller;
+    font-size: 1em;
 
 }
 .missionAndVision .content1 .title {
     background: linear-gradient(to right, #E65C00, #F9D423);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.5rem;
+    font-size: 2em;
 
 }
 
@@ -156,7 +153,7 @@
     background: linear-gradient(#1FA2FF , #12D8FA , #A6FFCB);
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.5rem;
+    font-size: 2em;
 
 }
 
@@ -212,5 +209,342 @@
     align-items: center;
     flex-direction: column;
     width: 100%;
+}
+
+
+/* --------- Large screens up to 1200px --------- */
+@media (max-width: 1200px) {
+  .section1 {
+    padding: 4rem 6rem;
+    height: 60vh;
+  }
+  .foundingStory {
+    padding: 4rem 3rem;
+    gap: 8rem;
+  }
+  .missionAndVision {
+    padding: 1rem 3rem;
+    gap: 8rem;
+  }
+  .imgContainer {
+    width: 320px;
+    bottom: -100px;
+  }
+}
+
+/* --------- Medium screens up to 1024px --------- */
+@media (max-width: 1024px) {
+  .section1 {
+    padding: 3rem 4rem;
+    height: 60vh;
+  }
+  .imgContainer {
+    width: 280px;
+    bottom: -110px;
+  }
+  .para {
+    font-size: 1.75rem;
+    padding: 10rem 4rem;
+  }
+  .foundingStory {
+    flex-direction: column;
+    padding: 3rem 3rem;
+    gap: 4rem;
+    
+  }
+  .foundingStoryImg img {
+    max-width: 450px;
+  }
+
+   
+.radial {
+    background: radial-gradient(circle at top, #EC008C , #FC6767);
+    position: absolute;
+    z-index: 2;
+    width: 300px;
+    height: 200px;
+    border-radius: 50%;
+    top: 30px;
+    left: 220px;
     /* border: 2px solid red; */
+    filter: blur(50px);
+}
+
+  .missionAndVision {
+    flex-direction: column;
+    padding: 1rem 3rem;
+    gap: 4rem;
+  }
+  .stats {
+    gap: 3rem;
+  }
+  .statCard {
+    margin: 3rem 0;
+  }
+  .section3 {
+    margin: 4rem 0;
+  }
+}
+
+@media (max-width: 920px) {
+.section1 {
+    padding: 2.5rem 2rem;
+    height: 60vh;
+  }
+  .imgContainer {
+    width: 230px;
+    bottom: -80px;
+  }
+  .para {
+    font-size: 1.5rem;
+    padding: 6rem 2rem 3rem;
+  }
+  .foundingStory {
+    padding: 2rem 2rem;
+    gap: 3rem;
+  }
+  .foundingStoryImg img {
+    max-width: 450px;
+  }
+  .missionAndVision {
+    padding: 1rem 2rem;
+    gap: 3rem;
+  }
+  .stats {
+    gap: 2.5rem;
+  }
+  .statCard {
+    margin: 2rem 0;
+  }
+  .section3 {
+    margin: 3rem 0;
+  }
+}
+
+/* --------- Small screens up to 780px --------- */
+@media (max-width: 780px) {
+  .container {
+    max-width: 780px;
+  }
+  .section1 {
+    padding: 2.5rem 2rem;
+    height: 50vh;
+  }
+  .imgContainer {
+    width: 230px;
+    bottom: -80px;
+  }
+  .para {
+    font-size: 1.5rem;
+    padding: 6rem 2rem 3rem;
+  }
+  .foundingStory {
+    padding: 2rem 2rem;
+    gap: 3rem;
+  }
+  .foundingStoryImg img {
+    max-width: 450px;
+  }
+  .missionAndVision {
+    padding: 1rem 2rem;
+    gap: 3rem;
+  }
+  .stats {
+    gap: 2.5rem;
+  }
+  .statCard {
+    margin: 2rem 0;
+  }
+  .section3 {
+    margin: 3rem 0;
+  }
+}
+
+@media (max-width: 560px) {
+.section1 {
+    padding: 1.5rem;
+    height: 50vh;
+  }
+  .imgContainer {
+    width: 160px;
+    bottom: -80px;
+  }
+  .foundingStory {
+    padding: 2rem 2rem;
+    gap: 3rem;
+  }
+  .foundingStoryImg img {
+    max-width: 450px;
+  }
+
+   
+    .radial {
+        background: radial-gradient(circle at top, #EC008C , #FC6767);
+        position: absolute;
+        z-index: 2;
+        width: 300px;
+        height: 180px;
+        border-radius: 50%;
+        top: 30px;
+        left: 20px;
+        /* border: 2px solid red; */
+        filter: blur(50px);
+    }
+
+}
+
+/* --------- Extra small screens up to 480px --------- */
+@media (max-width: 480px) {
+  .container {
+    max-width: 100%;
+  }
+  .title {
+    text-align: start;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .section1 {
+    padding: 2rem;
+    /* border:2px solid red; */
+    height:50vh;
+  }
+
+  .imgContainer {
+    width: 105px;
+    bottom: -10px;
+  }
+
+  .para {
+    font-size: 1rem;
+    /* border:2px solid red; */
+    padding: 4rem;
+    margin: 4rem 1rem;
+    
+  }
+
+  
+.radial {
+    background: radial-gradient(circle at top, #EC008C , #FC6767);
+    position: absolute;
+    z-index: 2;
+    width: 300px;
+    height: 180px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    /* border: 2px solid red; */
+    filter: blur(50px);
+}
+
+.foundingStory {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+    /* border:2px solid red; */
+}
+  .foundingStoryImg img {
+    max-width: 350px;
+    /* border:2px solid red; */
+  }
+  .missionAndVision {
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+  .stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .statCard {
+    margin: 1rem 0;
+  }
+  .section3 {
+    margin: 2rem 0;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .para,
+  .description {
+    text-align: left;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    max-width: 100%;
+  }
+  .title {
+    text-align: start;
+    padding: 5px;
+    margin: 5px;
+  }
+  
+  .section1 {
+    padding: 2rem;
+    /* border:2px solid red; */
+    height:50vh;
+  }
+
+  .imgContainer {
+    width: 105px;
+    bottom: -10px;
+    display: none;
+  }
+
+  .para {
+    font-size: 1rem;
+    /* border:2px solid red; */
+    padding: 4rem;
+    margin: 4rem 1rem;
+    
+  }
+
+  
+.radial {
+    background: radial-gradient(circle at top, #EC008C , #FC6767);
+    position: absolute;
+    z-index: 2;
+    width: 300px;
+    height: 120px;
+    border-radius: 50%;
+    top: 30px;
+    left: 20px;
+    /* border: 2px solid red; */
+    filter: blur(50px);
+}
+
+.foundingStory {
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+    /* border:2px solid red; */
+}
+  .foundingStoryImg img {
+    max-width: 300px;
+    /* border:2px solid red; */
+  }
+  .missionAndVision {
+    padding: 1rem 1rem;
+    gap: 2rem;
+  }
+  .stats {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .statCard {
+    margin: 1rem 0;
+  }
+  .section3 {
+    margin: 2rem 0;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .para,
+  .description {
+    text-align: left;
+    padding: 0 1rem;
+  }
 }

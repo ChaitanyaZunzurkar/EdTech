@@ -1,6 +1,5 @@
 import style from '../Stylesheets/Learning.module.css'
 import SpecialText from './SpecialText';
-import { ButtonComponent } from '../Components/ButtonComponent'
 
 const LearningGridArray = [
     {
@@ -53,11 +52,6 @@ const Learning = () => {
                 <div key={index} className={index === 0 ? `${style.firstGridBox}` : index === 3 ? `${style.fourthGridBox}` : `${style.GridBox}` && index % 2 === 0 ? `${style.even}` : `${style.odd}`}>
                     <p className={index === 0 ? `${style.title}` :`${style.heading}`}> {content.heading} <SpecialText text={content.highlightText} /></p>
                     <p className={style.description}> {content.description} </p>
-                    <div className={style.btn}>
-                        {
-                            content.BtnText ? <ButtonComponent active={true} path={content.BtnLink} text={content.BtnText} /> : ''
-                        }
-                    </div>
                 </div>
             ))
          }

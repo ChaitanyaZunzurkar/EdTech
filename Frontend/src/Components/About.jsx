@@ -4,8 +4,6 @@ import aboutImg1 from '../assets/aboutus1.webp'
 import aboutImg2 from '../assets/aboutus2.webp'
 import aboutImg3 from '../assets/aboutus3.webp'
 import foundaryStoreImg from '../assets/FoundingStory.png'
-import { RiDoubleQuotesL } from "react-icons/ri";
-import { RiDoubleQuotesR } from "react-icons/ri";
 import Learning from './Learning'
 import ContactForm from '../Components/ContactForm'
 
@@ -32,8 +30,7 @@ const About = () => {
   return (
     <div className={style.container}>
         <section className={style.section1}>
-            <p className={style.about}>About us</p>
-            <p className={style.title}>Driving Innovation in Online Education for a <SpecialText text={'Brighter Future'} /> </p>
+            <b><p className={style.title}>Driving Innovation in Online Education for a <SpecialText text={'Brighter Future'} /> </p></b>
             <p className={style.description}>Studynotion is at the forefront of driving innovation in online education. We are passionate about creating a brighter future by offering cutting-edge courses, leveraging emerging technologies, and nurturing a vibrant learning community.</p>
 
             <div className={style.imgContainer}>
@@ -45,8 +42,10 @@ const About = () => {
 
         <section className={style.section2}>
             <p className={style.para}>
-                <RiDoubleQuotesL color='#424854'/> We are passionate about revolutionizing the way we learn. Our innovative platform  <SpecialText text={' combines technology'} />, <span className={style.expert}><b>expertise</b></span> , and community to create an <span className={style.education}><b>unparalleled educational experience.</b></span> <RiDoubleQuotesR color='#424854'/>
+                We are passionate about revolutionizing the way we learn. Our innovative platform  <SpecialText text={' combines technology'} />, <span className={style.expert}><b>expertise</b></span> , and community to create an <span className={style.education}><b>unparalleled educational experience.</b></span> 
             </p>
+
+            <hr style={{border:"1px solid grey" , width:"100%"}} />
 
             <div className={style.foundingStory}>
                 <div className={style.content}>

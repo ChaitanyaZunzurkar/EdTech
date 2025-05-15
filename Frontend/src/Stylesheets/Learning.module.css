@@ -1,13 +1,16 @@
 .container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr   ;
+    grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: auto auto;
+    /* border: 2px solid red; */
 }
 
 .firstGridBox {
     /* border: 2px solid red; */
-    padding: 20px;
+    padding:  20px;
+    padding-bottom: 0px;
     margin-right: 10rem;
+
 }
 
 .btn {
@@ -45,7 +48,7 @@
     background-color: #161D29;
     padding: 20px;
     height: 230px;
-
+    /* border: 2px solid red; */
 }
 
 .odd {
@@ -54,3 +57,126 @@
     height: 230px;
 }
 
+
+
+/* Max width 1200px - reduce big margins */
+@media (max-width: 1200px) {
+    .firstGridBox {
+        margin-right: 5rem;
+    }
+    .fourthGridBox {
+        margin-left: 10rem;
+    }
+        
+    .even {
+        background-color: #161D29;
+        padding: 20px;
+        height: 250px;
+        width: 250px
+        /* border: 2px solid red; */
+    }
+
+    .odd {
+        background-color: #6E727F;
+        padding: 20px;
+        height: 250px;
+        width: 250px
+
+    }
+
+}
+
+/* Max width 1024px - make grid 2 columns and 2 rows */
+@media (max-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        width:100vw;
+    }
+    .firstGridBox {
+        margin-right: 0;
+         height: 250px;
+        width: 450px
+    }
+    .fourthGridBox {
+        height: 250px;
+        width: 250px;
+        margin: 0px;
+        padding: 0px;
+        
+    }
+
+     .even {
+        background-color: #161D29;
+        padding: 20px;
+        height: 250px;
+        width: 250px
+        /* border: 2px solid red; */
+    }
+
+    .odd {
+        background-color: #6E727F;
+        padding: 20px;
+        height: 250px;
+        width: 250px;
+
+    }
+}
+
+/* Max width 780px - stack grid items vertically */
+@media (max-width: 780px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        width:100vw;
+    }
+    
+    .fourthGridBox {
+        /* margin-left: 15px; */
+        padding: 0px;
+        margin: 0px;
+        /* display: none; */
+        height: 250px;
+        width: 250px;
+    }
+    .btn {
+        margin-left: 0;
+        margin-top: 15px;
+        align-self: center;
+    }
+}
+
+/* Max width 480px - reduce padding and font sizes */
+@media (max-width: 480px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    .firstGridBox .title {
+        font-size: 1.5rem;
+        padding: 0 8px;
+    }
+    .heading {
+        font-size: 1rem;
+    }
+    .description {
+        font-size: 0.9rem;
+    }
+    .firstGridBox,
+    .fourthGridBox {
+        padding: 15px;
+    }
+    .even, .odd {
+        height: auto;
+        padding: 15px;
+    }
+    .btn {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+}

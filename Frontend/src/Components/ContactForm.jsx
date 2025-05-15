@@ -31,8 +31,11 @@ const ContactForm = ({title , description}) => {
 
     return (
         <div className={style.container}>
-            <p className={style.title}><b>{ title }</b></p>
-            <p className={style.desc}>{ description }</p>
+            <div className={style.head}>
+                <p className={style.title}><b>{ title }</b></p>
+                <p className={style.desc}>{ description }</p>
+            </div>
+            
             <form className={style.form} onSubmit={submitHandler}>
                     <div className={style.AboutPage_contact_form_nameSection}>
                         <div>
@@ -45,6 +48,7 @@ const ContactForm = ({title , description}) => {
                                 placeholder='Enter first name'
                                 value={contactData.firstName}
                                 onChange={changeHandler}
+                                className={style.input}
                             />
                     </div>
                     <div>   
@@ -57,6 +61,7 @@ const ContactForm = ({title , description}) => {
                             value={contactData.lastName}
                             onChange={changeHandler}
                             required
+                            className={style.input}
                         />
                     </div>
                 </div>
@@ -72,6 +77,7 @@ const ContactForm = ({title , description}) => {
                             value={contactData.email}
                             onChange={changeHandler}
                             required
+                            className={style.input}
                         />
                     </div>
                 </div>
@@ -91,7 +97,7 @@ const ContactForm = ({title , description}) => {
                                 onChange={changeHandler}
                                 value={contactData.countryCode}
                                 required
-                                >
+                            >
                                 {
                                     countryCode.map((country , index) => (
                                         <option 
