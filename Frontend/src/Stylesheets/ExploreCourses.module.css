@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%; 
+    width: 100%; 
 }
 
 .title {
@@ -39,13 +39,13 @@
     padding: 5px;
     margin: 10px;
     width: 100%;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 
 .nav ul li {
     list-style: none;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 20px;
     font-size: 1rem;
 }
 
@@ -59,22 +59,114 @@
     border-radius: 100px;
 }
 
-
-@media (max-width: 768px) {
+/* 1200px and below */
+@media (max-width: 1200px) {
+    
     .title {
-        font-size: 1.5rem; /* Reduced for better fit on mobile */
+        font-size: 1.8rem;
     }
 
     .para {
-        font-size: 1rem; /* Adjusted for readability */
-        width: 90%; /* Increased width for better fit */
-    }
-
-    .nav ul { /* Stack items on smaller screens */
-        padding: 10px;
+        font-size: 1.1rem;
+        width: 85%;
     }
 
     .nav ul li {
-        font-size: 0.9rem; /* Slightly reduced for mobile screens */
+        font-size: 0.95rem;
+    }
+}
+
+/* 1024px and below */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 1.7rem;
+    }
+
+    .para {
+        font-size: 1rem;
+    }
+
+    .nav ul li {
+        padding: 7px 14px;
+    }
+}
+
+/* 780px and below */
+@media (max-width: 780px) {
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .para {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .nav ul {
+        gap: 8px;
+    }
+
+    .nav ul li {
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+}
+
+/* 600px and below */
+@media (max-width: 600px) {
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .para {
+        font-size: 0.95rem;
+        width: 95%;
+    }
+
+    .nav ul {
+        gap: 6px;
+    }
+
+    .nav ul li {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 520px) {
+    .nav {
+        display: none;
+    }
+}
+
+/* 480px and below */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.3rem;
+    }
+
+    .para {
+        font-size: 0.9rem;
+    }
+
+    .nav ul li {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
+
+/* 350px and below */
+@media (max-width: 350px) {
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .para {
+        font-size: 0.8rem;
+    }
+
+    .nav ul li {
+        font-size: 0.75rem;
+        padding: 4px 8px;
     }
 }

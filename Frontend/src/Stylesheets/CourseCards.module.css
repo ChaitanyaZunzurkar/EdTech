@@ -11,8 +11,8 @@
 }
 .card {
     /* border: 2px solid red; */
-    width: 22%; 
-    height: auto;
+    width: 350px;
+    height: 200px;
     background-color: #161D29;
     display: flex;
     padding: 15px 10px;
@@ -119,10 +119,21 @@
     color: #DBDDEA;
 }
 
+@media (max-width: 1200px) {
+    .container {
+        margin: 2rem 0px;
+    }
+    .card {
+        width: 300px;
+        height: 200px;
+    }
+}
 
 @media (max-width: 1024px) {
     .card {
-        width: 30%; /* Adjust width for tablets */
+        width: 300px;
+        height: 200px;
+        margin: 5px;
     }
     
 }
@@ -130,10 +141,24 @@
 @media (max-width: 768px) {
     .container {
         gap: 1rem; /* Reduced gap for smaller screens */
+        
     }
 
     .card {
         width: 45%; /* Adjust width for mobile devices */
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction:column;
+    }
+    .card {
+        width: 400px;
+        height: 200px;
     }
 }
 
@@ -148,9 +173,5 @@
 
     .card p {
         font-size: 0.8rem;
-    }
-
-    .CourseInfo {
-        flex-direction: column; /* Stack elements for better fit */
     }
 }

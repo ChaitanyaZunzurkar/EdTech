@@ -153,8 +153,19 @@
         font-size: 26px; /* Further reduces font size */
     }
 
+    .info {
+        display: flex;
+        justify-content: flex-start;
+        /* text-align: center; */
+        align-items: flex-start;
+        /* border: 2px solid red; */
+        width: 100%;
+        margin:1rem 1.5rem;
+    }
     .para {
         font-size: 14px; /* Adjusts text for mobile readability */
+        /* margin: 0px; */
+        padding: 0px;
     }
     .codeContainer {
         width: 95%; /* Adjusts code block width */
@@ -165,10 +176,19 @@
     .title {
         font-size: 22px; /* Further reduces title size */
     }
-
+    .info {
+        display: flex;
+        justify-content: flex-start;
+        /* text-align: center; */
+        align-items: flex-start;
+        /* border: 2px solid red; */
+        width: 100%;
+        margin:1rem 1.5rem;
+    }
     .para {
-        font-size: 13px; /* Further reduces text size */
-        padding: 10px 0px;
+        font-size: 14px; /* Adjusts text for mobile readability */
+        /* margin: 0px; */
+        padding: 0px;
     }
 
     .codeContainer {

@@ -22,7 +22,9 @@ export default function LearningLanguageSection() {
                 <img src={plan_your_lessons} alt='img'  className={style.img3}/>
             </div>
 
-            <ButtonComponent active={true} path={'/signup'} text={'Learn More'} />
+            <div className={style.btnSection}>
+                <ButtonComponent active={true} path={'/signup'} text={'Learn More'} />
+            </div>
         </div>
     )
 }

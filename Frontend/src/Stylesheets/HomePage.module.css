@@ -24,7 +24,7 @@
 
 .section .img {
     background-image: url('../assets/bghome.svg');
-    width: 100%;
+    width: 100vw;
     height: 100%;
 }
 
@@ -67,8 +67,8 @@
 }
 
 .desc p {
-    margin: 0px;
     margin: 0.5rem;
+    /* border: 2px solid red; */
 }
 
 .learnBtn {
@@ -80,6 +80,7 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+    margin: 0.5rem 1.2rem;
 }
 
 .learnBtn:hover {
@@ -91,15 +92,18 @@
         font-size: 24px; /* Reduced font size for tablets */
         width: 40%; /* Adjusted width */
     }
-    .desc {
-        width: 50%; /* Adjusted width for tablets */
+
+    .sectionFour {
+        height: 24vh;
     }
+    
 }
 
 @media (max-width: 768px) {
     .sectionFour {
         flex-direction: column; /* Stack content vertically */
         gap: 1rem; /* Reduced gap */
+        
     }
     .title, .desc {
         width: 80%; /* Full width for readability */
@@ -109,18 +113,31 @@
     }
     .desc p {
         font-size: 0.9rem; /* Adjusted font size */
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .learnBtn {
+        margin: 10px 0px;
+    }
+}
+
+@media (max-width: 550px) {
+    .sectionFour {
+        height: 28vh;
     }
 }
 
 @media (max-width: 480px) {
+    .sectionFour {
+        height: 30vh;
+    }
     .title {
         font-size: 18px; /* Further reduced for smaller screens */
     }
     .desc {
         width: 90%; /* Almost full width */
-        text-align: center; /* Center text on small screens */
+        padding: 0px 20px;
     }
-    .learnBtn {
-        width: 100%; /* Full-width button for easier tapping */
-    }
+
 }

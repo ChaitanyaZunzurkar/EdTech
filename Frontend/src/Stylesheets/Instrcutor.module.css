@@ -3,6 +3,8 @@
     justify-content: center;
     align-items: center;
     margin: 6rem;
+    /* border: 2px solid red; */
+
 }
 
 .content {
@@ -12,7 +14,9 @@
 .title {
     font-size: 35px;
     padding: 15px 0px;
-    width: 50%;
+    width: 90%;
+    /* border: 2px solid red; */
+
 }
 
 .para {
@@ -34,54 +38,73 @@
     box-shadow: -14px -14px 2px white;
 }
 
-@media (max-width: 768px) {
-    .container {
-        margin: 3rem; /* Change: Reduced margin for smaller screens */
-    }
 
+@media screen and (max-width: 1200px) {
     .content {
-        margin: 0px 3rem; /* Change: Reduced content margin */
+        margin: 0 4rem;
     }
-
-    .title {
-        font-size: 28px; /* Change: Reduced font size for smaller screens */
-        width: 90%; /* Change: Increased width to make title more visible */
-    }
-
-    .para {
-        width: 80%; /* Change: Increased width for better readability */
-    }
-
     .img img {
-        width: 100%; /* Change: Make the image take up full width */
-        margin-bottom: 2rem; /* Change: Added bottom margin to space out content */
-    }
-
-    .container {
-        flex-direction: column; /* Change: Stack content vertically */
+        width: 600px;
     }
 }
 
-/* For screens 480px and below */
-@media (max-width: 480px) {
-    .title {
-        font-size: 24px; /* Change: Reduced font size for very small screens */
-    }
-
-    .para {
-        width: 100%; /* Change: Take up full width for text */
-    }
-
-    .content {
-        margin: 0px 2rem; /* Change: Further reduced content margin */
-    }
-
-    .img img {
-        width: 100%; /* Change: Ensure image scales to full width */
-        margin-bottom: 1rem; /* Change: Adjusted margin for image */
-    }
-
+@media screen and (max-width: 1024px) {
     .container {
-        padding: 1.5rem 0px; /* Change: Reduced padding for small screens */
+        flex-direction: column;
+        margin: 4rem;
+    }
+    .content {
+        margin: 2rem 8rem;
+        /* text-align: center; */
+    }
+    .para {
+        align-items: center;
+        justify-content: center;
+        /* text-align: center; */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .img img {
+        width: 100%;
+    }
+    .para {
+        font-size: 15px;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .content {
+        margin: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin: 3rem;
+    }
+    .title {
+        font-size: 26px;
+    }
+    .para {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 22px;
+    }
+    .para {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .title {
+        font-size: 20px;
+    }
+    .para {
+        font-size: 12px;
     }
 }

@@ -30,11 +30,11 @@ export default function HomePage() {
 <html>
 <head>
 <title>Example</title>
-<linkrel = "stylesheet"href="styles.css">
+<linkrel="stylesheet"href="style.css">
 </head>
 <body>
 <h1><a href="/">Header</a></h1>
-<nav> <a href="one/">One</a> <a href="two/">Two</a> </nav>
+<nav> <a href="one/">One</a> </nav>
 </body>
 </html>`}
         />
