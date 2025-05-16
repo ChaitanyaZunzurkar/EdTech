@@ -55,7 +55,14 @@
 .topSellingCourses,
 .frequentlyBroughtCourse {
     max-width: 1200px;
-    margin: 25px auto;
+    margin: 25px 10rem;
+}
+
+.frequentlyBroughtCourse  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .typeOfCourses {
@@ -92,4 +99,89 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+}
+
+
+@media (max-width: 1200px) {
+    .contentBox {
+        padding: 0 8rem;
+    }
+
+    .coursesToGetYouStarted,
+    .topSellingCourses,
+    .frequentlyBroughtCourse {
+        margin: 25px 8rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contentBox {
+        padding: 0 5rem;
+    }
+
+    .heading {
+        font-size: 26px;
+    }
+    .coursesToGetYouStarted,
+    .topSellingCourses,
+    .frequentlyBroughtCourse {
+        margin: 25px 4rem;
+    }
+    .courses {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 780px) {
+    .contentBox {
+        padding: 0 3rem;
+    }
+
+    .heading {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contentBox {
+        padding: 0 1.5rem;
+    }
+
+    .heading {
+        font-size: 22px;
+        /* text-align: center; */
+    }
+
+    .courses {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .coursesToGetYouStarted,
+    .topSellingCourses,
+    .frequentlyBroughtCourse {
+        margin: 20px 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalogNavItem {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 350px) {
+    .heading {
+        font-size: 20px;
+    }
+
+    .catalogNavItem {
+        font-size: 12px;
+        padding: 4px 8px;
+    }
 }
