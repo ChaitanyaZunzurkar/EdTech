@@ -18,23 +18,28 @@ const Template = ({ title , description , specialText , login  , img }) => {
         <div className={style.container}>
             <div className={style.content}>
                 <p className={style.title}><b>{ title } </b></p>
-                <p className={style.description}>{ description } <span className={style.specialText}>{specialText}</span></p>
+                <p className={style.description}>{ description } </p>
+                <span className={style.specialText}>{specialText}</span>
 
-                <div className={style.btnDiv}>
-                    <button 
-                        className={`${style.btn} ${accountType === "Student" ? style.active : ""}`}
-                        onClick={() => changeRole('Student')}
-                    >
-                        <b>Student</b>
-                    </button>
+                {
+                    login ? (<></>) : (
+                        <div className={style.btnDiv}>
+                            <button 
+                                className={`${style.btn} ${accountType === "Student" ? style.active : ""}`}
+                                onClick={() => changeRole('Student')}
+                            >
+                                <b>Student</b>
+                            </button>
 
-                    <button 
-                        className={`${style.btn} ${accountType !== "Student" ? style.active : ''}`}
-                        onClick={() => changeRole('Instructor')}
-                    >
-                        <b>Instructors</b>
-                    </button>
-                </div>
+                            <button 
+                                className={`${style.btn} ${accountType !== "Student" ? style.active : ''}`}
+                                onClick={() => changeRole('Instructor')}
+                            >
+                                <b>Instructors</b>
+                            </button>
+                        </div>
+                    )
+                }
 
                 <div className={style.form}>
                     {

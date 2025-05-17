@@ -3,7 +3,13 @@ import loginImg from '../assets/login.webp'
 
 const Login = () => {
   return (
-    <div>
+    <div 
+      style={{
+        display: "flex",
+        justifyContent:"center",
+        alignItems:"center"
+      }}
+    >
         <Template 
             title={'Welcome Back'}
             description={'Build skills for today, tomorrow, and beyond.'}

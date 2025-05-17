@@ -130,7 +130,7 @@ const SignupForm = ({ accountType }) => {
                                         value={country.code}
 
                                     >
-                                        {`${country.code}`} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {`${country.country}`}
+                                        {`${country.code}`} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {`${country.country}`}
                                     </option>
                                 ))
                             }
@@ -146,7 +146,7 @@ const SignupForm = ({ accountType }) => {
                             required
                         />
                     </div>
-
+                    </div>
                     <div className={style.passwordSection}>
                         <div className={style.PasswordDiv}>
                             <label htmlFor='password' className={style.label}>Password<span className={style.astrick}>*</span></label>
@@ -176,7 +176,7 @@ const SignupForm = ({ accountType }) => {
                             />
                         </div>
                     </div>
-                </div>
+                
                 
                 <button className={style.signupBtn}>Create Account</button>
             </form>

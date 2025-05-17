@@ -2,7 +2,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30vw;
+    width: 40vw;
+    /* border: 1px solid red; */
+
 }
 
 .form {
@@ -14,7 +16,7 @@
     width: 100%;
     margin: 10px;
     /* border: 1px solid red; */
-    padding: 5px;
+    padding: 5px 0px;
 
 }
 
@@ -34,7 +36,7 @@
 }
 
 .loginBtn {
-    width: 84%;
+    width: 80%;
     background-color: #FFD60A;
     color: #000814;
     border: none;
@@ -46,7 +48,7 @@
     color: #47A5C5;
     display: flex;
     justify-content: flex-end;
-    width: 84%;
+    width: 80%;
     align-items: center;
     background-color: #000814;
     border: none;
@@ -57,4 +59,67 @@
 
 .form .passwordInput {
     margin: 0px;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 40vw;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        width: 80vw;
+        margin-left: 5rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 75vw;
+        margin: 0px;
+        margin-left: 1rem;
+    }
+    .form input,
+    .loginBtn,
+    .forgotPassowordBtn {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 80vw;
+        margin: 0px;
+    }
+    .form input,
+    .loginBtn,
+    .forgotPassowordBtn {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 85vw;
+    }
+    .form {
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .container {
+        width: 94vw;
+    }
+    .form input {
+        font-size: 14px;
+    }
+    .loginBtn {
+        font-size: 14px;
+    }
+    .forgotPassowordBtn {
+        font-size: 13px;
+    }
 }
