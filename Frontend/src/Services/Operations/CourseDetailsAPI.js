@@ -273,3 +273,60 @@ export const deleteCourse = async (data , token) => {
         toast.error("Fail to edit course details.")
     }
 }
+
+export const getFullDetailsOfCourse = async (courseId, token) => {
+  const toastId = toast.loading("Loading...")
+  //   dispatch(setLoading(true));
+  let result = null
+  try {
+    const response = await apiConnector(
+      "POST", courses.GET_FULL_COURSE_DETAILS_AUTHENTICATED,
+      {
+        courseId,
+      },
+      {
+        Authorization: `Bearer ${token}`,
+      }
+    )
+    console.log("COURSE_FULL_DETAILS_API API RESPONSE............", response)
+
+    if (!response.data.success) {
+      throw new Error(response.data.message)
+    }
+    result = response?.data?.data
+  } catch (error) {
+    console.log("COURSE_FULL_DETAILS_API API ERROR............", error)
+    result = error.response.data
+    // toast.error(error.response.data.message);
+  }
+  toast.dismiss(toastId)
+  //   dispatch(setLoading(false)); 
+  return result
+}
+
+export const markLectureAsComplete = async (data, token) => {
+  let result = null
+  console.log("mark complete data", data)
+  const toastId = toast.loading("Loading...")
+  try {
+    const response = await apiConnector("POST", courses.LECTURE_COMPLETION_API, data, {
+      Authorization: `Bearer ${token}`,
+    })
+    console.log(
+      "MARK_LECTURE_AS_COMPLETE_API API RESPONSE............",
+      response
+    )
+
+    if (!response.data.message) {
+      throw new Error(response.data.error)
+    }
+    toast.success("Lecture Completed")
+    result = true
+  } catch (error) {
+    console.log("MARK_LECTURE_AS_COMPLETE_API API ERROR............", error)
+    toast.error(error.message)
+    result = false
+  }
+  toast.dismiss(toastId)
+  return result
+}

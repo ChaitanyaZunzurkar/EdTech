@@ -28,6 +28,7 @@ export const courses = {
     EDIT_COURSE_API: BASE_URL + 'course/edit-course',
     GET_INSTRUCTOR_COURESES_API: BASE_URL + 'course/get-instructor-courses',
     DELETE_COURSE_API: BASE_URL + 'course/delete-course',
+    GET_FULL_COURSE_DETAILS_AUTHENTICATED: BASE_URL + "course/getFullCourseDetails",
 }
 
 export const catelog = {

@@ -18,8 +18,15 @@ import MyCourse from './Components/MyCourse'
 import CategoryPage from './Components/CategoryPage'
 import CoursePage from './Components/CoursePage'
 import EnrolledCourses from './Components/EnrolledCourses'
+import ViewCourse from './Components/ViewCourse'
+// import { useSelector } from "react-redux";
+import VideoDetails from './Components/VideoDetails'
 
 function App() {
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
+  // const { user } = useSelector((state) => state.profile)
+
   return (
     <div>
         <Navbar />
@@ -42,6 +49,9 @@ function App() {
               <Route path="/dashboard/enrolled-courses" element={<EnrolledCourses />} />
             </Route>
 
+            <Route element={<ViewCourse />} >
+                <Route path="view-course/:courseId/section/:sectionId/sub-section/:subSectionId" element={<VideoDetails />} />
+            </Route>
         </Routes>
         {/* <Footer /> */}
     </div>
