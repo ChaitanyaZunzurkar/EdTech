@@ -27,7 +27,6 @@ const OTPFrom = () => {
         event.preventDefault()
         const OTP = Number(otpData.first + otpData.second + otpData.third + otpData.fourth + otpData.fifth + otpData.sixth);
 
-        console.log(signupData)
         dispatch(signup(
             signupData.firstName, 
             signupData.lastName, 

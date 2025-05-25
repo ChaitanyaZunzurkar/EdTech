@@ -45,7 +45,6 @@ const SignupForm = ({ accountType }) => {
                 accountType
             })
         )
-        console.log(signupData)
         const email = signupData.email
         dispatch(otpSender(email , navigate))
 

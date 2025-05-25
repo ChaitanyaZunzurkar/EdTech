@@ -14,15 +14,12 @@ const EnrolledCourses = () => {
       try {
         const res = await getUserEnrolledCourses(token);
         setEnrolledCourses(res);
-
-        console.log("This is res " , res)
       } catch (error) {
         console.log("Could not fetch enrolled courses." , error)
       }
     };
     useEffect(() => {
       getEnrolledCourses();
-      console.log("This is enrolled courses" , enrolledCourses)
     }, [])
 
     return (

@@ -5,7 +5,7 @@ const { createSection , updatedSection , deleteSection } =require('../Controller
 const { createSubSection , updateSubSection , deleteSubSection } = require("../Controllers/Subsection")
 const { creatingRatingAndReviews , getAvgCourseRating , getAllRatingAndReviews } = require('../Controllers/ratingAndReviews')
 const { createCategory , showAllCategory , CategoryPageDetails } = require('../Controllers/Categories')
-const { createCourse, getAllCourses , getCourseDetails, editCourse, getInstructorCourses, deleteCourse } = require('../Controllers/Course')
+const { createCourse, getAllCourses , getCourseDetails, editCourse, getInstructorCourses, deleteCourse , getFullCourseDetails} = require('../Controllers/Course')
 
 router.post('/createCategory' , auth , isAdmin , createCategory)
 router.get('/getCategory' , showAllCategory)
@@ -26,6 +26,7 @@ router.delete('/delete-subsection' , deleteSubSection)
 router.post('/create-course' , auth , isInstructor ,  createCourse)
 router.get('/getCourse' , getAllCourses)
 router.post('/getCourseDetials' , getCourseDetails)
+router.post("/getFullCourseDetails", auth, getFullCourseDetails)
 
 router.post('/edit-course' , auth , isInstructor , editCourse)
 router.get('/get-instructor-courses' , auth , isInstructor , getInstructorCourses)

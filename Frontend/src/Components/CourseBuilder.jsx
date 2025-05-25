@@ -32,12 +32,10 @@ const CourseBuilder = () => {
       } , token)
 
     } else {
-      console.log(course)
       result = await createSection({
         sectionName: data.sectionName,
         courseId: course.courseDetails?._id || course.updatedCourse?._id
       } , token)
-      console.log(course)
     }
 
     if(result) {
@@ -92,9 +90,6 @@ const CourseBuilder = () => {
         />
         {
           errors.sectionName && <span className={style.error}>{errors.sectionName.message}</span>
-        }
-        {
-          console.log("course Builder" , course)
         }
         {
           course?.updatedCourse?.courseContent?.length > 0 &&

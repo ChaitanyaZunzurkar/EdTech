@@ -2,7 +2,7 @@ const Profile = require('../Models/Profile')
 const User = require("../Models/User")
 const Course = require('../Models/Course')
 const { imageUploader } = require('../Utils/imageUpload')
-const { convertSecondsToDuration } = require("../utils/secToDuration")
+const { convertSecondsToDuration } = require("../Utils/secToDuration")
 const CourseProgress = require("../Models/CourseProgess")
 require('dotenv').config()
 
@@ -114,7 +114,6 @@ exports.updateProfilePicture = async (req, res) => {
         }
 
         const profilePictureUploadResponse = await imageUploader(profilePicture, process.env.FOLDER_NAME)
-        console.log(profilePictureUploadResponse)
         const updatedUser = await User.findByIdAndUpdate(
             userId,
             {

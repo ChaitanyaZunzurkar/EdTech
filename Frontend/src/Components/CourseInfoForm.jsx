@@ -32,7 +32,6 @@ const CourseForm = () => {
     try {
       setLoading(true);
       const res = await apiConnector("GET", categories.CATEGORIES_URL);
-      console.log(res.data.allCategory);
       setSubLink(res.data.allCategory);
       setLoading(false);
     } catch (error) {
@@ -149,7 +148,6 @@ const CourseForm = () => {
         }
         
         setLoading(true)
-        console.log("Sending FormData for Editing:", formData);
         const result = await editCourseDetails(formData , token)
         setLoading(false)
 

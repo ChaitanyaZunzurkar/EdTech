@@ -97,7 +97,6 @@ const LectureModal = ({ lectureData , setLectureData , add = false , edit = fals
                 section._id === result.updateSection._id ? {...section , subSection: result.updateSection.subSection} : section
             ))
 
-            console.log(updatedCourseContent)
             const updatedCourse = { 
                 ...course , 
                 updatedCourse : {
@@ -105,11 +104,9 @@ const LectureModal = ({ lectureData , setLectureData , add = false , edit = fals
                     courseContent: updatedCourseContent
                 }
             }
-            console.log(updatedCourse)
             dispatch(setCourse(updatedCourse))
         }
         setLectureData(null)
-        console.log(course)
     }
 
     return (

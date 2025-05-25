@@ -34,7 +34,7 @@ const DashboardSettings = () => {
         if (profileData.mobileNumber.length < 10) {
             toast.error("Invalid mobile number.");
         }
-        console.log(profileData);
+        
         setProfileData({
             firstName: "",
             lastName: "",

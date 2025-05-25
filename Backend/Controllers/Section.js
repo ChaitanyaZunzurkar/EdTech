@@ -5,7 +5,6 @@ exports.createSection = async (req ,res) => {
     try {
         const { sectionName , courseId } = req.body
 
-        console.log(sectionName , courseId)
         if(!sectionName || !courseId) {
             return res.status(400).json({
                 success:false,

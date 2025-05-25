@@ -55,7 +55,6 @@ export const getCourseDetails = async (courseId) => {
 
     try {
         // add loading
-        console.log(courseId)
         const res = await apiConnector('POST' , courses.GET_COURSE_DETAILS_URL , {
             courseId
         });

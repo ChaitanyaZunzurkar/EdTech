@@ -40,7 +40,6 @@ export default function CatagoryPage() {
         }
 
         getCategoryDetails()
-        console.log(catalogPageData)
     } , [catagoryId])
     
     return (

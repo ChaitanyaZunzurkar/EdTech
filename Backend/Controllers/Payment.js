@@ -211,7 +211,6 @@ exports.capturePayment = async (req , res) => {
 
     try {
         const paymentResponse = await instance.orders.create(options)
-        console.log(paymentResponse)
 
         res.json({
             success:true,

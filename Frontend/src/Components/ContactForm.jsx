@@ -26,7 +26,6 @@ const ContactForm = ({title , description}) => {
         if(contactData.mobileNumber.length < 10) {
             toast.error("Invalid mobile number.")
         }
-        console.log(contactData)
     }
 
     return (

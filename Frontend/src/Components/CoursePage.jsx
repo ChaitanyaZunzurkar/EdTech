@@ -92,9 +92,6 @@ const CoursePage = () => {
   
   return (
       <div className={` ${style.main}`}>
-        {
-          console.log("This is course Details ", courseDetails)
-        }
         <div className="flex flex-col">
           <div className={style.container}>
               <div className={style.pages}>

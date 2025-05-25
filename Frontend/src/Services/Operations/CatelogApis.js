@@ -4,7 +4,6 @@ import { catelog } from "../apis"
 export const getCategoryPageDetails = async (categoryId) => {
     let result = []
     try {
-        console.log("working")
         const response = await apiConnector('POST' , catelog.CATELOG_PAGE_DETAILS , {
             categoryId: categoryId
         })

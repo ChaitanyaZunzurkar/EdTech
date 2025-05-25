@@ -12,7 +12,6 @@ export const otpSender = (email , navigate) => {
             const res = await apiConnector("POST" , auth.OTP_SENDER_URL , {
                 email
             })
-            console.log("Response got after sending OTP." , res)
 
             if(!res.data.success) {
                 toast.error("Fail to send OTP")

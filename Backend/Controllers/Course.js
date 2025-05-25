@@ -198,7 +198,6 @@ exports.editCourse = async (req, res) => {
         }
 
         if(req.files) {
-            console.log("Thumbnail update")
             const updatedThumbnail = req.files.thumbnail;
 
             const thumbnailImage = await imageUploader(
@@ -382,4 +381,75 @@ exports.deleteCourse = async (req , res) => {
             message:"Fail to delete course."
         })
     }
+}
+
+
+exports.getFullCourseDetails = async (req, res) => {
+  try {
+    const { courseId } = req.body
+    const userId = req.user.id
+    const courseDetails = await Course.findOne({
+      _id: courseId,
+    })
+      .populate({
+        path: "instructor",
+        populate: {
+          path: "additionalDetails",
+        },
+      })
+      .populate("Category")
+      .populate("ratingAndReviews")
+      .populate({
+        path: "courseContent",
+        populate: {
+          path: "subSection",
+        },
+      })
+      .exec()
+
+    let courseProgressCount = await CourseProgess.findOne({
+      courseID: courseId,
+      userId: userId,
+    })
+
+    if (!courseDetails) {
+      return res.status(400).json({
+        success: false,
+        message: `Could not find course with id: ${courseId}`,
+      })
+    }
+
+    // if (courseDetails.status === "Draft") {
+    //   return res.status(403).json({
+    //     success: false,
+    //     message: `Accessing a draft course is forbidden`,
+    //   });
+    // }
+
+    let totalDurationInSeconds = 0
+    courseDetails.courseContent.forEach((content) => {
+      content.subSection.forEach((subSection) => {
+        const timeDurationInSeconds = parseInt(subSection.timeDuration)
+        totalDurationInSeconds += timeDurationInSeconds
+      })
+    })
+
+    const totalDuration = convertSecondsToDuration(totalDurationInSeconds)
+
+    return res.status(200).json({
+      success: true,
+      data: {
+        courseDetails,
+        totalDuration,
+        completedVideos: courseProgressCount?.completeVideo
+          ? courseProgressCount?.completeVideo
+          : [],
+      },
+    })
+  } catch (error) {
+    return res.status(500).json({
+      success: false,
+      message: error.message,
+    })
+  }
 }
