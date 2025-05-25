@@ -8,6 +8,7 @@ import { BigPlayButton, Player } from "video-react"
 
 import { markLectureAsComplete } from "../Services/Operations/CourseDetailsAPI"
 import { updateCompletedLectures } from "../Store/Slice/viewCourseSlice"
+import style from '../Stylesheets/videoDetails.module.css'
 import IconBtn from "./IconBtn"
 
 const VideoDetails = () => {
@@ -169,20 +170,21 @@ const VideoDetails = () => {
   }
 
   return (
-    <div className="flex flex-col gap-5 text-white">
+    <div className={style.container} >
       {!videoData ? (
         <img
           src={previewSource}
           alt="Preview"
-          className="h-full w-full rounded-md object-cover"
+          className={style.img}
         />
       ) : (
         <Player
           ref={playerRef}
-          aspectRatio="16:9"
+          aspectRatio="16:8.4"
           playsInline
           onEnded={() => setVideoEnded(true)}
           src={videoData?.videoUrl}
+          className={style.videoPlayer}
         >
           <BigPlayButton position="center" />
           {/* Render When Video Ends */}
@@ -192,7 +194,7 @@ const VideoDetails = () => {
                 backgroundImage:
                   "linear-gradient(to top, rgb(0, 0, 0), rgba(0,0,0,0.7), rgba(0,0,0,0.5), rgba(0,0,0,0.1)",
               }}
-              className="full absolute inset-0 z-[100] grid h-full place-content-center font-inter"
+              className={style.video}
             >
               {!completedLectures.includes(subSectionId) && (
                 <IconBtn
@@ -214,7 +216,7 @@ const VideoDetails = () => {
                 text="Rewatch"
                 customClasses="text-xl max-w-max px-4 mx-auto mt-2"
               />
-              <div className="mt-10 flex min-w-[250px] justify-center gap-x-4 text-xl">
+              <div className={style.btnContainer}>
                 {!isFirstVideo() && (
                   <button
                     disabled={loading}
@@ -239,8 +241,8 @@ const VideoDetails = () => {
         </Player>
       )}
 
-      <h1 className="mt-4 text-3xl font-semibold">{videoData?.title}</h1>
-      <p className="pt-2 pb-6">{videoData?.description}</p>
+      <h1 className={style.videoTitle}>{videoData?.title}</h1>
+      <p className={style.videoDescription}>{videoData?.description}</p>
     </div>
   )
 }

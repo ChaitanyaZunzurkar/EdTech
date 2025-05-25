@@ -129,7 +129,7 @@ const LectureModal = ({ lectureData , setLectureData , add = false , edit = fals
                             register={register}
                             setValue={setValue}
                             errors={errors}
-                            video={false} /* for trail only */
+                            video={true} 
                             viewData={view ? lectureData.lectureVideo : null}
                             editData={edit ? lectureData.lectureVideo : null}
 

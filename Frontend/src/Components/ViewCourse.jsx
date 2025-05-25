@@ -1,8 +1,7 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Outlet, useParams } from "react-router-dom"
-
-// import CourseReviewModal from "../components/core/ViewCourse/CourseReviewModal"
+import style from '../Stylesheets/ViewCourse.module.css'
 import CourseDetailsSideBar from "./CourseDetailsSideBar"
 import { getFullDetailsOfCourse } from "../Services/Operations/CourseDetailsAPI"
 import {
@@ -35,15 +34,10 @@ export default function ViewCourse() {
   }, [])
 
   return (
-    <div style={{minHeight:"100vh"}}>
-      <div className="relative flex min-h-[calc(100vh-3.5rem)]">
-        <CourseDetailsSideBar />
-        <div className="h-[calc(100vh-3.5rem)] flex-1 overflow-auto">
-          <div className="mx-6">
-            <Outlet />
-          </div>
-        </div>
-        {/* <h1 style={{color:"white"}}>Hello</h1> */}
+    <div className={style.container}>
+      <CourseDetailsSideBar />
+      <div className={style.content}>
+          <Outlet />
       </div>
     </div>
   )

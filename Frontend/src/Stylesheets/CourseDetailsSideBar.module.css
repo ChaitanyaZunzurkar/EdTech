@@ -1,0 +1,88 @@
+.container {
+    /* border: 2px solid red; */
+    background-color: #0f172a;
+    min-width: 300px;
+    height: 100vh;
+    margin-top: 8vh;
+}
+
+.CourseInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coursesName {
+    font-weight:bold;
+    color: #DBDDEA;
+    font-size: larger;
+}
+
+.NumberOfVideo {
+    color: #06D6A0;
+}
+
+.line {
+    width: 300px;
+    color: #424854;
+}
+
+.courseVideo {
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.activeSection {
+  border-bottom: 1px solid #1e293b;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sectionName {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.SectionDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border-top: 1px solid gray;
+  background-color: hsl(217, 33%, 17%);
+  align-items: center;
+}
+
+.activeVideo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.subSectionContainer {
+  background-color: #0f172a;
+  padding-bottom: 0.5rem;
+}
+
+.subSectionItem {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.subSectionItem:hover {
+  background-color: #1e293b;
+}
+
+.subSectionItemActive {
+  background-color: #fde68a;
+  font-weight: 600;
+  color: #1e293b;
+}
