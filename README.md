@@ -73,27 +73,42 @@ Ensure you have the following installed:
    - Create a `.env` file in the `backend` directory.
    - Add the following variables:
      ```env
-     MONGO_URI=your-mongodb-connection-string
-     JWT_SECRET=your-jwt-secret
-     PORT=5000
-     CLIENT_URL=http://localhost:3000
+     VITE_BASE_URL=https://your-backend-url.com
+     VITE_RAZORPAY_KEY_ID=your_razorpay_key_id_here
+     ```
+4. **Set up environment variables:**
+   - Create a `.env` file in the `frontend` directory.
+   - Add the following variables:
+     ```env
+     PORT=3000
+     DATABASE_URL=your_mongodb_connection_string_here
+     MAIL_USER=your_email@example.com
+     MAIL_HOST=smtp.gmail.com
+     MAIL_PASS=your_email_password_here
+     JWT_SECRET_KEY=your_jwt_secret_key_here
+     FOLDER_NAME=YourProjectFolderName
+     RAZORPAY_KEY_ID=your_razorpay_key_id_here
+     RAZORPAY_SECRET_ID=your_razorpay_secret_key_here
+     CLOUDINARY_API_KEY=your_cloudinary_api_key_here
+     CLOUDINARY_API_SECRET=your_cloudinary_api_secret_here
+     CLOUDINARY_NAME=your_cloudinary_cloud_name_here
      ```
 
-4. **Run the application:**
+5. **Run the application:**
    - Start the backend server:
      ```bash
      cd backend
-     npm start
+     npm run dev
      ```
    - Start the frontend server:
      ```bash
      cd frontend
-     npm start
+     npm run dev
      ```
 
-5. **Access the application:**
-   - Frontend: `http://localhost:3000`
-   - Backend: `http://localhost:5000`
+6. **Access the application:**
+   - Frontend: `http://localhost:5173`
+   - Backend: `http://localhost:3000`
 
 ---
 
