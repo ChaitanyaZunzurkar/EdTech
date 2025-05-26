@@ -24,7 +24,7 @@ exports.resetPasswordToken = async (req , res) => {
             { new : true }
         )
 
-        const URL = `http://localhost:5173/update-password/${token}`
+        const URL = `https://edtech-backend-izeq.onrender.com/api/v1/update-password/${token}`;
         await mailSender(email , "Password Rest Link" , `Password Reset Link : ${URL}`)
 
         return res.json({
